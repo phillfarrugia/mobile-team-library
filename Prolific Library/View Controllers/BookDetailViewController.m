@@ -45,4 +45,8 @@
     self.viewModel = viewModel;
 }
 
+- (IBAction)checkoutButtonDidPress:(id)sender {
+    // TODO: Send Network Request to Checkout Book
+}
+
 @end

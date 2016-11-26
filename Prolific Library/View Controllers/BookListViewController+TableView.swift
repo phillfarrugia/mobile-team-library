@@ -35,6 +35,7 @@ extension BookListViewController {
         guard let viewModels = viewModels, viewModels.count > indexPath.row else { return }
         selectedViewModel = viewModels[indexPath.row]
         performSegueWithIdentifier(.BookDetail, sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

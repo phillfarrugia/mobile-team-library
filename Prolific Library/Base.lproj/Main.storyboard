@@ -93,11 +93,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szh-Jw-g6k">
+                                <rect key="frame" x="20" y="294" width="339" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="nps-pL-35e"/>
+                                </constraints>
+                                <state key="normal" title="Checkout"/>
+                                <connections>
+                                    <action selector="checkoutButtonDidPress:" destination="A0l-LJ-kNd" eventType="touchUpInside" id="dV1-JH-cNB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aVa-ZU-lyn" secondAttribute="trailing" constant="20" id="7oR-aB-Ka5"/>
                             <constraint firstItem="hsf-bd-8nt" firstAttribute="top" secondItem="bEO-L3-7zD" secondAttribute="bottom" constant="8" id="DeI-qR-OcT"/>
+                            <constraint firstAttribute="trailing" secondItem="Szh-Jw-g6k" secondAttribute="trailing" constant="16" id="L7g-HI-uAW"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hsf-bd-8nt" secondAttribute="trailing" constant="20" id="R5E-XH-iEd"/>
                             <constraint firstItem="hsf-bd-8nt" firstAttribute="leading" secondItem="fYm-in-uHA" secondAttribute="leading" constant="20" id="UrP-WL-Up0"/>
                             <constraint firstItem="aVa-ZU-lyn" firstAttribute="top" secondItem="hsf-bd-8nt" secondAttribute="bottom" constant="8" id="XHu-BC-Bix"/>
@@ -107,7 +118,9 @@
                             <constraint firstItem="yB5-TG-IfD" firstAttribute="top" secondItem="ezr-du-kux" secondAttribute="bottom" constant="8" id="ieO-kz-hTX"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ezr-du-kux" secondAttribute="trailing" constant="20" id="ixr-mb-z9c"/>
                             <constraint firstItem="ezr-du-kux" firstAttribute="leading" secondItem="fYm-in-uHA" secondAttribute="leading" constant="20" id="kHD-1K-e3K"/>
+                            <constraint firstItem="Szh-Jw-g6k" firstAttribute="leading" secondItem="fYm-in-uHA" secondAttribute="leading" constant="20" id="nIp-be-CnU"/>
                             <constraint firstItem="ezr-du-kux" firstAttribute="top" secondItem="oKz-pc-f4a" secondAttribute="bottom" constant="30" id="o8W-7r-xv2"/>
+                            <constraint firstItem="Szh-Jw-g6k" firstAttribute="top" secondItem="Aha-vv-hde" secondAttribute="bottom" constant="20" id="rhk-4z-QNJ"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Aha-vv-hde" secondAttribute="trailing" constant="20" id="u6O-Ud-4C5"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yB5-TG-IfD" secondAttribute="trailing" constant="20" id="uUF-KZ-f5O"/>
                             <constraint firstItem="yB5-TG-IfD" firstAttribute="leading" secondItem="fYm-in-uHA" secondAttribute="leading" constant="20" id="vTf-3E-M6f"/>
