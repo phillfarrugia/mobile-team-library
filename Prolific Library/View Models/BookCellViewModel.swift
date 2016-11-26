@@ -21,11 +21,17 @@ import Foundation
     }
     
     var publisher: String {
-        return "Publisher: \(book.publisher)"
+        if let publisher = book.publisher {
+            return "Publisher: \(publisher)"
+        }
+        return "N/A"
     }
     
     var categories: String {
-        return "Tags: \(book.categories)"
+        if let categories = book.categories {
+            return "Tags: \(categories)"
+        }
+        return "N/A"
     }
     
     var lastCheckedOut: String {
