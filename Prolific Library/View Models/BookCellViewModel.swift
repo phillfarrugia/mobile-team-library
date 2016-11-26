@@ -10,4 +10,24 @@ import Foundation
 
 struct BookCellViewModel {
     
+    private var book: Book
+    
+    var title: String {
+        return book.title
+    }
+    
+    var authors: String {
+        return book.author
+    }
+    
+    init(book: Book) {
+        self.book = book
+    }
+    
+    static func viewModels(fromModels models: [Book]) -> [BookCellViewModel] {
+        return models.map {
+            return BookCellViewModel(book: $0)
+        }
+    }
+    
 }
