@@ -16,7 +16,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.title = @"Add Book";
+    [self configureNavigation];
+}
+
+- (void)configureNavigation {
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                          target:self
+                                                                                          action:@selector(cancelBarButtonItemDidPress)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                           target:self
+                                                                                           action:@selector(confirmBarButtonItemDidPress)];
+}
+
+- (void)cancelBarButtonItemDidPress {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)confirmBarButtonItemDidPress {
+    // TODO: Send a Network Request to Add Book
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

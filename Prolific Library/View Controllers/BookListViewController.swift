@@ -42,7 +42,7 @@ class BookListViewController: UIViewController, UITableViewDataSource, SegueHand
     }
     
     internal func addBarButtonItemDidPress() {
-        // TODO: Segue to Add Books View Controller
+        performSegueWithIdentifier(.AddBook, sender: self)
     }
     
     private func sampleBookViewModels() {
