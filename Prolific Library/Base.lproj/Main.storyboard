@@ -153,13 +153,59 @@
                     <view key="view" contentMode="scaleToFill" id="hRf-Xn-t4T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t6K-FD-E29">
+                                <rect key="frame" x="30" y="94" width="315" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vDw-nF-edD">
+                                <rect key="frame" x="30" y="132" width="315" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categories" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CXZ-sm-aJ3">
+                                <rect key="frame" x="30" y="211" width="315" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Publisher" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cde-EY-zjp">
+                                <rect key="frame" x="30" y="170" width="315" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="t6K-FD-E29" firstAttribute="leading" secondItem="hRf-Xn-t4T" secondAttribute="leading" constant="30" id="39d-i2-JrP"/>
+                            <constraint firstItem="CXZ-sm-aJ3" firstAttribute="top" secondItem="Cde-EY-zjp" secondAttribute="bottom" constant="11" id="3W0-wA-Y4H"/>
+                            <constraint firstItem="Cde-EY-zjp" firstAttribute="leading" secondItem="hRf-Xn-t4T" secondAttribute="leading" constant="30" id="4ar-Cr-fZP"/>
+                            <constraint firstAttribute="trailing" secondItem="Cde-EY-zjp" secondAttribute="trailing" constant="30" id="KGA-ou-hpA"/>
+                            <constraint firstItem="vDw-nF-edD" firstAttribute="leading" secondItem="hRf-Xn-t4T" secondAttribute="leading" constant="30" id="PzF-mW-exZ"/>
+                            <constraint firstAttribute="trailing" secondItem="vDw-nF-edD" secondAttribute="trailing" constant="30" id="Q71-7A-nLR"/>
+                            <constraint firstItem="Cde-EY-zjp" firstAttribute="top" secondItem="vDw-nF-edD" secondAttribute="bottom" constant="8" id="Qjx-Mg-FaD"/>
+                            <constraint firstAttribute="trailing" secondItem="t6K-FD-E29" secondAttribute="trailing" constant="30" id="RIj-g7-vrf"/>
+                            <constraint firstItem="vDw-nF-edD" firstAttribute="top" secondItem="t6K-FD-E29" secondAttribute="bottom" constant="8" id="Tp5-eQ-fbl"/>
+                            <constraint firstAttribute="trailing" secondItem="CXZ-sm-aJ3" secondAttribute="trailing" constant="30" id="jGK-tW-JW7"/>
+                            <constraint firstItem="t6K-FD-E29" firstAttribute="top" secondItem="b8Z-7A-01s" secondAttribute="bottom" constant="30" id="nk8-gb-3Dt"/>
+                            <constraint firstItem="CXZ-sm-aJ3" firstAttribute="leading" secondItem="hRf-Xn-t4T" secondAttribute="leading" constant="30" id="wGo-jf-7m0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ULp-8R-XLL"/>
+                    <connections>
+                        <outlet property="authorTextField" destination="vDw-nF-edD" id="bbE-8F-XNp"/>
+                        <outlet property="categoriesTextField" destination="CXZ-sm-aJ3" id="Exz-oQ-YaN"/>
+                        <outlet property="publisherTextField" destination="Cde-EY-zjp" id="4rB-yK-zaP"/>
+                        <outlet property="titleTextField" destination="t6K-FD-E29" id="TdK-9f-6ww"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVw-A5-edL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3135" y="272"/>
+            <point key="canvasLocation" x="3133.5999999999999" y="271.21439280359823"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="90c-n6-zAF">

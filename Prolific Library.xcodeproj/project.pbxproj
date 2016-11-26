@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7254EBB1DE988D500AE53E9 /* AddBookValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7254EBA1DE988D500AE53E9 /* AddBookValidator.swift */; };
 		F73BFB711DE934FE00C0AAA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFB701DE934FE00C0AAA5 /* main.m */; };
 		F73BFB741DE934FE00C0AAA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFB731DE934FE00C0AAA5 /* AppDelegate.m */; };
 		F73BFB7A1DE934FE00C0AAA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73BFB781DE934FE00C0AAA5 /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F7254EBA1DE988D500AE53E9 /* AddBookValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddBookValidator.swift; path = Controllers/AddBookValidator.swift; sourceTree = "<group>"; };
 		F73BFB6C1DE934FE00C0AAA5 /* Prolific Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prolific Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F73BFB701DE934FE00C0AAA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F73BFB721DE934FE00C0AAA5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F7254EBC1DE988DA00AE53E9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F7254EBA1DE988D500AE53E9 /* AddBookValidator.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		F73BFB631DE934FE00C0AAA5 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +161,7 @@
 				F73BFBAE1DE94EBE00C0AAA5 /* View Models */,
 				F73BFBA91DE94E6400C0AAA5 /* Cells */,
 				F73BFBA81DE94E2300C0AAA5 /* View Controllers */,
+				F7254EBC1DE988DA00AE53E9 /* Controllers */,
 				F73BFB781DE934FE00C0AAA5 /* Main.storyboard */,
 				F73BFB7B1DE934FE00C0AAA5 /* Assets.xcassets */,
 				F73BFB7D1DE934FE00C0AAA5 /* LaunchScreen.storyboard */,
@@ -351,6 +362,7 @@
 				F73BFBAC1DE94EBA00C0AAA5 /* BookTableViewCell.swift in Sources */,
 				F73BFB741DE934FE00C0AAA5 /* AppDelegate.m in Sources */,
 				F73BFB711DE934FE00C0AAA5 /* main.m in Sources */,
+				F7254EBB1DE988D500AE53E9 /* AddBookValidator.swift in Sources */,
 				F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+TableView.swift in Sources */,
 				F73BFBA71DE9474200C0AAA5 /* BookListViewController.swift in Sources */,
 				F73BFBC01DE9594700C0AAA5 /* SegueHandlerType.swift in Sources */,
