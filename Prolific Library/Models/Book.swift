@@ -16,11 +16,11 @@ class Book {
     let publisher: String
     let categories: String
     
-    let lastCheckedOut: Date
-    let lastCheckedOutBy: String
+    let lastCheckedOut: Date?
+    let lastCheckedOutBy: String?
     
     init(title: String, author: String, publisher: String, categories: String,
-         lastCheckedOut: Date, lastCheckedOutBy: String) {
+         lastCheckedOut: Date? = nil, lastCheckedOutBy: String? = nil) {
         self.title = title
         self.author = author
         self.publisher = publisher

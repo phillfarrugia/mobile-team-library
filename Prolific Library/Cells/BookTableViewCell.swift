@@ -33,7 +33,8 @@ class BookTableViewCell: UITableViewCell, Reusable {
     
     private func configure(forViewModel viewModel: BookCellViewModel?) {
         if let viewModel = viewModel {
-            // TODO: Configure Labels
+            titleLabel.text = viewModel.title
+            authorLabel.text = viewModel.authors
         }
     }
     
