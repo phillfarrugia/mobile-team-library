@@ -8,10 +8,11 @@
 
 import UIKit
 
-class BookListViewController: UIViewController, UITableViewDataSource, SegueHandlerType {
+class BookListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SegueHandlerType {
     
     enum SegueIdentifier: String {
         case AddBook
+        case BookDetail
     }
     
     @IBOutlet private var tableView: UITableView!
@@ -21,6 +22,8 @@ class BookListViewController: UIViewController, UITableViewDataSource, SegueHand
             tableView.reloadData()
         }
     }
+    
+    internal var selectedViewModel: BookCellViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +38,7 @@ class BookListViewController: UIViewController, UITableViewDataSource, SegueHand
         tableView.registerReusableCell(BookTableViewCell.self)
         tableView.rowHeight = BookTableViewCell.cellHeight
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     private func configureNavigation() {
@@ -50,5 +54,20 @@ class BookListViewController: UIViewController, UITableViewDataSource, SegueHand
         let bookTwo = Book(title: "iOS Programming: The Big Nerd Ranch Guide", author: "Joe Conway and Aaron Hillegass", publisher: "Big Nerd Ranch", categories: "big nerd ranch, ios")
         viewModels = BookCellViewModel.viewModels(fromModels: [bookOne, bookTwo])
     }
-
+    
+    // MARK: Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segueIdentifierForSegue(segue) {
+        case .BookDetail:
+            if let destinationViewController = segue.destination as? BookDetailViewController,
+                let viewModel = selectedViewModel {
+                destinationViewController.configure(for: viewModel)
+                selectedViewModel = nil
+            }
+        default:
+            return
+        }
+    }
+    
 }

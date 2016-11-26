@@ -29,4 +29,12 @@ extension BookListViewController {
         return bookCell
     }
     
+    // MARK: UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModels = viewModels, viewModels.count > indexPath.row else { return }
+        selectedViewModel = viewModels[indexPath.row]
+        performSegueWithIdentifier(.BookDetail, sender: self)
+    }
+    
 }

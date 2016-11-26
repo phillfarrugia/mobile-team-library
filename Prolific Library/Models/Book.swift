@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Book {
+@objc class Book: NSObject {
     
     let title: String
     let author: String

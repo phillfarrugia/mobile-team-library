@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BookCellViewModel {
+@objc class BookCellViewModel: NSObject {
     
     private var book: Book
     

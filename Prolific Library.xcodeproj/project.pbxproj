@@ -27,9 +27,10 @@
 		F73BFBB01DE94EDB00C0AAA5 /* BookCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBAF1DE94EDB00C0AAA5 /* BookCellViewModel.swift */; };
 		F73BFBB31DE94FD000C0AAA5 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBB21DE94FD000C0AAA5 /* Reusable.swift */; };
 		F73BFBB91DE9524000C0AAA5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBB81DE9524000C0AAA5 /* Book.swift */; };
-		F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift */; };
+		F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+TableView.swift */; };
 		F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */; };
 		F73BFBC01DE9594700C0AAA5 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBF1DE9594700C0AAA5 /* SegueHandlerType.swift */; };
+		F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBC21DE95B9F00C0AAA5 /* BookDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,10 +92,12 @@
 		F73BFBAF1DE94EDB00C0AAA5 /* BookCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookCellViewModel.swift; path = "View Models/BookCellViewModel.swift"; sourceTree = "<group>"; };
 		F73BFBB21DE94FD000C0AAA5 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reusable.swift; path = Utilities/Reusable.swift; sourceTree = "<group>"; };
 		F73BFBB81DE9524000C0AAA5 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Book.swift; path = Models/Book.swift; sourceTree = "<group>"; };
-		F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BookListViewController+DataSource.swift"; path = "View Controllers/BookListViewController+DataSource.swift"; sourceTree = "<group>"; };
+		F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BookListViewController+TableView.swift"; path = "View Controllers/BookListViewController+TableView.swift"; sourceTree = "<group>"; };
 		F73BFBBC1DE9591200C0AAA5 /* AddBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddBookViewController.h; path = "View Controllers/AddBookViewController.h"; sourceTree = "<group>"; };
 		F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddBookViewController.m; path = "View Controllers/AddBookViewController.m"; sourceTree = "<group>"; };
 		F73BFBBF1DE9594700C0AAA5 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegueHandlerType.swift; path = Utilities/SegueHandlerType.swift; sourceTree = "<group>"; };
+		F73BFBC11DE95B9F00C0AAA5 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookDetailViewController.h; path = "View Controllers/BookDetailViewController.h"; sourceTree = "<group>"; };
+		F73BFBC21DE95B9F00C0AAA5 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookDetailViewController.m; path = "View Controllers/BookDetailViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,9 +193,11 @@
 			isa = PBXGroup;
 			children = (
 				F73BFBA61DE9474200C0AAA5 /* BookListViewController.swift */,
-				F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift */,
+				F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+TableView.swift */,
 				F73BFBBC1DE9591200C0AAA5 /* AddBookViewController.h */,
 				F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */,
+				F73BFBC11DE95B9F00C0AAA5 /* BookDetailViewController.h */,
+				F73BFBC21DE95B9F00C0AAA5 /* BookDetailViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -339,13 +344,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */,
 				F73BFBB31DE94FD000C0AAA5 /* Reusable.swift in Sources */,
 				F73BFBB01DE94EDB00C0AAA5 /* BookCellViewModel.swift in Sources */,
 				F73BFBB91DE9524000C0AAA5 /* Book.swift in Sources */,
 				F73BFBAC1DE94EBA00C0AAA5 /* BookTableViewCell.swift in Sources */,
 				F73BFB741DE934FE00C0AAA5 /* AppDelegate.m in Sources */,
 				F73BFB711DE934FE00C0AAA5 /* main.m in Sources */,
-				F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift in Sources */,
+				F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+TableView.swift in Sources */,
 				F73BFBA71DE9474200C0AAA5 /* BookListViewController.swift in Sources */,
 				F73BFBC01DE9594700C0AAA5 /* SegueHandlerType.swift in Sources */,
 				F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */,
@@ -414,6 +420,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -461,6 +468,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
