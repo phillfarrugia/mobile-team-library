@@ -34,4 +34,22 @@ extension NetworkRequestManager {
     
     // MARK: - GET - Get a Library Book
     
+    typealias GetBookDetailRequestCompletion = (_ book: Book?, _ error: Error?) -> Void
+    
+    static func fetchBookDetailRequest(bookURL: String, completion: @escaping GetBookDetailRequestCompletion) {
+        Alamofire.request("\(NetworkRequestManager.baseURL)\(bookURL)", method: .get).responseJSON {
+            response in
+            switch response.result {
+            case .success(let data):
+                guard let bookJSON = data as? JSON, let book = Book(json: bookJSON) else {
+                    completion(nil, nil)
+                    return
+                }
+                completion(book, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
 }

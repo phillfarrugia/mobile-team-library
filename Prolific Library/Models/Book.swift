@@ -11,6 +11,9 @@ import Gloss
 
 @objc class Book: NSObject, Decodable {
     
+    let identifier: Int
+    let url: String
+    
     let title: String
     let author: String
     
@@ -20,8 +23,10 @@ import Gloss
     let lastCheckedOut: Date?
     let lastCheckedOutBy: String?
     
-    init(title: String, author: String, publisher: String, categories: String,
+    init(identifier: Int, url: String, title: String, author: String, publisher: String, categories: String,
          lastCheckedOut: Date? = nil, lastCheckedOutBy: String? = nil) {
+        self.identifier = identifier
+        self.url = url
         self.title = title
         self.author = author
         self.publisher = publisher
@@ -33,9 +38,13 @@ import Gloss
     // MARK: JSON Deserialization
     
     required init?(json: JSON) {
+        guard let identifier: Int = "id" <~~ json else { return nil }
+        guard let url: String = "url" <~~ json else { return nil }
         guard let title: String = "title" <~~ json else { return nil }
         guard let author: String = "author" <~~ json else { return nil }
         
+        self.identifier = identifier
+        self.url = url
         self.title = title
         self.author = author
         self.publisher = "publisher" <~~ json
