@@ -57,12 +57,16 @@
     }
 }
 
+// MARK: - Validation State
+
 - (AddBookValidationState)validationState {
     return [AddBookValidator validateWithTitleText:self.titleTextField.text
                                         authorText:self.authorTextField.text
                                      publisherText:self.publisherTextField.text
                                     categoriesText:self.categoriesTextField.text];
 }
+
+// MARK: Required Fields Incomplete State
 
 - (void)handleRequiredFieldsIncompleteState {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Fields Required"
@@ -74,6 +78,8 @@
     [alertController addAction:dismissAction];
     [self presentViewController:alertController animated:YES completion:nil];
 }
+
+// MARK: Incomplete State
 
 - (void)handleIncompleteState {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Unsaved Changes"
@@ -90,11 +96,11 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
+// MARK: Complete State
+
 - (void)handleCompleteState {
     // TODO: Send a Network Request to Add Book
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-// MARK: Alert View
 
 @end

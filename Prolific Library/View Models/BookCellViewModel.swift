@@ -31,7 +31,7 @@ import Foundation
     var lastCheckedOut: String {
         if let lastCheckedOutBy = book.lastCheckedOutBy,
             let lastCheckedOut = book.lastCheckedOut {
-            return "\(book.lastCheckedOutBy) @ <Date Here>"
+            return "\(lastCheckedOutBy) @ \(BookCellViewModel.format(date: lastCheckedOut))"
         }
         return "N/A"
     }
@@ -48,6 +48,12 @@ import Foundation
         return models.map {
             return BookCellViewModel(book: $0)
         }
+    }
+    
+    static private func format(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM d, yyyy h:m a"
+        return dateFormatter.string(from: date)
     }
     
 }
