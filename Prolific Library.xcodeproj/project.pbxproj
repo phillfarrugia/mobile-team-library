@@ -27,6 +27,7 @@
 		F73BFBB01DE94EDB00C0AAA5 /* BookCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBAF1DE94EDB00C0AAA5 /* BookCellViewModel.swift */; };
 		F73BFBB31DE94FD000C0AAA5 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBB21DE94FD000C0AAA5 /* Reusable.swift */; };
 		F73BFBB91DE9524000C0AAA5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBB81DE9524000C0AAA5 /* Book.swift */; };
+		F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		F73BFBAF1DE94EDB00C0AAA5 /* BookCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookCellViewModel.swift; path = "View Models/BookCellViewModel.swift"; sourceTree = "<group>"; };
 		F73BFBB21DE94FD000C0AAA5 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reusable.swift; path = Utilities/Reusable.swift; sourceTree = "<group>"; };
 		F73BFBB81DE9524000C0AAA5 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Book.swift; path = Models/Book.swift; sourceTree = "<group>"; };
+		F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BookListViewController+DataSource.swift"; path = "View Controllers/BookListViewController+DataSource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				F73BFBA61DE9474200C0AAA5 /* BookListViewController.swift */,
+				F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				F73BFBAC1DE94EBA00C0AAA5 /* BookTableViewCell.swift in Sources */,
 				F73BFB741DE934FE00C0AAA5 /* AppDelegate.m in Sources */,
 				F73BFB711DE934FE00C0AAA5 /* main.m in Sources */,
+				F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift in Sources */,
 				F73BFBA71DE9474200C0AAA5 /* BookListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

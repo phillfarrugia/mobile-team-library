@@ -12,7 +12,7 @@ class BookListViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet private var tableView: UITableView!
     
-    private var viewModels: [BookCellViewModel]? {
+    internal var viewModels: [BookCellViewModel]? {
         didSet {
             tableView.reloadData()
         }
@@ -23,6 +23,7 @@ class BookListViewController: UIViewController, UITableViewDataSource {
 
         title = "Books"
         configureTableView()
+        configureNavigation()
         sampleBookViewModels()
     }
     
@@ -32,29 +33,18 @@ class BookListViewController: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
     }
     
+    private func configureNavigation() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(BookListViewController.addBarButtonItemDidPress))
+    }
+    
+    internal func addBarButtonItemDidPress() {
+        // TODO: Segue to Add Books View Controller
+    }
+    
     private func sampleBookViewModels() {
         let bookOne = Book(title: "Programming Android", author: "Zigurd Mednieks, Laird Dornin, G. Blake Meike, Masumi Nakamura", publisher: "O'Reilly Media", categories: "android")
         let bookTwo = Book(title: "iOS Programming: The Big Nerd Ranch Guide", author: "Joe Conway and Aaron Hillegass", publisher: "Big Nerd Ranch", categories: "big nerd ranch, ios")
         viewModels = BookCellViewModel.viewModels(fromModels: [bookOne, bookTwo])
-    }
-    
-    // MARK: UITableViewDataSource
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let viewModels = viewModels else { return 0 }
-        return viewModels.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let viewModels = viewModels, viewModels.count > indexPath.row,
-            let bookCell = BookTableViewCell.tableView(tableView: tableView, dequeueReusableCellForViewModel: viewModels[indexPath.row], atIndexPath: indexPath) else {
-            return UITableViewCell()
-        }
-        return bookCell
     }
 
 }
