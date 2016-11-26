@@ -8,7 +8,11 @@
 
 import UIKit
 
-class BookListViewController: UIViewController, UITableViewDataSource {
+class BookListViewController: UIViewController, UITableViewDataSource, SegueHandlerType {
+    
+    enum SegueIdentifier: String {
+        case AddBook
+    }
     
     @IBOutlet private var tableView: UITableView!
     

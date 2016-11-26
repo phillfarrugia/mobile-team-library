@@ -29,6 +29,7 @@
 		F73BFBB91DE9524000C0AAA5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBB81DE9524000C0AAA5 /* Book.swift */; };
 		F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift */; };
 		F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */; };
+		F73BFBC01DE9594700C0AAA5 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBF1DE9594700C0AAA5 /* SegueHandlerType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BookListViewController+DataSource.swift"; path = "View Controllers/BookListViewController+DataSource.swift"; sourceTree = "<group>"; };
 		F73BFBBC1DE9591200C0AAA5 /* AddBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddBookViewController.h; path = "View Controllers/AddBookViewController.h"; sourceTree = "<group>"; };
 		F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddBookViewController.m; path = "View Controllers/AddBookViewController.m"; sourceTree = "<group>"; };
+		F73BFBBF1DE9594700C0AAA5 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegueHandlerType.swift; path = Utilities/SegueHandlerType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				F73BFBB21DE94FD000C0AAA5 /* Reusable.swift */,
+				F73BFBBF1DE9594700C0AAA5 /* SegueHandlerType.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				F73BFB711DE934FE00C0AAA5 /* main.m in Sources */,
 				F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift in Sources */,
 				F73BFBA71DE9474200C0AAA5 /* BookListViewController.swift in Sources */,
+				F73BFBC01DE9594700C0AAA5 /* SegueHandlerType.swift in Sources */,
 				F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

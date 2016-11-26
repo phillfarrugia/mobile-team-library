@@ -37,7 +37,7 @@
                     <navigationItem key="navigationItem" id="VHf-xi-82Y"/>
                     <connections>
                         <outlet property="tableView" destination="f8g-7J-sJy" id="FOU-Za-Eun"/>
-                        <segue destination="2qV-3c-Kqn" kind="presentation" id="uBQ-Md-ARM"/>
+                        <segue destination="2qV-3c-Kqn" kind="presentation" identifier="AddBook" id="uBQ-Md-ARM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
