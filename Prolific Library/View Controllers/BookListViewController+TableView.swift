@@ -38,4 +38,16 @@ extension BookListViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            guard let viewModels = viewModels, viewModels.count > indexPath.row else { return }
+            selectedViewModel = viewModels[indexPath.row]
+            // TODO: Perform Deletion
+        }
+    }
+    
 }
