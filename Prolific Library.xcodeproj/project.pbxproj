@@ -28,6 +28,7 @@
 		F73BFBB31DE94FD000C0AAA5 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBB21DE94FD000C0AAA5 /* Reusable.swift */; };
 		F73BFBB91DE9524000C0AAA5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBB81DE9524000C0AAA5 /* Book.swift */; };
 		F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift */; };
+		F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		F73BFBB21DE94FD000C0AAA5 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reusable.swift; path = Utilities/Reusable.swift; sourceTree = "<group>"; };
 		F73BFBB81DE9524000C0AAA5 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Book.swift; path = Models/Book.swift; sourceTree = "<group>"; };
 		F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BookListViewController+DataSource.swift"; path = "View Controllers/BookListViewController+DataSource.swift"; sourceTree = "<group>"; };
+		F73BFBBC1DE9591200C0AAA5 /* AddBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddBookViewController.h; path = "View Controllers/AddBookViewController.h"; sourceTree = "<group>"; };
+		F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddBookViewController.m; path = "View Controllers/AddBookViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +189,8 @@
 			children = (
 				F73BFBA61DE9474200C0AAA5 /* BookListViewController.swift */,
 				F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift */,
+				F73BFBBC1DE9591200C0AAA5 /* AddBookViewController.h */,
+				F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 				F73BFB711DE934FE00C0AAA5 /* main.m in Sources */,
 				F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+DataSource.swift in Sources */,
 				F73BFBA71DE9474200C0AAA5 /* BookListViewController.swift in Sources */,
+				F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
