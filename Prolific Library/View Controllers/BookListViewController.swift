@@ -31,7 +31,7 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         title = "Books"
         configureTableView()
         configureNavigation()
-        sampleBookViewModels()
+        fetchAllBooks()
     }
     
     private func configureTableView() {
@@ -49,12 +49,6 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         performSegueWithIdentifier(.AddBook, sender: self)
     }
     
-    private func sampleBookViewModels() {
-        let bookOne = Book(title: "Programming Android", author: "Zigurd Mednieks, Laird Dornin, G. Blake Meike, Masumi Nakamura", publisher: "O'Reilly Media", categories: "android")
-        let bookTwo = Book(title: "iOS Programming: The Big Nerd Ranch Guide", author: "Joe Conway and Aaron Hillegass", publisher: "Big Nerd Ranch", categories: "big nerd ranch, ios")
-        viewModels = BookCellViewModel.viewModels(fromModels: [bookOne, bookTwo])
-    }
-    
     // MARK: Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,6 +62,33 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         default:
             return
         }
+    }
+    
+    private func fetchAllBooks() {
+        NetworkRequestManager.fetchAllBooksRequest {
+            books, error in
+            guard let books = books else {
+                self.handleGetBooksError()
+                return
+            }
+            self.viewModels = BookCellViewModel.viewModels(fromModels: books)
+        }
+    }
+    
+    // MARK: Error State
+    
+    private func handleGetBooksError() {
+        let alertController = UIAlertController(title: "Oh no!", message: "We were unable to retrieve a list of books. Try again?", preferredStyle: .alert)
+        let retryAction = UIAlertAction(title: "Retry", style: .default, handler: {
+            _ in
+            self.fetchAllBooks()
+        })
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: {
+            _ in
+            alertController.dismiss(animated: true, completion: nil)
+        })
+        alertController.addAction(retryAction)
+        alertController.addAction(dismissAction)
     }
     
 }

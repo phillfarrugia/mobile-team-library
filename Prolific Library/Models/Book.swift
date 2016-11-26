@@ -7,14 +7,15 @@
 //
 
 import Foundation
+import Gloss
 
-@objc class Book: NSObject {
+@objc class Book: NSObject, Decodable {
     
     let title: String
     let author: String
     
-    let publisher: String
-    let categories: String
+    let publisher: String?
+    let categories: String?
     
     let lastCheckedOut: Date?
     let lastCheckedOutBy: String?
@@ -27,6 +28,20 @@ import Foundation
         self.categories = categories
         self.lastCheckedOut = lastCheckedOut
         self.lastCheckedOutBy = lastCheckedOutBy
+    }
+    
+    // MARK: JSON Deserialization
+    
+    required init?(json: JSON) {
+        guard let title: String = "title" <~~ json else { return nil }
+        guard let author: String = "author" <~~ json else { return nil }
+        
+        self.title = title
+        self.author = author
+        self.publisher = "publisher" <~~ json
+        self.categories = "categories" <~~ json
+        self.lastCheckedOut = "lastCheckedOut" <~~ json
+        self.lastCheckedOutBy = "lastCheckedOutBy" <~~ json
     }
     
 }
