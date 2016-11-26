@@ -13,7 +13,11 @@ class BookTableViewCell: UITableViewCell, Reusable {
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var authorLabel: UILabel!
     
-    private var viewModel: BookCellViewModel?
+    private var viewModel: BookCellViewModel? {
+        didSet {
+            configure(forViewModel: viewModel)
+        }
+    }
     
     // MARK: Factory Method
     

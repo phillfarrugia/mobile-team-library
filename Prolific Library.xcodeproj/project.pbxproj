@@ -26,6 +26,7 @@
 		F73BFBAD1DE94EBA00C0AAA5 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73BFBAB1DE94EBA00C0AAA5 /* BookTableViewCell.xib */; };
 		F73BFBB01DE94EDB00C0AAA5 /* BookCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBAF1DE94EDB00C0AAA5 /* BookCellViewModel.swift */; };
 		F73BFBB31DE94FD000C0AAA5 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBB21DE94FD000C0AAA5 /* Reusable.swift */; };
+		F73BFBB91DE9524000C0AAA5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBB81DE9524000C0AAA5 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		F73BFBAB1DE94EBA00C0AAA5 /* BookTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookTableViewCell.xib; path = Cells/BookTableViewCell.xib; sourceTree = "<group>"; };
 		F73BFBAF1DE94EDB00C0AAA5 /* BookCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookCellViewModel.swift; path = "View Models/BookCellViewModel.swift"; sourceTree = "<group>"; };
 		F73BFBB21DE94FD000C0AAA5 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reusable.swift; path = Utilities/Reusable.swift; sourceTree = "<group>"; };
+		F73BFBB81DE9524000C0AAA5 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Book.swift; path = Models/Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				F73BFB721DE934FE00C0AAA5 /* AppDelegate.h */,
 				F73BFB731DE934FE00C0AAA5 /* AppDelegate.m */,
+				F73BFBB71DE9519B00C0AAA5 /* Models */,
 				F73BFBB11DE94FB600C0AAA5 /* Utilities */,
 				F73BFBAE1DE94EBE00C0AAA5 /* View Models */,
 				F73BFBA91DE94E6400C0AAA5 /* Cells */,
@@ -207,6 +210,14 @@
 				F73BFBB21DE94FD000C0AAA5 /* Reusable.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		F73BFBB71DE9519B00C0AAA5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F73BFBB81DE9524000C0AAA5 /* Book.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +330,7 @@
 			files = (
 				F73BFBB31DE94FD000C0AAA5 /* Reusable.swift in Sources */,
 				F73BFBB01DE94EDB00C0AAA5 /* BookCellViewModel.swift in Sources */,
+				F73BFBB91DE9524000C0AAA5 /* Book.swift in Sources */,
 				F73BFBAC1DE94EBA00C0AAA5 /* BookTableViewCell.swift in Sources */,
 				F73BFB741DE934FE00C0AAA5 /* AppDelegate.m in Sources */,
 				F73BFB711DE934FE00C0AAA5 /* main.m in Sources */,
