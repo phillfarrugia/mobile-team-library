@@ -39,6 +39,10 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.rowHeight = BookTableViewCell.cellHeight
         tableView.dataSource = self
         tableView.delegate = self
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(BookListViewController.didPullToRefresh), for: .valueChanged)
+        tableView.refreshControl = refreshControl
     }
     
     private func configureNavigation() {
@@ -47,6 +51,14 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     internal func addBarButtonItemDidPress() {
         performSegueWithIdentifier(.AddBook, sender: self)
+    }
+    
+    // MARK: Pull to Refresh
+    
+    internal func didPullToRefresh() {
+        self.fetchAllBooks { 
+            self.tableView.refreshControl?.endRefreshing()
+        }
     }
     
     // MARK: Segues
@@ -64,7 +76,7 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    private func fetchAllBooks() {
+    private func fetchAllBooks(_ completion: (() -> Void)? = nil) {
         NetworkRequestManager.fetchAllBooksRequest {
             books, error in
             guard let books = books else {
@@ -72,6 +84,7 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
                 return
             }
             self.viewModels = BookCellViewModel.viewModels(fromModels: books)
+            completion?()
         }
     }
     
