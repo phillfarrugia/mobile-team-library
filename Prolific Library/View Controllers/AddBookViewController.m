@@ -110,6 +110,9 @@
             [self handleAddBookRequestError];
         }
         else {
+            if (self.bookAddedAction) {
+                self.bookAddedAction();
+            }
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];

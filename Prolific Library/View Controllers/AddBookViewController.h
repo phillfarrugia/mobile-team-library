@@ -10,4 +10,6 @@
 
 @interface AddBookViewController : UIViewController
 
+@property (nonatomic) void (^bookAddedAction)(void);
+
 @end

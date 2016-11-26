@@ -10,7 +10,7 @@ import Foundation
 
 @objc class BookCellViewModel: NSObject {
     
-    private var book: Book
+    private(set) var book: Book
     
     var title: String {
         return book.title

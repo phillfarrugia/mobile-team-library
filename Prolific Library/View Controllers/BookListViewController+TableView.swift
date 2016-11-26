@@ -45,8 +45,17 @@ extension BookListViewController {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
             guard let viewModels = viewModels, viewModels.count > indexPath.row else { return }
-            selectedViewModel = viewModels[indexPath.row]
-            // TODO: Perform Deletion
+            let viewModel = viewModels[indexPath.row]
+            NetworkRequestManager.deleteBookRequest(book: viewModel.book, completion: {
+                error in
+                if let _ = error {
+                    self.handleDeleteBookError()
+                }
+                tableView.beginUpdates()
+                tableView.setEditing(false, animated: true)
+                tableView.endUpdates()
+                self.didPullToRefresh()
+            })
         }
     }
     

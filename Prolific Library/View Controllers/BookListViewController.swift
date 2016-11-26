@@ -65,6 +65,13 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segueIdentifierForSegue(segue) {
+        case .AddBook:
+            if let navigationController = segue.destination as? UINavigationController,
+                let destinationViewController = navigationController.viewControllers.first as? AddBookViewController {
+                destinationViewController.bookAddedAction = {
+                    self.didPullToRefresh()
+                }
+            }
         case .BookDetail:
             if let destinationViewController = segue.destination as? BookDetailViewController,
                 let viewModel = selectedViewModel {
@@ -88,9 +95,9 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    // MARK: Error State
+    // MARK: Error States
     
-    private func handleGetBooksError() {
+    internal func handleGetBooksError() {
         let alertController = UIAlertController(title: "Oh no!", message: "We were unable to retrieve a list of books. Try again?", preferredStyle: .alert)
         let retryAction = UIAlertAction(title: "Retry", style: .default, handler: {
             _ in
@@ -102,6 +109,17 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         })
         alertController.addAction(retryAction)
         alertController.addAction(dismissAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    internal func handleDeleteBookError() {
+        let alertController = UIAlertController(title: "Oh no!", message: "We were unable to delete that book. Please Try again", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Ok", style: .cancel, handler: {
+            _ in
+            alertController.dismiss(animated: true, completion: nil)
+        })
+        alertController.addAction(dismissAction)
+        present(alertController, animated: true, completion: nil)
     }
     
 }
