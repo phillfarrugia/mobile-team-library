@@ -36,6 +36,10 @@ import Foundation
         return "N/A"
     }
     
+    var shareableMessage: String {
+        return "Have you read \(title) by \(authors)?"
+    }
+    
     init(book: Book) {
         self.book = book
     }

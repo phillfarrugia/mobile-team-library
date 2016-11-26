@@ -49,4 +49,10 @@
     // TODO: Send Network Request to Checkout Book
 }
 
+- (IBAction)shareButtonDidPress:(id)sender {
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[self.viewModel.shareableMessage] applicationActivities:nil];
+    [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
+
 @end
