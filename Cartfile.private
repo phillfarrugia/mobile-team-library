@@ -1,0 +1,5 @@
+github "Quick/Quick"
+github "Quick/Nimble"
+
+github "hkellaway/Gloss"
+github "Alamofire/Alamofire"
