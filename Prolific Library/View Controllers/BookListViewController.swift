@@ -16,6 +16,11 @@ class BookListViewController: UIViewController {
         super.viewDidLoad()
 
         title = "Books"
+        configureTableView()
+    }
+    
+    private func configureTableView() {
+        tableView.registerReusableCell(BookTableViewCell.self)
     }
 
 }

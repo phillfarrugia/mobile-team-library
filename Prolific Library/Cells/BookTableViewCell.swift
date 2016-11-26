@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookTableViewCell: UITableViewCell {
+class BookTableViewCell: UITableViewCell, Reusable {
     
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var authorLabel: UILabel!
