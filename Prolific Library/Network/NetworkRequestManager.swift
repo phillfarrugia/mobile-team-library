@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class NetworkRequestManager {
+@objc class NetworkRequestManager: NSObject {
     
     static let baseURL = "http://prolific-interview.herokuapp.com/58360ebf895bb5000a5b1317"
     

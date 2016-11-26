@@ -99,8 +99,35 @@
 // MARK: Complete State
 
 - (void)handleCompleteState {
-    // TODO: Send a Network Request to Add Book
-    [self dismissViewControllerAnimated:YES completion:nil];
+    NSString *title = self.titleTextField.text;
+    NSString *author = self.authorTextField.text;
+    NSString *publisher = self.publisherTextField.text;
+    NSString *categories = self.categoriesTextField.text;
+    
+    Book *newBook = [[Book alloc] initWithTitle:title author:author publisher:publisher categories:categories];
+    [NetworkRequestManager postNewBookRequestWithBook:newBook completion:^(Book * _Nullable book, NSError * _Nullable error) {
+        if (book == nil) {
+            [self handleAddBookRequestError];
+        }
+        else {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }];
+}
+
+- (void)handleAddBookRequestError {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Uh oh!"
+                                                                             message:@"That request failed. Would you like to try again?"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertController addAction:confirmAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

@@ -11,8 +11,8 @@ import Gloss
 
 @objc class Book: NSObject, Decodable {
     
-    let identifier: Int
-    let url: String
+    let identifier: Int?
+    let url: String?
     
     let title: String
     let author: String
@@ -24,7 +24,7 @@ import Gloss
     let lastCheckedOutBy: String?
     
     init(identifier: Int, url: String, title: String, author: String, publisher: String, categories: String,
-         lastCheckedOut: Date? = nil, lastCheckedOutBy: String? = nil) {
+         lastCheckedOut: Date, lastCheckedOutBy: String) {
         self.identifier = identifier
         self.url = url
         self.title = title
@@ -35,7 +35,36 @@ import Gloss
         self.lastCheckedOutBy = lastCheckedOutBy
     }
     
-    // MARK: JSON Deserialization
+    init(title: String, author: String, publisher: String? = nil, categories: String? = nil) {
+        self.title = title
+        self.author = author
+        self.publisher = publisher
+        self.categories = categories
+        self.identifier = nil
+        self.url = nil
+        self.lastCheckedOut = nil
+        self.lastCheckedOutBy = nil
+    }
+    
+    // MARK: Serialization
+    
+    func toDict() -> [String: String] {
+        var dict: [String: String] = [:]
+        dict["title"] = title
+        dict["author"] = author
+        
+        if let publisher = publisher {
+            dict["publisher"] = publisher
+        }
+        
+        if let categories = categories {
+            dict["categories"] = categories
+        }
+        
+        return dict
+    }
+    
+    // MARK: Deserialization
     
     required init?(json: JSON) {
         guard let identifier: Int = "id" <~~ json else { return nil }
