@@ -28,6 +28,7 @@ class BookListViewController: UIViewController, UITableViewDataSource {
     
     private func configureTableView() {
         tableView.registerReusableCell(BookTableViewCell.self)
+        tableView.rowHeight = BookTableViewCell.cellHeight
         tableView.dataSource = self
     }
     

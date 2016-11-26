@@ -19,6 +19,8 @@ class BookTableViewCell: UITableViewCell, Reusable {
         }
     }
     
+    static let cellHeight: CGFloat = 70.0
+    
     // MARK: Factory Method
     
     class func tableView(tableView: UITableView, dequeueReusableCellForViewModel viewModel: BookCellViewModel? = nil, atIndexPath indexPath: IndexPath) -> BookTableViewCell? {
