@@ -11,6 +11,6 @@
 @class BookCellViewModel;
 @interface BookDetailViewController : UIViewController
 
-- (void)configureForViewModel:(BookCellViewModel *)book;
+- (void)configureForViewModel:(BookCellViewModel *)viewModel;
 
 @end

@@ -56,13 +56,78 @@
                     <view key="view" contentMode="scaleToFill" id="fYm-in-uHA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_The Core iOS Developer's Cookbook" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezr-du-kux">
+                                <rect key="frame" x="20" y="94" width="256.5" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Erica Sadun" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yB5-TG-IfD">
+                                <rect key="frame" x="20" y="150" width="98.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Publisher: Pragmatic Programming" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEO-L3-7zD">
+                                <rect key="frame" x="20" y="179" width="258.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Tags: ios, cookbook" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsf-bd-8nt">
+                                <rect key="frame" x="20" y="206.5" width="150.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Checked Out:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVa-ZU-lyn">
+                                <rect key="frame" x="20" y="234" width="112.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Michelle @ June 3, 2013 1:45pm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aha-vv-hde">
+                                <rect key="frame" x="20" y="258" width="202" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aVa-ZU-lyn" secondAttribute="trailing" constant="20" id="7oR-aB-Ka5"/>
+                            <constraint firstItem="hsf-bd-8nt" firstAttribute="top" secondItem="bEO-L3-7zD" secondAttribute="bottom" constant="8" id="DeI-qR-OcT"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hsf-bd-8nt" secondAttribute="trailing" constant="20" id="R5E-XH-iEd"/>
+                            <constraint firstItem="hsf-bd-8nt" firstAttribute="leading" secondItem="fYm-in-uHA" secondAttribute="leading" constant="20" id="UrP-WL-Up0"/>
+                            <constraint firstItem="aVa-ZU-lyn" firstAttribute="top" secondItem="hsf-bd-8nt" secondAttribute="bottom" constant="8" id="XHu-BC-Bix"/>
+                            <constraint firstItem="Aha-vv-hde" firstAttribute="leading" secondItem="fYm-in-uHA" secondAttribute="leading" constant="20" id="dbk-N3-0Kq"/>
+                            <constraint firstItem="Aha-vv-hde" firstAttribute="top" secondItem="aVa-ZU-lyn" secondAttribute="bottom" constant="8" id="eYA-ca-QSv"/>
+                            <constraint firstItem="bEO-L3-7zD" firstAttribute="leading" secondItem="fYm-in-uHA" secondAttribute="leading" constant="20" id="f8r-8S-Odh"/>
+                            <constraint firstItem="yB5-TG-IfD" firstAttribute="top" secondItem="ezr-du-kux" secondAttribute="bottom" constant="8" id="ieO-kz-hTX"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ezr-du-kux" secondAttribute="trailing" constant="20" id="ixr-mb-z9c"/>
+                            <constraint firstItem="ezr-du-kux" firstAttribute="leading" secondItem="fYm-in-uHA" secondAttribute="leading" constant="20" id="kHD-1K-e3K"/>
+                            <constraint firstItem="ezr-du-kux" firstAttribute="top" secondItem="oKz-pc-f4a" secondAttribute="bottom" constant="30" id="o8W-7r-xv2"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Aha-vv-hde" secondAttribute="trailing" constant="20" id="u6O-Ud-4C5"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yB5-TG-IfD" secondAttribute="trailing" constant="20" id="uUF-KZ-f5O"/>
+                            <constraint firstItem="yB5-TG-IfD" firstAttribute="leading" secondItem="fYm-in-uHA" secondAttribute="leading" constant="20" id="vTf-3E-M6f"/>
+                            <constraint firstItem="aVa-ZU-lyn" firstAttribute="leading" secondItem="fYm-in-uHA" secondAttribute="leading" constant="20" id="yCm-WH-IOE"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bEO-L3-7zD" secondAttribute="trailing" constant="20" id="zPs-h4-IXR"/>
+                            <constraint firstItem="bEO-L3-7zD" firstAttribute="top" secondItem="yB5-TG-IfD" secondAttribute="bottom" constant="8" id="zxB-Me-dnB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vG0-XF-A6c"/>
+                    <connections>
+                        <outlet property="authorLabel" destination="yB5-TG-IfD" id="rIB-uf-dU3"/>
+                        <outlet property="categoriesLabel" destination="hsf-bd-8nt" id="FCz-Ec-aon"/>
+                        <outlet property="lastCheckedOutLabel" destination="Aha-vv-hde" id="DzJ-mn-Yah"/>
+                        <outlet property="publisherLabel" destination="bEO-L3-7zD" id="dpr-YI-kIn"/>
+                        <outlet property="titleLabel" destination="ezr-du-kux" id="NlB-xl-bLR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0f-q6-6ne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2177" y="1277"/>
+            <point key="canvasLocation" x="2176.8000000000002" y="1276.9115442278862"/>
         </scene>
         <!--Add Book View Controller-->
         <scene sceneID="je2-nc-etF">

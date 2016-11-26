@@ -7,10 +7,19 @@
 //
 
 #import "BookDetailViewController.h"
+#import "Prolific_Library-Swift.h"
 
 @interface BookDetailViewController ()
 
 @property (nonatomic, weak) BookCellViewModel *viewModel;
+
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *authorLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *publisherLabel;
+@property (strong, nonatomic) IBOutlet UILabel *categoriesLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *lastCheckedOutLabel;
 
 @end
 
@@ -20,6 +29,16 @@
     [super viewDidLoad];
     
     self.title = @"Detail";
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.titleLabel setText:self.viewModel.title];
+    [self.authorLabel setText:self.viewModel.authors];
+    [self.publisherLabel setText:self.viewModel.publisher];
+    [self.categoriesLabel setText:self.viewModel.categories];
+    [self.lastCheckedOutLabel setText:self.viewModel.lastCheckedOut];
 }
 
 - (void)configureForViewModel:(BookCellViewModel *)viewModel {

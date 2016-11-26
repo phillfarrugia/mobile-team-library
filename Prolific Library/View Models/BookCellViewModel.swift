@@ -20,6 +20,22 @@ import Foundation
         return book.author
     }
     
+    var publisher: String {
+        return "Publisher: \(book.publisher)"
+    }
+    
+    var categories: String {
+        return "Tags: \(book.categories)"
+    }
+    
+    var lastCheckedOut: String {
+        if let lastCheckedOutBy = book.lastCheckedOutBy,
+            let lastCheckedOut = book.lastCheckedOut {
+            return "\(book.lastCheckedOutBy) @ <Date Here>"
+        }
+        return "N/A"
+    }
+    
     init(book: Book) {
         self.book = book
     }
