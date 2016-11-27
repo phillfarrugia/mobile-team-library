@@ -25,18 +25,6 @@ public class Book: NSObject, Decodable {
     
     // MARK: Initializers
     
-    public init(identifier: Int, url: String, title: String, author: String, publisher: String, categories: String,
-         lastCheckedOut: Date, lastCheckedOutBy: String) {
-        self.identifier = identifier
-        self.url = url
-        self.title = title
-        self.author = author
-        self.publisher = publisher
-        self.categories = categories
-        self.lastCheckedOut = lastCheckedOut
-        self.lastCheckedOutBy = lastCheckedOutBy
-    }
-    
     public init(title: String, author: String, publisher: String? = nil, categories: String? = nil) {
         self.title = title
         self.author = author
