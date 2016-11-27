@@ -29,7 +29,6 @@
 		F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBC21DE95B9F00C0AAA5 /* BookDetailViewController.m */; };
 		F7C8FE2C1DEA6A4400BFEEDF /* BookListViewController+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE2B1DEA6A4400BFEEDF /* BookListViewController+Errors.swift */; };
 		F7C8FE881DEA6EF800BFEEDF /* ProlificLibraryCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FE7F1DEA6EF800BFEEDF /* ProlificLibraryCore.framework */; };
-		F7C8FE8F1DEA6EF800BFEEDF /* ProlificLibraryCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE8E1DEA6EF800BFEEDF /* ProlificLibraryCoreTests.swift */; };
 		F7C8FE911DEA6EF800BFEEDF /* ProlificLibraryCore.h in Headers */ = {isa = PBXBuildFile; fileRef = F7C8FE811DEA6EF800BFEEDF /* ProlificLibraryCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7C8FE941DEA6EF800BFEEDF /* ProlificLibraryCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FE7F1DEA6EF800BFEEDF /* ProlificLibraryCore.framework */; };
 		F7C8FE951DEA6EF800BFEEDF /* ProlificLibraryCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FE7F1DEA6EF800BFEEDF /* ProlificLibraryCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -164,7 +163,6 @@
 		F7C8FE811DEA6EF800BFEEDF /* ProlificLibraryCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProlificLibraryCore.h; sourceTree = "<group>"; };
 		F7C8FE821DEA6EF800BFEEDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7C8FE871DEA6EF800BFEEDF /* ProlificLibraryCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProlificLibraryCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7C8FE8E1DEA6EF800BFEEDF /* ProlificLibraryCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProlificLibraryCoreTests.swift; sourceTree = "<group>"; };
 		F7C8FE901DEA6EF800BFEEDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7C8FEC01DEA782A00BFEEDF /* AddBookValidatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookValidatorSpec.swift; sourceTree = "<group>"; };
 		F7C8FEC31DEA7B8600BFEEDF /* DateFormatter+Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateFormatter+Book.swift"; path = "Utilities/DateFormatter+Book.swift"; sourceTree = "<group>"; };
@@ -372,7 +370,6 @@
 		F7C8FE8D1DEA6EF800BFEEDF /* ProlificLibraryCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				F7C8FE8E1DEA6EF800BFEEDF /* ProlificLibraryCoreTests.swift */,
 				F7C8FEC01DEA782A00BFEEDF /* AddBookValidatorSpec.swift */,
 				F7C8FEC51DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift */,
 				F7C8FE901DEA6EF800BFEEDF /* Info.plist */,
@@ -610,7 +607,6 @@
 				F7C8FEC11DEA782A00BFEEDF /* AddBookValidatorSpec.swift in Sources */,
 				F7C8FEC21DEA796200BFEEDF /* AddBookValidator.swift in Sources */,
 				F7C8FEC61DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift in Sources */,
-				F7C8FE8F1DEA6EF800BFEEDF /* ProlificLibraryCoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
