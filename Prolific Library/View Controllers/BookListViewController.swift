@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProlificLibraryCore
 
 class BookListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SegueHandlerType {
     

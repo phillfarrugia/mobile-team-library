@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProlificLibraryCore
 
 class BookTableViewCell: UITableViewCell, Reusable {
     

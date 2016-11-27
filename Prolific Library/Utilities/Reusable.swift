@@ -8,17 +8,17 @@
 
 import UIKit
 
-protocol Reusable: class {
+public protocol Reusable: class {
     static var reuseIdentifier: String { get }
     static var nib: UINib? { get }
 }
 
-extension Reusable {
+public extension Reusable {
     static var reuseIdentifier: String { return String(describing: self) }
     static var nib: UINib? { return UINib(nibName: String(describing: self), bundle: nil) }
 }
 
-extension UITableView {
+public extension UITableView {
     func registerReusableCell<T: UITableViewCell>(_: T.Type) where T: Reusable {
         if let nib = T.nib {
             self.register(nib, forCellReuseIdentifier: T.reuseIdentifier)

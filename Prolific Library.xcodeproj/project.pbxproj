@@ -31,10 +31,8 @@
 		F73BFBAC1DE94EBA00C0AAA5 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBAA1DE94EBA00C0AAA5 /* BookTableViewCell.swift */; };
 		F73BFBAD1DE94EBA00C0AAA5 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73BFBAB1DE94EBA00C0AAA5 /* BookTableViewCell.xib */; };
 		F73BFBB01DE94EDB00C0AAA5 /* BookCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBAF1DE94EDB00C0AAA5 /* BookCellViewModel.swift */; };
-		F73BFBB31DE94FD000C0AAA5 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBB21DE94FD000C0AAA5 /* Reusable.swift */; };
 		F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+TableView.swift */; };
 		F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */; };
-		F73BFBC01DE9594700C0AAA5 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBF1DE9594700C0AAA5 /* SegueHandlerType.swift */; };
 		F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBC21DE95B9F00C0AAA5 /* BookDetailViewController.m */; };
 		F7C8FE2C1DEA6A4400BFEEDF /* BookListViewController+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE2B1DEA6A4400BFEEDF /* BookListViewController+Errors.swift */; };
 		F7C8FE881DEA6EF800BFEEDF /* ProlificLibraryCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FE7F1DEA6EF800BFEEDF /* ProlificLibraryCore.framework */; };
@@ -45,6 +43,8 @@
 		F7C8FEA11DEA6FA700BFEEDF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73BFB941DE945EB00C0AAA5 /* Alamofire.framework */; };
 		F7C8FEA21DEA6FA700BFEEDF /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73BFB951DE945EB00C0AAA5 /* Gloss.framework */; };
 		F7C8FEA31DEA6FFD00BFEEDF /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBB81DE9524000C0AAA5 /* Book.swift */; };
+		F7C8FEA41DEA710400BFEEDF /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBB21DE94FD000C0AAA5 /* Reusable.swift */; };
+		F7C8FEA51DEA710600BFEEDF /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBF1DE9594700C0AAA5 /* SegueHandlerType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,7 +238,6 @@
 				F73BFB721DE934FE00C0AAA5 /* AppDelegate.h */,
 				F73BFB731DE934FE00C0AAA5 /* AppDelegate.m */,
 				F70F6C811DE995FE00926C1D /* Network */,
-				F73BFBB11DE94FB600C0AAA5 /* Utilities */,
 				F73BFBAE1DE94EBE00C0AAA5 /* View Models */,
 				F73BFBA91DE94E6400C0AAA5 /* Cells */,
 				F73BFBA81DE94E2300C0AAA5 /* View Controllers */,
@@ -319,6 +318,7 @@
 				F73BFBBF1DE9594700C0AAA5 /* SegueHandlerType.swift */,
 			);
 			name = Utilities;
+			path = "../Prolific Library";
 			sourceTree = "<group>";
 		};
 		F73BFBB71DE9519B00C0AAA5 /* Models */ = {
@@ -334,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				F73BFBB71DE9519B00C0AAA5 /* Models */,
+				F73BFBB11DE94FB600C0AAA5 /* Utilities */,
 				F7C8FE811DEA6EF800BFEEDF /* ProlificLibraryCore.h */,
 				F7C8FE821DEA6EF800BFEEDF /* Info.plist */,
 			);
@@ -536,7 +537,6 @@
 			files = (
 				F7C8FE2C1DEA6A4400BFEEDF /* BookListViewController+Errors.swift in Sources */,
 				F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */,
-				F73BFBB31DE94FD000C0AAA5 /* Reusable.swift in Sources */,
 				F73BFBB01DE94EDB00C0AAA5 /* BookCellViewModel.swift in Sources */,
 				F73BFBAC1DE94EBA00C0AAA5 /* BookTableViewCell.swift in Sources */,
 				F73BFB741DE934FE00C0AAA5 /* AppDelegate.m in Sources */,
@@ -548,7 +548,6 @@
 				F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+TableView.swift in Sources */,
 				F73BFBA71DE9474200C0AAA5 /* BookListViewController.swift in Sources */,
 				F70F6C891DE9973900926C1D /* NetworkRequestManager+PUT.swift in Sources */,
-				F73BFBC01DE9594700C0AAA5 /* SegueHandlerType.swift in Sources */,
 				F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */,
 				F70F6C871DE9971D00926C1D /* NetworkRequestManager+POST.swift in Sources */,
 			);
@@ -566,6 +565,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C8FEA41DEA710400BFEEDF /* Reusable.swift in Sources */,
+				F7C8FEA51DEA710600BFEEDF /* SegueHandlerType.swift in Sources */,
 				F7C8FEA31DEA6FFD00BFEEDF /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
