@@ -37,6 +37,7 @@
 		F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */; };
 		F73BFBC01DE9594700C0AAA5 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBF1DE9594700C0AAA5 /* SegueHandlerType.swift */; };
 		F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBC21DE95B9F00C0AAA5 /* BookDetailViewController.m */; };
+		F7C8FE2C1DEA6A4400BFEEDF /* BookListViewController+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE2B1DEA6A4400BFEEDF /* BookListViewController+Errors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		F73BFBBF1DE9594700C0AAA5 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegueHandlerType.swift; path = Utilities/SegueHandlerType.swift; sourceTree = "<group>"; };
 		F73BFBC11DE95B9F00C0AAA5 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookDetailViewController.h; path = "View Controllers/BookDetailViewController.h"; sourceTree = "<group>"; };
 		F73BFBC21DE95B9F00C0AAA5 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookDetailViewController.m; path = "View Controllers/BookDetailViewController.m"; sourceTree = "<group>"; };
+		F7C8FE2B1DEA6A4400BFEEDF /* BookListViewController+Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BookListViewController+Errors.swift"; path = "View Controllers/BookListViewController+Errors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 			children = (
 				F73BFBA61DE9474200C0AAA5 /* BookListViewController.swift */,
 				F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+TableView.swift */,
+				F7C8FE2B1DEA6A4400BFEEDF /* BookListViewController+Errors.swift */,
 				F73BFBBC1DE9591200C0AAA5 /* AddBookViewController.h */,
 				F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */,
 				F73BFBC11DE95B9F00C0AAA5 /* BookDetailViewController.h */,
@@ -378,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C8FE2C1DEA6A4400BFEEDF /* BookListViewController+Errors.swift in Sources */,
 				F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */,
 				F73BFBB31DE94FD000C0AAA5 /* Reusable.swift in Sources */,
 				F73BFBB01DE94EDB00C0AAA5 /* BookCellViewModel.swift in Sources */,

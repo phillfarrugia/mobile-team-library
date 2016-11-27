@@ -38,7 +38,7 @@
                     <connections>
                         <outlet property="tableView" destination="f8g-7J-sJy" id="FOU-Za-Eun"/>
                         <segue destination="2qV-3c-Kqn" kind="presentation" identifier="AddBook" id="uBQ-Md-ARM"/>
-                        <segue destination="A0l-LJ-kNd" kind="push" identifier="BookDetail" id="GsQ-TK-J5G"/>
+                        <segue destination="A0l-LJ-kNd" kind="show" identifier="BookDetail" id="GsQ-TK-J5G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

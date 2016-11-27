@@ -47,6 +47,12 @@
 
 - (IBAction)checkoutButtonDidPress:(id)sender {
     // TODO: Send Network Request to Checkout Book
+    [NetworkRequestManager checkoutBookRequestWithBook:self.viewModel.book checkedOutBy:@"Phill Farrugia" completion:^(Book * _Nullable book, NSError * _Nullable error) {
+        NSLog(@"%@", book.lastCheckedOutBy);
+        if (error) {
+            NSLog(@"%@", book);
+        }
+    }];
 }
 
 - (IBAction)shareButtonDidPress:(id)sender {

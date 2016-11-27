@@ -78,12 +78,10 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
                 destinationViewController.configure(for: viewModel)
                 selectedViewModel = nil
             }
-        default:
-            return
         }
     }
     
-    private func fetchAllBooks(_ completion: (() -> Void)? = nil) {
+    internal func fetchAllBooks(_ completion: (() -> Void)? = nil) {
         NetworkRequestManager.fetchAllBooksRequest {
             books, error in
             guard let books = books else {
@@ -93,33 +91,6 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
             self.viewModels = BookCellViewModel.viewModels(fromModels: books)
             completion?()
         }
-    }
-    
-    // MARK: Error States
-    
-    internal func handleGetBooksError() {
-        let alertController = UIAlertController(title: "Oh no!", message: "We were unable to retrieve a list of books. Try again?", preferredStyle: .alert)
-        let retryAction = UIAlertAction(title: "Retry", style: .default, handler: {
-            _ in
-            self.fetchAllBooks()
-        })
-        let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: {
-            _ in
-            alertController.dismiss(animated: true, completion: nil)
-        })
-        alertController.addAction(retryAction)
-        alertController.addAction(dismissAction)
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    internal func handleDeleteBookError() {
-        let alertController = UIAlertController(title: "Oh no!", message: "We were unable to delete that book. Please Try again", preferredStyle: .alert)
-        let dismissAction = UIAlertAction(title: "Ok", style: .cancel, handler: {
-            _ in
-            alertController.dismiss(animated: true, completion: nil)
-        })
-        alertController.addAction(dismissAction)
-        present(alertController, animated: true, completion: nil)
     }
     
 }
