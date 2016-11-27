@@ -50,6 +50,8 @@ import Foundation
         self.book = book
     }
     
+    // MARK: Static Functions
+    
     static func viewModels(fromModels models: [Book]) -> [BookCellViewModel] {
         return models.map {
             return BookCellViewModel(book: $0)

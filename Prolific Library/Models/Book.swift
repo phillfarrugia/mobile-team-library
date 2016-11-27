@@ -23,6 +23,8 @@ import Gloss
     let lastCheckedOut: Date?
     let lastCheckedOutBy: String?
     
+    // MARK: Initializers
+    
     init(identifier: Int, url: String, title: String, author: String, publisher: String, categories: String,
          lastCheckedOut: Date, lastCheckedOutBy: String) {
         self.identifier = identifier

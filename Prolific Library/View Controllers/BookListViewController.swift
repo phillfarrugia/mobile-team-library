@@ -61,6 +61,18 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
+    internal func fetchAllBooks(_ completion: (() -> Void)? = nil) {
+        NetworkRequestManager.fetchAllBooksRequest {
+            books, error in
+            guard let books = books else {
+                self.handleGetBooksError()
+                return
+            }
+            self.viewModels = BookCellViewModel.viewModels(fromModels: books)
+            completion?()
+        }
+    }
+    
     // MARK: Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,18 +90,6 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
                 destinationViewController.configure(for: viewModel)
                 selectedViewModel = nil
             }
-        }
-    }
-    
-    internal func fetchAllBooks(_ completion: (() -> Void)? = nil) {
-        NetworkRequestManager.fetchAllBooksRequest {
-            books, error in
-            guard let books = books else {
-                self.handleGetBooksError()
-                return
-            }
-            self.viewModels = BookCellViewModel.viewModels(fromModels: books)
-            completion?()
         }
     }
     
