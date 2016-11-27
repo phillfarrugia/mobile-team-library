@@ -13,10 +13,6 @@
 		F73BFB7C1DE934FE00C0AAA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F73BFB7B1DE934FE00C0AAA5 /* Assets.xcassets */; };
 		F73BFB7F1DE934FE00C0AAA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73BFB7D1DE934FE00C0AAA5 /* LaunchScreen.storyboard */; };
 		F73BFB8A1DE934FF00C0AAA5 /* Prolific_LibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFB891DE934FF00C0AAA5 /* Prolific_LibraryTests.m */; };
-		F73BFB961DE945EB00C0AAA5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73BFB941DE945EB00C0AAA5 /* Alamofire.framework */; };
-		F73BFB971DE945EB00C0AAA5 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F73BFB941DE945EB00C0AAA5 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F73BFB981DE945EB00C0AAA5 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73BFB951DE945EB00C0AAA5 /* Gloss.framework */; };
-		F73BFB991DE945EB00C0AAA5 /* Gloss.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F73BFB951DE945EB00C0AAA5 /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F73BFB9E1DE9466000C0AAA5 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73BFB9C1DE9466000C0AAA5 /* Nimble.framework */; };
 		F73BFB9F1DE9466000C0AAA5 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73BFB9D1DE9466000C0AAA5 /* Quick.framework */; };
 		F73BFBA11DE9467900C0AAA5 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F73BFB9C1DE9466000C0AAA5 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -45,6 +41,8 @@
 		F7C8FEAA1DEA725100BFEEDF /* NetworkRequestManager+PUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F6C881DE9973900926C1D /* NetworkRequestManager+PUT.swift */; };
 		F7C8FEAB1DEA725300BFEEDF /* NetworkRequestManager+DELETE.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F6C8A1DE9975700926C1D /* NetworkRequestManager+DELETE.swift */; };
 		F7C8FEAC1DEA731800BFEEDF /* AddBookValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7254EBA1DE988D500AE53E9 /* AddBookValidator.swift */; };
+		F7C8FEAE1DEA758700BFEEDF /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F73BFB9C1DE9466000C0AAA5 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F7C8FEAF1DEA758700BFEEDF /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F73BFB9D1DE9466000C0AAA5 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,9 +83,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F73BFB971DE945EB00C0AAA5 /* Alamofire.framework in Embed Frameworks */,
 				F7C8FE951DEA6EF800BFEEDF /* ProlificLibraryCore.framework in Embed Frameworks */,
-				F73BFB991DE945EB00C0AAA5 /* Gloss.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +96,17 @@
 			files = (
 				F73BFBA11DE9467900C0AAA5 /* Nimble.framework in CopyFiles */,
 				F73BFBA21DE9467900C0AAA5 /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7C8FEAD1DEA757E00BFEEDF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F7C8FEAE1DEA758700BFEEDF /* Nimble.framework in CopyFiles */,
+				F7C8FEAF1DEA758700BFEEDF /* Quick.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,9 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F73BFB961DE945EB00C0AAA5 /* Alamofire.framework in Frameworks */,
 				F7C8FE941DEA6EF800BFEEDF /* ProlificLibraryCore.framework in Frameworks */,
-				F73BFB981DE945EB00C0AAA5 /* Gloss.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +435,7 @@
 				F7C8FE831DEA6EF800BFEEDF /* Sources */,
 				F7C8FE841DEA6EF800BFEEDF /* Frameworks */,
 				F7C8FE851DEA6EF800BFEEDF /* Resources */,
+				F7C8FEAD1DEA757E00BFEEDF /* CopyFiles */,
 			);
 			buildRules = (
 			);
