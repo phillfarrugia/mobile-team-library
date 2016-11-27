@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import AlamofireImage
 
 public class BookCellViewModel: NSObject {
     

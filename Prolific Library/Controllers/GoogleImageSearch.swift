@@ -17,7 +17,7 @@ public class GoogleImageSearch {
     public static let apiKey = "AIzaSyD6qXAmmrWw_KXlLemW2hJePaM5uVnl9Rw"
     public static let customSearchEngineId = "005205891837075401404:beshpf1s_1e"
     
-    public typealias PerformSearchRequestCompletion = (_ imageURL: String?, _ error: Error?) -> Void
+    public typealias PerformSearchRequestCompletion = (_ imageURL: URL?, _ error: Error?) -> Void
     
     public static func performSearch(forQuery query: String, completion: @escaping PerformSearchRequestCompletion) {
         guard let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
@@ -26,7 +26,8 @@ public class GoogleImageSearch {
             response in
             switch response.result {
             case .success(let data):
-                guard let json = data as? JSON, let imageURL = GoogleImageSearch.parseImageURL(fromJSON: json) else {
+                guard let json = data as? JSON, let imageURLString = GoogleImageSearch.parseImageURL(fromJSON: json),
+                    let imageURL = URL(string: imageURLString) else {
                     completion(nil, nil)
                     return
                 }
@@ -41,8 +42,8 @@ public class GoogleImageSearch {
         guard let results = JSON["items"] as? [JSON],
             let firstResult = results.first,
         let pageMap = firstResult["pagemap"] as? JSON,
-        let scraped = pageMap["scraped"] as? [JSON],
-        let imageURL = scraped.first?["image_link"] as? String else { return nil }
+        let scraped = pageMap["cse_image"] as? [JSON],
+        let imageURL = scraped.first?["src"] as? String else { return nil }
         return imageURL
     }
     

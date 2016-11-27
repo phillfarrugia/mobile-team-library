@@ -15,37 +15,48 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Book Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WM0-SF-Vre">
-                        <rect key="frame" x="20" y="12" width="84" height="21"/>
+                        <rect key="frame" x="77" y="12" width="84" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Book author(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a41-c8-cvU">
-                        <rect key="frame" x="20" y="38" width="101.5" height="17"/>
+                        <rect key="frame" x="77" y="38" width="102" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V9N-Oz-3Ur">
+                        <rect key="frame" x="20" y="8" width="45" height="54"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="54" id="GMC-hi-RO5"/>
+                            <constraint firstAttribute="width" constant="45" id="hjG-zY-jMW"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="WM0-SF-Vre" firstAttribute="leading" secondItem="V9N-Oz-3Ur" secondAttribute="trailing" constant="12" id="2Js-QC-qc0"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WM0-SF-Vre" secondAttribute="trailing" constant="20" id="Ajt-i0-qqV"/>
+                    <constraint firstItem="V9N-Oz-3Ur" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="BuN-PZ-FbR"/>
                     <constraint firstAttribute="bottom" secondItem="a41-c8-cvU" secondAttribute="bottom" constant="14" id="Bx6-7v-Drl"/>
                     <constraint firstItem="a41-c8-cvU" firstAttribute="top" secondItem="WM0-SF-Vre" secondAttribute="bottom" constant="5" id="CkE-WY-igL"/>
-                    <constraint firstItem="a41-c8-cvU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Qmy-De-ve7"/>
+                    <constraint firstItem="a41-c8-cvU" firstAttribute="leading" secondItem="V9N-Oz-3Ur" secondAttribute="trailing" constant="12" id="MW3-pA-QxT"/>
                     <constraint firstItem="WM0-SF-Vre" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="VQp-bK-b2T"/>
-                    <constraint firstItem="WM0-SF-Vre" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="dut-hi-Oty"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="a41-c8-cvU" secondAttribute="trailing" constant="20" id="lWo-Ah-VNy"/>
+                    <constraint firstAttribute="bottom" secondItem="V9N-Oz-3Ur" secondAttribute="bottom" constant="7.5" id="ncs-Gs-6vC"/>
+                    <constraint firstItem="V9N-Oz-3Ur" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="qVx-hE-9fs"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="authorLabel" destination="a41-c8-cvU" id="3fK-zM-PJr"/>
+                <outlet property="coverImageView" destination="V9N-Oz-3Ur" id="VwF-og-hfK"/>
                 <outlet property="titleLabel" destination="WM0-SF-Vre" id="FsW-0v-sB1"/>
             </connections>
-            <point key="canvasLocation" x="34" y="51.5"/>
+            <point key="canvasLocation" x="34" y="51"/>
         </tableViewCell>
     </objects>
 </document>

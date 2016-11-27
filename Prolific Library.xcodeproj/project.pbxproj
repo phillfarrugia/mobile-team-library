@@ -54,6 +54,9 @@
 		F7C8FEC61DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FEC51DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift */; };
 		F7C8FEC81DEA846700BFEEDF /* GoogleImageSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FEC71DEA846700BFEEDF /* GoogleImageSearch.swift */; };
 		F7C8FECA1DEB940300BFEEDF /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FEC91DEB940300BFEEDF /* AlamofireImage.framework */; };
+		F7C8FECB1DEB9C0400BFEEDF /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FEC91DEB940300BFEEDF /* AlamofireImage.framework */; };
+		F7C8FECC1DEB9C0400BFEEDF /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FEC91DEB940300BFEEDF /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F7C8FECE1DEB9CA300BFEEDF /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FECD1DEB9CA300BFEEDF /* ImageHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,7 @@
 				F73BFB971DE945EB00C0AAA5 /* Alamofire.framework in Embed Frameworks */,
 				F7C8FE951DEA6EF800BFEEDF /* ProlificLibraryCore.framework in Embed Frameworks */,
 				F73BFB991DE945EB00C0AAA5 /* Gloss.framework in Embed Frameworks */,
+				F7C8FECC1DEB9C0400BFEEDF /* AlamofireImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +175,7 @@
 		F7C8FEC51DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+BookSpec.swift"; sourceTree = "<group>"; };
 		F7C8FEC71DEA846700BFEEDF /* GoogleImageSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleImageSearch.swift; path = Controllers/GoogleImageSearch.swift; sourceTree = "<group>"; };
 		F7C8FEC91DEB940300BFEEDF /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		F7C8FECD1DEB9CA300BFEEDF /* ImageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHandler.swift; path = Controllers/ImageHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +186,7 @@
 				F73BFB961DE945EB00C0AAA5 /* Alamofire.framework in Frameworks */,
 				F7C8FE941DEA6EF800BFEEDF /* ProlificLibraryCore.framework in Frameworks */,
 				F73BFB981DE945EB00C0AAA5 /* Gloss.framework in Frameworks */,
+				F7C8FECB1DEB9C0400BFEEDF /* AlamofireImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +240,7 @@
 			children = (
 				F7254EBA1DE988D500AE53E9 /* AddBookValidator.swift */,
 				F7C8FEC71DEA846700BFEEDF /* GoogleImageSearch.swift */,
+				F7C8FECD1DEB9CA300BFEEDF /* ImageHandler.swift */,
 			);
 			name = Controllers;
 			path = "../Prolific Library";
@@ -598,6 +605,7 @@
 				F7C8FEC81DEA846700BFEEDF /* GoogleImageSearch.swift in Sources */,
 				F7C8FEA81DEA724C00BFEEDF /* NetworkRequestManager+GET.swift in Sources */,
 				F7C8FEC41DEA7B8600BFEEDF /* DateFormatter+Book.swift in Sources */,
+				F7C8FECE1DEB9CA300BFEEDF /* ImageHandler.swift in Sources */,
 				F7C8FEA71DEA724A00BFEEDF /* NetworkRequestManager.swift in Sources */,
 				F7C8FEAB1DEA725300BFEEDF /* NetworkRequestManager+DELETE.swift in Sources */,
 				F7C8FEAA1DEA725100BFEEDF /* NetworkRequestManager+PUT.swift in Sources */,

@@ -16,7 +16,7 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         case BookDetail
     }
     
-    @IBOutlet private var tableView: UITableView!
+    @IBOutlet internal var tableView: UITableView!
     
     internal var viewModels: [BookCellViewModel]? {
         didSet {
@@ -32,7 +32,16 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         title = "Books"
         configureTableView()
         configureNavigation()
-        fetchAllBooks()
+        //fetchAllBooks()
+        self.viewModels = BookCellViewModel.viewModels(fromModels: sampleBooks())
+    }
+    
+    private func sampleBooks() -> [Book] {
+        let bookOne = Book(title: "Mastering iOS Frameworks", author: "Kyle Richter")
+        let bookTwo = Book(title: "iOS Programming: The Big Nerd Ranch Guide", author: "Aaron Hilegass")
+        let bookThree = Book(title: "iOS App Development For Dummies", author: "Jesse Feiler")
+        let bookFour = Book(title: "The iPhone Developer's CookBook", author: "Erica Sadun")
+        return [bookOne, bookTwo, bookThree, bookFour]
     }
     
     private func configureTableView() {
@@ -67,11 +76,33 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
             books, error in
             guard let books = books else {
                 self.handleGetBooksError()
+                self.tableView.refreshControl?.endRefreshing()
                 return
             }
             self.viewModels = BookCellViewModel.viewModels(fromModels: books)
             completion?()
         }
+    }
+    
+    // MARK: Downloading Cover Images
+    
+    func downloadAndCacheCoverImage(forViewModel viewModel: BookCellViewModel, completion: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
+        GoogleImageSearch.performSearch(forQuery: "\(viewModel.title) \(viewModel.authors)", completion: {
+            imageURL, error in
+            if let imageURL = imageURL {
+                ImageHandler.sharedInstance.downloadAndCacheImage(withImageURL: imageURL, completion: {
+                    image, error in
+                    guard let image = image else {
+                        completion(nil, error)
+                        return
+                    }
+                    completion(image, nil)
+                })
+            }
+            else {
+                completion(nil, error)
+            }
+        })
     }
     
     // MARK: Segues

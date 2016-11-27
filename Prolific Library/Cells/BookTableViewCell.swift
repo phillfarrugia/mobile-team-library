@@ -13,8 +13,9 @@ class BookTableViewCell: UITableViewCell, Reusable {
     
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var authorLabel: UILabel!
+    @IBOutlet private var coverImageView: UIImageView!
     
-    private var viewModel: BookCellViewModel? {
+    private weak var viewModel: BookCellViewModel? {
         didSet {
             configure(forViewModel: viewModel)
         }
@@ -39,6 +40,10 @@ class BookTableViewCell: UITableViewCell, Reusable {
             titleLabel.text = viewModel.title
             authorLabel.text = viewModel.authors
         }
+    }
+    
+    func setCoverImage(image: UIImage) {
+        self.coverImageView.image = image
     }
     
 }

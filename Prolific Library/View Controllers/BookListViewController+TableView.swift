@@ -8,6 +8,7 @@
 
 import UIKit
 import ProlificLibraryCore
+import AlamofireImage
 
 extension BookListViewController {
     
@@ -27,6 +28,16 @@ extension BookListViewController {
             let bookCell = BookTableViewCell.tableView(tableView: tableView, dequeueReusableCellForViewModel: viewModels[indexPath.row], atIndexPath: indexPath) else {
                 return UITableViewCell()
         }
+        downloadAndCacheCoverImage(forViewModel: viewModels[indexPath.row], completion: {
+            image, error in
+            guard let cell = tableView.cellForRow(at: indexPath) as? BookTableViewCell,
+                let image = image else {
+                // Cell at IndexPath is no longer visible on screen
+                // Request Image response is cached locally by AlamofireImage 
+                return
+            }
+            cell.setCoverImage(image: image)
+        })
         return bookCell
     }
     
