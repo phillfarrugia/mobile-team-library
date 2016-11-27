@@ -50,6 +50,7 @@
 		F7C8FEBE1DEA77F200BFEEDF /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F73BFB9C1DE9466000C0AAA5 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F7C8FEBF1DEA77F200BFEEDF /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F73BFB9D1DE9466000C0AAA5 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F7C8FEC11DEA782A00BFEEDF /* AddBookValidatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FEC01DEA782A00BFEEDF /* AddBookValidatorSpec.swift */; };
+		F7C8FEC21DEA796200BFEEDF /* AddBookValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7254EBA1DE988D500AE53E9 /* AddBookValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -600,6 +601,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C8FEC11DEA782A00BFEEDF /* AddBookValidatorSpec.swift in Sources */,
+				F7C8FEC21DEA796200BFEEDF /* AddBookValidator.swift in Sources */,
 				F7C8FE8F1DEA6EF800BFEEDF /* ProlificLibraryCoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
