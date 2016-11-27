@@ -52,6 +52,7 @@
 		F7C8FEC21DEA796200BFEEDF /* AddBookValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7254EBA1DE988D500AE53E9 /* AddBookValidator.swift */; };
 		F7C8FEC41DEA7B8600BFEEDF /* DateFormatter+Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FEC31DEA7B8600BFEEDF /* DateFormatter+Book.swift */; };
 		F7C8FEC61DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FEC51DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift */; };
+		F7C8FEC81DEA846700BFEEDF /* GoogleImageSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FEC71DEA846700BFEEDF /* GoogleImageSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		F7C8FEC01DEA782A00BFEEDF /* AddBookValidatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookValidatorSpec.swift; sourceTree = "<group>"; };
 		F7C8FEC31DEA7B8600BFEEDF /* DateFormatter+Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateFormatter+Book.swift"; path = "Utilities/DateFormatter+Book.swift"; sourceTree = "<group>"; };
 		F7C8FEC51DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+BookSpec.swift"; sourceTree = "<group>"; };
+		F7C8FEC71DEA846700BFEEDF /* GoogleImageSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleImageSearch.swift; path = Controllers/GoogleImageSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				F7254EBA1DE988D500AE53E9 /* AddBookValidator.swift */,
+				F7C8FEC71DEA846700BFEEDF /* GoogleImageSearch.swift */,
 			);
 			name = Controllers;
 			path = "../Prolific Library";
@@ -588,6 +591,7 @@
 			files = (
 				F7C8FEA91DEA724E00BFEEDF /* NetworkRequestManager+POST.swift in Sources */,
 				F7C8FEA41DEA710400BFEEDF /* Reusable.swift in Sources */,
+				F7C8FEC81DEA846700BFEEDF /* GoogleImageSearch.swift in Sources */,
 				F7C8FEA81DEA724C00BFEEDF /* NetworkRequestManager+GET.swift in Sources */,
 				F7C8FEC41DEA7B8600BFEEDF /* DateFormatter+Book.swift in Sources */,
 				F7C8FEA71DEA724A00BFEEDF /* NetworkRequestManager.swift in Sources */,
