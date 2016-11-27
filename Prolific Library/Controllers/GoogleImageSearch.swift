@@ -46,4 +46,23 @@ public class GoogleImageSearch {
         return imageURL
     }
     
+    public typealias LoadImageRequestCompletion = (_ image: UIImage?, _ error: Error?) -> Void
+    
+    public static func loadImage(forImageURL imageURL: String, completion: @escaping LoadImageRequestCompletion) {
+        guard let url = URL(string: imageURL) else { return }
+        Alamofire.request(url).responseData {
+            response in
+            switch response.result {
+            case .success(let data):
+                guard let image = UIImage(data: data) else {
+                    completion(nil, nil)
+                    return
+                }
+                completion(image, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
 }
