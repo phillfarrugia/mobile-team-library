@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F7254EBB1DE988D500AE53E9 /* AddBookValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7254EBA1DE988D500AE53E9 /* AddBookValidator.swift */; };
 		F73BFB711DE934FE00C0AAA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFB701DE934FE00C0AAA5 /* main.m */; };
 		F73BFB741DE934FE00C0AAA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFB731DE934FE00C0AAA5 /* AppDelegate.m */; };
 		F73BFB7A1DE934FE00C0AAA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73BFB781DE934FE00C0AAA5 /* Main.storyboard */; };
@@ -45,6 +44,7 @@
 		F7C8FEA91DEA724E00BFEEDF /* NetworkRequestManager+POST.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F6C861DE9971D00926C1D /* NetworkRequestManager+POST.swift */; };
 		F7C8FEAA1DEA725100BFEEDF /* NetworkRequestManager+PUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F6C881DE9973900926C1D /* NetworkRequestManager+PUT.swift */; };
 		F7C8FEAB1DEA725300BFEEDF /* NetworkRequestManager+DELETE.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F6C8A1DE9975700926C1D /* NetworkRequestManager+DELETE.swift */; };
+		F7C8FEAC1DEA731800BFEEDF /* AddBookValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7254EBA1DE988D500AE53E9 /* AddBookValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,6 +208,7 @@
 				F7254EBA1DE988D500AE53E9 /* AddBookValidator.swift */,
 			);
 			name = Controllers;
+			path = "../Prolific Library";
 			sourceTree = "<group>";
 		};
 		F73BFB631DE934FE00C0AAA5 = {
@@ -240,7 +241,6 @@
 				F73BFB731DE934FE00C0AAA5 /* AppDelegate.m */,
 				F73BFBA91DE94E6400C0AAA5 /* Cells */,
 				F73BFBA81DE94E2300C0AAA5 /* View Controllers */,
-				F7254EBC1DE988DA00AE53E9 /* Controllers */,
 				F73BFB781DE934FE00C0AAA5 /* Main.storyboard */,
 				F73BFB7B1DE934FE00C0AAA5 /* Assets.xcassets */,
 				F73BFB7D1DE934FE00C0AAA5 /* LaunchScreen.storyboard */,
@@ -337,6 +337,7 @@
 				F73BFBB11DE94FB600C0AAA5 /* Utilities */,
 				F73BFBAE1DE94EBE00C0AAA5 /* View Models */,
 				F70F6C811DE995FE00926C1D /* Network */,
+				F7254EBC1DE988DA00AE53E9 /* Controllers */,
 				F7C8FE811DEA6EF800BFEEDF /* ProlificLibraryCore.h */,
 				F7C8FE821DEA6EF800BFEEDF /* Info.plist */,
 			);
@@ -542,7 +543,6 @@
 				F73BFBAC1DE94EBA00C0AAA5 /* BookTableViewCell.swift in Sources */,
 				F73BFB741DE934FE00C0AAA5 /* AppDelegate.m in Sources */,
 				F73BFB711DE934FE00C0AAA5 /* main.m in Sources */,
-				F7254EBB1DE988D500AE53E9 /* AddBookValidator.swift in Sources */,
 				F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+TableView.swift in Sources */,
 				F73BFBA71DE9474200C0AAA5 /* BookListViewController.swift in Sources */,
 				F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */,
@@ -570,6 +570,7 @@
 				F7C8FEA61DEA719600BFEEDF /* BookCellViewModel.swift in Sources */,
 				F7C8FEA51DEA710600BFEEDF /* SegueHandlerType.swift in Sources */,
 				F7C8FEA31DEA6FFD00BFEEDF /* Book.swift in Sources */,
+				F7C8FEAC1DEA731800BFEEDF /* AddBookValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

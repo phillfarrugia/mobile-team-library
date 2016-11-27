@@ -8,15 +8,16 @@
 
 import Foundation
 
-@objc enum AddBookValidationState: Int {
+@objc
+public enum AddBookValidationState: Int {
     case RequiredFieldsIncomplete
     case Incomplete
     case Complete
 }
 
-@objc class AddBookValidator: NSObject {
+@objc public class AddBookValidator: NSObject {
     
-    static func validate(titleText: String, authorText: String, publisherText: String, categoriesText: String) -> AddBookValidationState {
+    public static func validate(titleText: String, authorText: String, publisherText: String, categoriesText: String) -> AddBookValidationState {
         let hasTitleText = titleText.characters.count > 0
         let hasAuthorText = authorText.characters.count > 0
         let hasPublisherText = publisherText.characters.count > 0

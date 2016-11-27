@@ -7,7 +7,6 @@
 //
 
 #import "AddBookViewController.h"
-#import "Prolific_Library-Swift.h"
 #import "ProlificLibraryCore.h"
 
 @interface AddBookViewController ()
