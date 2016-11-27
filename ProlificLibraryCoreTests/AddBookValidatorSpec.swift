@@ -14,7 +14,7 @@ class AddBookValidatorSpec: QuickSpec {
 
         describe("validate", {
             
-            context("all empty", {
+            context("all fields empty", {
                 it("should return required fields incompete", closure: {
                     expect(AddBookValidator.validate(titleText: "", authorText: "", publisherText: "", categoriesText: "")).to(equal(AddBookValidationState.RequiredFieldsIncomplete))
                 })
@@ -47,6 +47,24 @@ class AddBookValidatorSpec: QuickSpec {
             context("no title", {
                 it("should return required fields incompete", closure: {
                     expect(AddBookValidator.validate(titleText: "", authorText: "erica sadun", publisherText: "objcio", categoriesText: "ios, swift, programming")).to(equal(AddBookValidationState.RequiredFieldsIncomplete))
+                })
+            })
+            
+            context("no author", {
+                it("should return required fields incompete", closure: {
+                    expect(AddBookValidator.validate(titleText: "book name", authorText: "", publisherText: "objcio", categoriesText: "ios, swift, programming")).to(equal(AddBookValidationState.RequiredFieldsIncomplete))
+                })
+            })
+            
+            context("no publisher", {
+                it("should return required fields incompete", closure: {
+                    expect(AddBookValidator.validate(titleText: "book name", authorText: "erica sadun", publisherText: "", categoriesText: "ios, swift, programming")).to(equal(AddBookValidationState.Incomplete))
+                })
+            })
+            
+            context("no categories", {
+                it("should return required fields incompete", closure: {
+                    expect(AddBookValidator.validate(titleText: "book name", authorText: "erica sadun", publisherText: "objcio", categoriesText: "")).to(equal(AddBookValidationState.Incomplete))
                 })
             })
             
