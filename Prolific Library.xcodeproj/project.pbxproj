@@ -51,6 +51,7 @@
 		F7C8FEBF1DEA77F200BFEEDF /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F73BFB9D1DE9466000C0AAA5 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F7C8FEC11DEA782A00BFEEDF /* AddBookValidatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FEC01DEA782A00BFEEDF /* AddBookValidatorSpec.swift */; };
 		F7C8FEC21DEA796200BFEEDF /* AddBookValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7254EBA1DE988D500AE53E9 /* AddBookValidator.swift */; };
+		F7C8FEC41DEA7B8600BFEEDF /* DateFormatter+Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FEC31DEA7B8600BFEEDF /* DateFormatter+Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +166,7 @@
 		F7C8FE8E1DEA6EF800BFEEDF /* ProlificLibraryCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProlificLibraryCoreTests.swift; sourceTree = "<group>"; };
 		F7C8FE901DEA6EF800BFEEDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7C8FEC01DEA782A00BFEEDF /* AddBookValidatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookValidatorSpec.swift; sourceTree = "<group>"; };
+		F7C8FEC31DEA7B8600BFEEDF /* DateFormatter+Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateFormatter+Book.swift"; path = "Utilities/DateFormatter+Book.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +338,7 @@
 			children = (
 				F73BFBB21DE94FD000C0AAA5 /* Reusable.swift */,
 				F73BFBBF1DE9594700C0AAA5 /* SegueHandlerType.swift */,
+				F7C8FEC31DEA7B8600BFEEDF /* DateFormatter+Book.swift */,
 			);
 			name = Utilities;
 			path = "../Prolific Library";
@@ -586,6 +589,7 @@
 				F7C8FEA91DEA724E00BFEEDF /* NetworkRequestManager+POST.swift in Sources */,
 				F7C8FEA41DEA710400BFEEDF /* Reusable.swift in Sources */,
 				F7C8FEA81DEA724C00BFEEDF /* NetworkRequestManager+GET.swift in Sources */,
+				F7C8FEC41DEA7B8600BFEEDF /* DateFormatter+Book.swift in Sources */,
 				F7C8FEA71DEA724A00BFEEDF /* NetworkRequestManager.swift in Sources */,
 				F7C8FEAB1DEA725300BFEEDF /* NetworkRequestManager+DELETE.swift in Sources */,
 				F7C8FEAA1DEA725100BFEEDF /* NetworkRequestManager+PUT.swift in Sources */,

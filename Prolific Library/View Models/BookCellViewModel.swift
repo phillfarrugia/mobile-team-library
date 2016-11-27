@@ -37,7 +37,7 @@ public class BookCellViewModel: NSObject {
     public var lastCheckedOut: String {
         if let lastCheckedOutBy = book.lastCheckedOutBy,
             let lastCheckedOut = book.lastCheckedOut {
-            return "\(lastCheckedOutBy) @ \(BookCellViewModel.format(date: lastCheckedOut))"
+            return "\(lastCheckedOutBy) @ \(DateFormatter.format(lastCheckedOutDate: lastCheckedOut))"
         }
         return "N/A"
     }
@@ -56,12 +56,6 @@ public class BookCellViewModel: NSObject {
         return models.map {
             return BookCellViewModel(book: $0)
         }
-    }
-    
-    private static func format(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM d, yyyy h:m a"
-        return dateFormatter.string(from: date)
     }
     
 }
