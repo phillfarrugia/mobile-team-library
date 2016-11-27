@@ -53,6 +53,7 @@
 		F7C8FEC41DEA7B8600BFEEDF /* DateFormatter+Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FEC31DEA7B8600BFEEDF /* DateFormatter+Book.swift */; };
 		F7C8FEC61DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FEC51DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift */; };
 		F7C8FEC81DEA846700BFEEDF /* GoogleImageSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FEC71DEA846700BFEEDF /* GoogleImageSearch.swift */; };
+		F7C8FECA1DEB940300BFEEDF /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FEC91DEB940300BFEEDF /* AlamofireImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +170,7 @@
 		F7C8FEC31DEA7B8600BFEEDF /* DateFormatter+Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateFormatter+Book.swift"; path = "Utilities/DateFormatter+Book.swift"; sourceTree = "<group>"; };
 		F7C8FEC51DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+BookSpec.swift"; sourceTree = "<group>"; };
 		F7C8FEC71DEA846700BFEEDF /* GoogleImageSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleImageSearch.swift; path = Controllers/GoogleImageSearch.swift; sourceTree = "<group>"; };
+		F7C8FEC91DEB940300BFEEDF /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			files = (
 				F7C8FEA11DEA6FA700BFEEDF /* Alamofire.framework in Frameworks */,
 				F7C8FEA21DEA6FA700BFEEDF /* Gloss.framework in Frameworks */,
+				F7C8FECA1DEB940300BFEEDF /* AlamofireImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +299,7 @@
 		F73BFB9B1DE945F500C0AAA5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F7C8FEC91DEB940300BFEEDF /* AlamofireImage.framework */,
 				F73BFB9C1DE9466000C0AAA5 /* Nimble.framework */,
 				F73BFB9D1DE9466000C0AAA5 /* Quick.framework */,
 				F73BFB941DE945EB00C0AAA5 /* Alamofire.framework */,
