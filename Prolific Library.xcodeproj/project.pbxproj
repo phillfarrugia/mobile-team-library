@@ -52,6 +52,7 @@
 		F7C8FEC11DEA782A00BFEEDF /* AddBookValidatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FEC01DEA782A00BFEEDF /* AddBookValidatorSpec.swift */; };
 		F7C8FEC21DEA796200BFEEDF /* AddBookValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7254EBA1DE988D500AE53E9 /* AddBookValidator.swift */; };
 		F7C8FEC41DEA7B8600BFEEDF /* DateFormatter+Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FEC31DEA7B8600BFEEDF /* DateFormatter+Book.swift */; };
+		F7C8FEC61DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FEC51DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		F7C8FE901DEA6EF800BFEEDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7C8FEC01DEA782A00BFEEDF /* AddBookValidatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookValidatorSpec.swift; sourceTree = "<group>"; };
 		F7C8FEC31DEA7B8600BFEEDF /* DateFormatter+Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateFormatter+Book.swift"; path = "Utilities/DateFormatter+Book.swift"; sourceTree = "<group>"; };
+		F7C8FEC51DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+BookSpec.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +374,7 @@
 			children = (
 				F7C8FE8E1DEA6EF800BFEEDF /* ProlificLibraryCoreTests.swift */,
 				F7C8FEC01DEA782A00BFEEDF /* AddBookValidatorSpec.swift */,
+				F7C8FEC51DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift */,
 				F7C8FE901DEA6EF800BFEEDF /* Info.plist */,
 			);
 			path = ProlificLibraryCoreTests;
@@ -606,6 +609,7 @@
 			files = (
 				F7C8FEC11DEA782A00BFEEDF /* AddBookValidatorSpec.swift in Sources */,
 				F7C8FEC21DEA796200BFEEDF /* AddBookValidator.swift in Sources */,
+				F7C8FEC61DEA7C4000BFEEDF /* DateFormatter+BookSpec.swift in Sources */,
 				F7C8FE8F1DEA6EF800BFEEDF /* ProlificLibraryCoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

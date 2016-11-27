@@ -12,7 +12,8 @@ extension DateFormatter {
     
     public static func format(lastCheckedOutDate date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM d, yyyy h:m a"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "MMMM d, yyyy h:mm a"
         return dateFormatter.string(from: date)
     }
     
