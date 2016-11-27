@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import Gloss
+import ProlificLibraryCore
 
 extension NetworkRequestManager {
     

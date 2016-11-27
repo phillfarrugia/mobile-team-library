@@ -32,7 +32,6 @@
 		F73BFBAD1DE94EBA00C0AAA5 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73BFBAB1DE94EBA00C0AAA5 /* BookTableViewCell.xib */; };
 		F73BFBB01DE94EDB00C0AAA5 /* BookCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBAF1DE94EDB00C0AAA5 /* BookCellViewModel.swift */; };
 		F73BFBB31DE94FD000C0AAA5 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBB21DE94FD000C0AAA5 /* Reusable.swift */; };
-		F73BFBB91DE9524000C0AAA5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBB81DE9524000C0AAA5 /* Book.swift */; };
 		F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+TableView.swift */; };
 		F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */; };
 		F73BFBC01DE9594700C0AAA5 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBF1DE9594700C0AAA5 /* SegueHandlerType.swift */; };
@@ -43,6 +42,9 @@
 		F7C8FE911DEA6EF800BFEEDF /* ProlificLibraryCore.h in Headers */ = {isa = PBXBuildFile; fileRef = F7C8FE811DEA6EF800BFEEDF /* ProlificLibraryCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7C8FE941DEA6EF800BFEEDF /* ProlificLibraryCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FE7F1DEA6EF800BFEEDF /* ProlificLibraryCore.framework */; };
 		F7C8FE951DEA6EF800BFEEDF /* ProlificLibraryCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FE7F1DEA6EF800BFEEDF /* ProlificLibraryCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F7C8FEA11DEA6FA700BFEEDF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73BFB941DE945EB00C0AAA5 /* Alamofire.framework */; };
+		F7C8FEA21DEA6FA700BFEEDF /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73BFB951DE945EB00C0AAA5 /* Gloss.framework */; };
+		F7C8FEA31DEA6FFD00BFEEDF /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBB81DE9524000C0AAA5 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +173,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C8FEA11DEA6FA700BFEEDF /* Alamofire.framework in Frameworks */,
+				F7C8FEA21DEA6FA700BFEEDF /* Gloss.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +238,6 @@
 				F73BFB721DE934FE00C0AAA5 /* AppDelegate.h */,
 				F73BFB731DE934FE00C0AAA5 /* AppDelegate.m */,
 				F70F6C811DE995FE00926C1D /* Network */,
-				F73BFBB71DE9519B00C0AAA5 /* Models */,
 				F73BFBB11DE94FB600C0AAA5 /* Utilities */,
 				F73BFBAE1DE94EBE00C0AAA5 /* View Models */,
 				F73BFBA91DE94E6400C0AAA5 /* Cells */,
@@ -324,11 +327,13 @@
 				F73BFBB81DE9524000C0AAA5 /* Book.swift */,
 			);
 			name = Models;
+			path = "../Prolific Library";
 			sourceTree = "<group>";
 		};
 		F7C8FE801DEA6EF800BFEEDF /* ProlificLibraryCore */ = {
 			isa = PBXGroup;
 			children = (
+				F73BFBB71DE9519B00C0AAA5 /* Models */,
 				F7C8FE811DEA6EF800BFEEDF /* ProlificLibraryCore.h */,
 				F7C8FE821DEA6EF800BFEEDF /* Info.plist */,
 			);
@@ -533,7 +538,6 @@
 				F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */,
 				F73BFBB31DE94FD000C0AAA5 /* Reusable.swift in Sources */,
 				F73BFBB01DE94EDB00C0AAA5 /* BookCellViewModel.swift in Sources */,
-				F73BFBB91DE9524000C0AAA5 /* Book.swift in Sources */,
 				F73BFBAC1DE94EBA00C0AAA5 /* BookTableViewCell.swift in Sources */,
 				F73BFB741DE934FE00C0AAA5 /* AppDelegate.m in Sources */,
 				F73BFB711DE934FE00C0AAA5 /* main.m in Sources */,
@@ -562,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C8FEA31DEA6FFD00BFEEDF /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,6 +716,7 @@
 		F73BFB8F1DE934FF00C0AAA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6VSG94VVFH;
@@ -731,6 +737,7 @@
 		F73BFB901DE934FF00C0AAA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6VSG94VVFH;
@@ -793,6 +800,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ProlificLibraryCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -818,6 +829,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ProlificLibraryCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -900,6 +915,7 @@
 				F7C8FE971DEA6EF800BFEEDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7C8FE9B1DEA6EF800BFEEDF /* Build configuration list for PBXNativeTarget "ProlificLibraryCoreTests" */ = {
 			isa = XCConfigurationList;
@@ -908,6 +924,7 @@
 				F7C8FE991DEA6EF800BFEEDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

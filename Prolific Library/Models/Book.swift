@@ -9,23 +9,23 @@
 import Foundation
 import Gloss
 
-@objc class Book: NSObject, Decodable {
+public class Book: NSObject, Decodable {
     
-    let identifier: Int?
-    let url: String?
+    public let identifier: Int?
+    public let url: String?
     
-    let title: String
-    let author: String
+    public let title: String
+    public let author: String
     
-    let publisher: String?
-    let categories: String?
+    public let publisher: String?
+    public let categories: String?
     
-    let lastCheckedOut: Date?
-    let lastCheckedOutBy: String?
+    public let lastCheckedOut: Date?
+    public let lastCheckedOutBy: String?
     
     // MARK: Initializers
     
-    init(identifier: Int, url: String, title: String, author: String, publisher: String, categories: String,
+    public init(identifier: Int, url: String, title: String, author: String, publisher: String, categories: String,
          lastCheckedOut: Date, lastCheckedOutBy: String) {
         self.identifier = identifier
         self.url = url
@@ -37,7 +37,7 @@ import Gloss
         self.lastCheckedOutBy = lastCheckedOutBy
     }
     
-    init(title: String, author: String, publisher: String? = nil, categories: String? = nil) {
+    public init(title: String, author: String, publisher: String? = nil, categories: String? = nil) {
         self.title = title
         self.author = author
         self.publisher = publisher
@@ -50,7 +50,7 @@ import Gloss
     
     // MARK: Serialization
     
-    func toDict() -> [String: String] {
+    public func toDict() -> [String: String] {
         var dict: [String: String] = [:]
         dict["title"] = title
         dict["author"] = author
@@ -68,7 +68,7 @@ import Gloss
     
     // MARK: Deserialization
     
-    required init?(json: JSON) {
+    public required init?(json: JSON) {
         guard let identifier: Int = "id" <~~ json else { return nil }
         guard let url: String = "url" <~~ json else { return nil }
         guard let title: String = "title" <~~ json else { return nil }
