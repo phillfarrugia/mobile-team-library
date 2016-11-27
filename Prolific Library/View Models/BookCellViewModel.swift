@@ -7,35 +7,34 @@
 //
 
 import Foundation
-import ProlificLibraryCore
 
-@objc class BookCellViewModel: NSObject {
+public class BookCellViewModel: NSObject {
     
-    private(set) var book: Book
+    private(set) public var book: Book
     
-    var title: String {
+    public var title: String {
         return book.title
     }
     
-    var authors: String {
+    public var authors: String {
         return book.author
     }
     
-    var publisher: String {
+    public var publisher: String {
         if let publisher = book.publisher {
             return "Publisher: \(publisher)"
         }
         return "N/A"
     }
     
-    var categories: String {
+    public var categories: String {
         if let categories = book.categories {
             return "Tags: \(categories)"
         }
         return "N/A"
     }
     
-    var lastCheckedOut: String {
+    public var lastCheckedOut: String {
         if let lastCheckedOutBy = book.lastCheckedOutBy,
             let lastCheckedOut = book.lastCheckedOut {
             return "\(lastCheckedOutBy) @ \(BookCellViewModel.format(date: lastCheckedOut))"
@@ -43,23 +42,23 @@ import ProlificLibraryCore
         return "N/A"
     }
     
-    var shareableMessage: String {
+    public var shareableMessage: String {
         return "Have you read \(title) by \(authors)?"
     }
     
-    init(book: Book) {
+    public init(book: Book) {
         self.book = book
     }
     
     // MARK: Static Functions
     
-    static func viewModels(fromModels models: [Book]) -> [BookCellViewModel] {
+    public static func viewModels(fromModels models: [Book]) -> [BookCellViewModel] {
         return models.map {
             return BookCellViewModel(book: $0)
         }
     }
     
-    static private func format(date: Date) -> String {
+    private static func format(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM d, yyyy h:m a"
         return dateFormatter.string(from: date)

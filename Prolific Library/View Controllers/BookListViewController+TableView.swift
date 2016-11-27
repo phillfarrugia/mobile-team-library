@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProlificLibraryCore
 
 extension BookListViewController {
     

@@ -9,15 +9,14 @@
 import Foundation
 import Alamofire
 import Gloss
-import ProlificLibraryCore
 
-extension NetworkRequestManager {
+public extension NetworkRequestManager {
     
     // MARK: - POST - Add a Library Book
     
-    typealias PostBookRequestionCompletion = (_ book: Book?, _ error: Error?) -> Void
+    public typealias PostBookRequestionCompletion = (_ book: Book?, _ error: Error?) -> Void
     
-    static func postNewBookRequest(book: Book, completion: @escaping PostBookRequestionCompletion) {
+    public static func postNewBookRequest(book: Book, completion: @escaping PostBookRequestionCompletion) {
         let params = book.toDict()
         Alamofire.request("\(NetworkRequestManager.baseURL)/books", method: .post, parameters: params, encoding: URLEncoding(destination: .httpBody)).responseJSON {
             response in

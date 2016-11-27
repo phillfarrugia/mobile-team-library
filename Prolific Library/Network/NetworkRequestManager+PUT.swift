@@ -9,15 +9,14 @@
 import Foundation
 import Alamofire
 import Gloss
-import ProlificLibraryCore
 
-extension NetworkRequestManager {
+public extension NetworkRequestManager {
     
     // MARK: - PUT - Update a Library Book
     
-    typealias UpdateBookRequestCompletion = (_ book: Book?, _ error: Error?) -> Void
+    public typealias UpdateBookRequestCompletion = (_ book: Book?, _ error: Error?) -> Void
     
-    static func updateBookRequest(book: Book, completion: @escaping UpdateBookRequestCompletion) {
+    public static func updateBookRequest(book: Book, completion: @escaping UpdateBookRequestCompletion) {
         let params = book.toDict()
         guard let bookURL = book.url else { return }
         Alamofire.request("\(NetworkRequestManager.baseURL)\(bookURL)", method: .put, parameters: params, encoding: URLEncoding(destination: .httpBody)).responseJSON {
@@ -37,9 +36,9 @@ extension NetworkRequestManager {
     
     // MARK: - PUT - Checkout a Library Book
     
-    typealias CheckoutBookRequestCompletion = (_ book: Book?, _ error: Error?) -> Void
+    public typealias CheckoutBookRequestCompletion = (_ book: Book?, _ error: Error?) -> Void
     
-    static func checkoutBookRequest(book: Book, checkedOutBy: String, completion: @escaping UpdateBookRequestCompletion) {
+    public static func checkoutBookRequest(book: Book, checkedOutBy: String, completion: @escaping UpdateBookRequestCompletion) {
         var params = book.toDict()
         params["lastCheckedOutBy"] = checkedOutBy
         guard let bookURL = book.url else { return }

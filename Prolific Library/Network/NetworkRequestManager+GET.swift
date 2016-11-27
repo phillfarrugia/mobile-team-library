@@ -9,15 +9,14 @@
 import Foundation
 import Alamofire
 import Gloss
-import ProlificLibraryCore
 
-extension NetworkRequestManager {
+public extension NetworkRequestManager {
     
     // MARK: - GET - List All Library Books
     
-    typealias GetAllBooksRequestCompletion = (_ books: [Book]?, _ error: Error?) -> Void
+    public typealias GetAllBooksRequestCompletion = (_ books: [Book]?, _ error: Error?) -> Void
     
-    static func fetchAllBooksRequest(completion: @escaping GetAllBooksRequestCompletion) {
+    public static func fetchAllBooksRequest(completion: @escaping GetAllBooksRequestCompletion) {
         Alamofire.request("\(NetworkRequestManager.baseURL)/books", method: .get).responseJSON {
             response in
             switch response.result {
@@ -35,9 +34,9 @@ extension NetworkRequestManager {
     
     // MARK: - GET - Get a Library Book
     
-    typealias GetBookDetailRequestCompletion = (_ book: Book?, _ error: Error?) -> Void
+    public typealias GetBookDetailRequestCompletion = (_ book: Book?, _ error: Error?) -> Void
     
-    static func fetchBookDetailRequest(bookURL: String, completion: @escaping GetBookDetailRequestCompletion) {
+    public static func fetchBookDetailRequest(bookURL: String, completion: @escaping GetBookDetailRequestCompletion) {
         Alamofire.request("\(NetworkRequestManager.baseURL)\(bookURL)", method: .get).responseJSON {
             response in
             switch response.result {

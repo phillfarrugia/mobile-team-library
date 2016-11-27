@@ -9,15 +9,14 @@
 import Foundation
 import Alamofire
 import Gloss
-import ProlificLibraryCore
 
 extension NetworkRequestManager {
     
     // MARK: - DELETE - Delete a Library Book
     
-    typealias DeleteBookRequestCompletion = (_ error: Error?) -> Void
+    public typealias DeleteBookRequestCompletion = (_ error: Error?) -> Void
     
-    static func deleteBookRequest(book: Book, completion: @escaping DeleteBookRequestCompletion) {
+    public static func deleteBookRequest(book: Book, completion: @escaping DeleteBookRequestCompletion) {
         guard let bookURL = book.url else { return }
         Alamofire.request("\(NetworkRequestManager.baseURL)\(bookURL)", method: .delete).responseJSON {
             response in
@@ -32,9 +31,9 @@ extension NetworkRequestManager {
     
     // MARK: - DELETE - Clear All Books
     
-    typealias ClearBooksRequestCompletion = (_ error: Error?) -> Void
+    public typealias ClearBooksRequestCompletion = (_ error: Error?) -> Void
     
-    static func clearBooksRequest(completion: @escaping ClearBooksRequestCompletion) {
+    public static func clearBooksRequest(completion: @escaping ClearBooksRequestCompletion) {
         Alamofire.request("\(NetworkRequestManager.baseURL)/clean", method: .delete).responseJSON {
             response in
             switch response.result {
