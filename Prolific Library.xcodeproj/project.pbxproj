@@ -27,7 +27,6 @@
 		F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+TableView.swift */; };
 		F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */; };
 		F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBC21DE95B9F00C0AAA5 /* BookDetailViewController.m */; };
-		F7C8FE2C1DEA6A4400BFEEDF /* BookListViewController+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE2B1DEA6A4400BFEEDF /* BookListViewController+Errors.swift */; };
 		F7C8FE881DEA6EF800BFEEDF /* ProlificLibraryCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FE7F1DEA6EF800BFEEDF /* ProlificLibraryCore.framework */; };
 		F7C8FE911DEA6EF800BFEEDF /* ProlificLibraryCore.h in Headers */ = {isa = PBXBuildFile; fileRef = F7C8FE811DEA6EF800BFEEDF /* ProlificLibraryCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7C8FE941DEA6EF800BFEEDF /* ProlificLibraryCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FE7F1DEA6EF800BFEEDF /* ProlificLibraryCore.framework */; };
@@ -68,6 +67,10 @@
 		F7E662851DEC3472002717D6 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E662831DEC3472002717D6 /* BookCollectionViewCell.xib */; };
 		F7E662871DEC353A002717D6 /* BookListViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662861DEC353A002717D6 /* BookListViewController+CollectionView.swift */; };
 		F7E6628D1DEC41B0002717D6 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E6628C1DEC41B0002717D6 /* TagsViewController.swift */; };
+		F7E6628F1DEC4A83002717D6 /* TagsViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E6628E1DEC4A83002717D6 /* TagsViewController+CollectionView.swift */; };
+		F7E662911DEC4ACC002717D6 /* TagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662901DEC4ACC002717D6 /* TagViewModel.swift */; };
+		F7E662931DEC4D53002717D6 /* GenericBookCoverListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662921DEC4D53002717D6 /* GenericBookCoverListViewController.swift */; };
+		F7E662951DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662941DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,7 +179,6 @@
 		F73BFBBF1DE9594700C0AAA5 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegueHandlerType.swift; path = Utilities/SegueHandlerType.swift; sourceTree = "<group>"; };
 		F73BFBC11DE95B9F00C0AAA5 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookDetailViewController.h; path = "View Controllers/BookDetailViewController.h"; sourceTree = "<group>"; };
 		F73BFBC21DE95B9F00C0AAA5 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookDetailViewController.m; path = "View Controllers/BookDetailViewController.m"; sourceTree = "<group>"; };
-		F7C8FE2B1DEA6A4400BFEEDF /* BookListViewController+Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BookListViewController+Errors.swift"; path = "View Controllers/BookListViewController+Errors.swift"; sourceTree = "<group>"; };
 		F7C8FE7F1DEA6EF800BFEEDF /* ProlificLibraryCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProlificLibraryCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C8FE811DEA6EF800BFEEDF /* ProlificLibraryCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProlificLibraryCore.h; sourceTree = "<group>"; };
 		F7C8FE821DEA6EF800BFEEDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -196,6 +198,10 @@
 		F7E662831DEC3472002717D6 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookCollectionViewCell.xib; path = Cells/BookCollectionViewCell.xib; sourceTree = "<group>"; };
 		F7E662861DEC353A002717D6 /* BookListViewController+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BookListViewController+CollectionView.swift"; path = "View Controllers/BookListViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		F7E6628C1DEC41B0002717D6 /* TagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagsViewController.swift; path = "View Controllers/TagsViewController.swift"; sourceTree = "<group>"; };
+		F7E6628E1DEC4A83002717D6 /* TagsViewController+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TagsViewController+CollectionView.swift"; path = "View Controllers/TagsViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		F7E662901DEC4ACC002717D6 /* TagViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagViewModel.swift; path = "View Models/TagViewModel.swift"; sourceTree = "<group>"; };
+		F7E662921DEC4D53002717D6 /* GenericBookCoverListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericBookCoverListViewController.swift; path = "View Controllers/GenericBookCoverListViewController.swift"; sourceTree = "<group>"; };
+		F7E662941DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GenericBookCoverListViewController+Errors.swift"; path = "View Controllers/GenericBookCoverListViewController+Errors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +350,8 @@
 		F73BFBA81DE94E2300C0AAA5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F7E662921DEC4D53002717D6 /* GenericBookCoverListViewController.swift */,
+				F7E662941DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift */,
 				F7E6628B1DEC419C002717D6 /* Tags View Controller */,
 				F7E662881DEC4164002717D6 /* Book List View Controller */,
 				F7E662891DEC4172002717D6 /* Add Book View Controller */,
@@ -368,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				F73BFBAF1DE94EDB00C0AAA5 /* BookCellViewModel.swift */,
+				F7E662901DEC4ACC002717D6 /* TagViewModel.swift */,
 			);
 			name = "View Models";
 			path = "../Prolific Library";
@@ -431,7 +440,6 @@
 				F73BFBA61DE9474200C0AAA5 /* BookListViewController.swift */,
 				F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+TableView.swift */,
 				F7E662861DEC353A002717D6 /* BookListViewController+CollectionView.swift */,
-				F7C8FE2B1DEA6A4400BFEEDF /* BookListViewController+Errors.swift */,
 			);
 			name = "Book List View Controller";
 			sourceTree = "<group>";
@@ -458,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				F7E6628C1DEC41B0002717D6 /* TagsViewController.swift */,
+				F7E6628E1DEC4A83002717D6 /* TagsViewController+CollectionView.swift */,
 			);
 			name = "Tags View Controller";
 			sourceTree = "<group>";
@@ -649,13 +658,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7C8FE2C1DEA6A4400BFEEDF /* BookListViewController+Errors.swift in Sources */,
+				F7E6628F1DEC4A83002717D6 /* TagsViewController+CollectionView.swift in Sources */,
 				F7C8FED11DEBDF1600BFEEDF /* TagBubbleViewContainer.swift in Sources */,
 				F7E662871DEC353A002717D6 /* BookListViewController+CollectionView.swift in Sources */,
+				F7E662951DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift in Sources */,
 				F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */,
 				F7E662841DEC3472002717D6 /* BookCollectionViewCell.swift in Sources */,
 				F73BFBAC1DE94EBA00C0AAA5 /* BookTableViewCell.swift in Sources */,
 				F7E6628D1DEC41B0002717D6 /* TagsViewController.swift in Sources */,
+				F7E662931DEC4D53002717D6 /* GenericBookCoverListViewController.swift in Sources */,
 				F73BFB741DE934FE00C0AAA5 /* AppDelegate.m in Sources */,
 				F73BFB711DE934FE00C0AAA5 /* main.m in Sources */,
 				F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+TableView.swift in Sources */,
@@ -682,6 +693,7 @@
 				F7C8FEA41DEA710400BFEEDF /* Reusable.swift in Sources */,
 				F7C8FEC81DEA846700BFEEDF /* GoogleImageSearch.swift in Sources */,
 				F7C8FEA81DEA724C00BFEEDF /* NetworkRequestManager+GET.swift in Sources */,
+				F7E662911DEC4ACC002717D6 /* TagViewModel.swift in Sources */,
 				F7C8FEC41DEA7B8600BFEEDF /* DateFormatter+Book.swift in Sources */,
 				F7C8FECE1DEB9CA300BFEEDF /* ImageHandler.swift in Sources */,
 				F7C8FEA71DEA724A00BFEEDF /* NetworkRequestManager.swift in Sources */,

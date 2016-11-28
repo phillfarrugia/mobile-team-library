@@ -73,10 +73,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jT8-5W-NiJ">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9As-FV-7OZ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FTy-O3-HOU">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1AB-Qt-Y7s">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -87,13 +87,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="jT8-5W-NiJ" secondAttribute="trailing" id="4wW-d2-fPK"/>
-                            <constraint firstItem="jT8-5W-NiJ" firstAttribute="leading" secondItem="vvx-GT-NSk" secondAttribute="leading" id="MYG-Y6-u2y"/>
-                            <constraint firstItem="jT8-5W-NiJ" firstAttribute="top" secondItem="hMB-Ry-vbZ" secondAttribute="bottom" id="dLf-mh-02f"/>
-                            <constraint firstItem="dQr-Vo-HhH" firstAttribute="top" secondItem="jT8-5W-NiJ" secondAttribute="bottom" id="kC2-76-ANq"/>
+                            <constraint firstItem="dQr-Vo-HhH" firstAttribute="top" secondItem="9As-FV-7OZ" secondAttribute="bottom" id="Qgf-Nx-M0Q"/>
+                            <constraint firstItem="9As-FV-7OZ" firstAttribute="leading" secondItem="vvx-GT-NSk" secondAttribute="leading" id="cvB-dh-y5E"/>
+                            <constraint firstAttribute="trailing" secondItem="9As-FV-7OZ" secondAttribute="trailing" id="od7-0A-2Fz"/>
+                            <constraint firstItem="9As-FV-7OZ" firstAttribute="top" secondItem="hMB-Ry-vbZ" secondAttribute="bottom" id="uCU-Fz-ZyS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gjd-lI-pht"/>
+                    <connections>
+                        <outlet property="collectionView" destination="9As-FV-7OZ" id="nSH-JD-VIc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Npp-Kq-q84" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
