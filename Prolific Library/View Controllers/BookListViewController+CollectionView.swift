@@ -59,4 +59,11 @@ extension BookListViewController {
         return CGSize(width: 95, height: 137)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewModels = viewModels, viewModels.count > indexPath.row else { return }
+        selectedViewModel = viewModels[indexPath.row]
+        performSegueWithIdentifier(.BookDetail, sender: self)
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
+    
 }
