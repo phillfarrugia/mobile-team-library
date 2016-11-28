@@ -28,7 +28,8 @@ extension BookListViewController {
             let bookCell = BookTableViewCell.tableView(tableView: tableView, dequeueReusableCellForViewModel: viewModels[indexPath.row], atIndexPath: indexPath) else {
                 return UITableViewCell()
         }
-        downloadAndCacheCoverImage(forViewModel: viewModels[indexPath.row], completion: {
+        
+        BookCellViewModel.downloadAndCacheCoverImage(forViewModel: viewModels[indexPath.row], completion: {
             image, error in
             guard let cell = tableView.cellForRow(at: indexPath) as? BookTableViewCell,
                 let image = image else {
