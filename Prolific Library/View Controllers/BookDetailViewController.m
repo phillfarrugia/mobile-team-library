@@ -72,6 +72,10 @@
     }];
 }
 
+- (void)willMoveToParentViewController:(UIViewController *)parent {
+    [self.navigationController.navigationBar setBarTintColor:nil];
+}
+
 - (void)shareBarButtonItemDidPress {
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[self.viewModel.shareableMessage] applicationActivities:nil];
     activityViewController.excludedActivityTypes = @[UIActivityTypeAirDrop];

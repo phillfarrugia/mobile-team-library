@@ -22,7 +22,7 @@ public class BookCellViewModel: NSObject {
     
     public var publisher: String? {
         if let publisher = book.publisher {
-            return "Publisher: \(publisher)"
+            return "\(publisher)"
         }
         return nil
     }
