@@ -27,6 +27,7 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
     internal var viewModels: [BookCellViewModel]? {
         didSet {
             tableView.reloadData()
+            collectionView.reloadData()
         }
     }
     
@@ -75,6 +76,10 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         collectionView.registerReusableCell(BookCollectionViewCell.self)
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(BookListViewController.didPullToRefresh), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
     }
     
     private func configureNavigation() {
@@ -122,8 +127,17 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: Pull to Refresh
     
     internal func didPullToRefresh() {
-        self.fetchAllBooks { 
+        self.fetchAllBooks {
+            self.endPullToRefresh()
+        }
+    }
+    
+    internal func endPullToRefresh() {
+        switch (self.viewStyle) {
+        case .List:
             self.tableView.refreshControl?.endRefreshing()
+        case .Cover:
+            self.collectionView.refreshControl?.endRefreshing()
         }
     }
     
@@ -132,7 +146,7 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
             books, error in
             guard let books = books else {
                 self.handleGetBooksError()
-                self.tableView.refreshControl?.endRefreshing()
+                self.endPullToRefresh()
                 return
             }
             self.viewModels = BookCellViewModel.viewModels(fromModels: books)
