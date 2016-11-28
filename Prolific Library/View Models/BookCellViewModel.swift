@@ -27,11 +27,12 @@ public class BookCellViewModel: NSObject {
         return "N/A"
     }
     
-    public var categories: String {
+    public var categories: [String]? {
         if let categories = book.categories {
-            return "Tags: \(categories)"
+            let trimmedCategories = categories.replacingOccurrences(of: ", ", with: ",").trimmingCharacters(in: .whitespaces)
+            return trimmedCategories.components(separatedBy: ",")
         }
-        return "N/A"
+        return nil
     }
     
     public var lastCheckedOut: String {

@@ -37,7 +37,7 @@
     [self.titleLabel setText:self.viewModel.title];
     [self.authorLabel setText:self.viewModel.authors];
     [self.publisherLabel setText:self.viewModel.publisher];
-    [self.categoriesLabel setText:self.viewModel.categories];
+    // TODO: Display Categories Views
     [self.lastCheckedOutLabel setText:self.viewModel.lastCheckedOut];
 }
 
