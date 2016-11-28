@@ -67,6 +67,7 @@
 		F7E662841DEC3472002717D6 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662821DEC3472002717D6 /* BookCollectionViewCell.swift */; };
 		F7E662851DEC3472002717D6 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E662831DEC3472002717D6 /* BookCollectionViewCell.xib */; };
 		F7E662871DEC353A002717D6 /* BookListViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662861DEC353A002717D6 /* BookListViewController+CollectionView.swift */; };
+		F7E6628D1DEC41B0002717D6 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E6628C1DEC41B0002717D6 /* TagsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +195,7 @@
 		F7E662821DEC3472002717D6 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookCollectionViewCell.swift; path = Cells/BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		F7E662831DEC3472002717D6 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookCollectionViewCell.xib; path = Cells/BookCollectionViewCell.xib; sourceTree = "<group>"; };
 		F7E662861DEC353A002717D6 /* BookListViewController+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BookListViewController+CollectionView.swift"; path = "View Controllers/BookListViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		F7E6628C1DEC41B0002717D6 /* TagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagsViewController.swift; path = "View Controllers/TagsViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,6 +344,7 @@
 		F73BFBA81DE94E2300C0AAA5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F7E6628B1DEC419C002717D6 /* Tags View Controller */,
 				F7E662881DEC4164002717D6 /* Book List View Controller */,
 				F7E662891DEC4172002717D6 /* Add Book View Controller */,
 				F7E6628A1DEC4179002717D6 /* Book Detail View Controller */,
@@ -449,6 +452,14 @@
 				F73BFBC21DE95B9F00C0AAA5 /* BookDetailViewController.m */,
 			);
 			name = "Book Detail View Controller";
+			sourceTree = "<group>";
+		};
+		F7E6628B1DEC419C002717D6 /* Tags View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F7E6628C1DEC41B0002717D6 /* TagsViewController.swift */,
+			);
+			name = "Tags View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -644,6 +655,7 @@
 				F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */,
 				F7E662841DEC3472002717D6 /* BookCollectionViewCell.swift in Sources */,
 				F73BFBAC1DE94EBA00C0AAA5 /* BookTableViewCell.swift in Sources */,
+				F7E6628D1DEC41B0002717D6 /* TagsViewController.swift in Sources */,
 				F73BFB741DE934FE00C0AAA5 /* AppDelegate.m in Sources */,
 				F73BFB711DE934FE00C0AAA5 /* main.m in Sources */,
 				F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+TableView.swift in Sources */,

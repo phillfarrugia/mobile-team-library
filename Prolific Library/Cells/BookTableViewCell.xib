@@ -25,52 +25,50 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PdW-l7-8aU">
-                        <rect key="frame" x="97" y="10" width="170" height="58"/>
+                        <rect key="frame" x="97" y="14" width="170" height="81.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="_Book Title That Takes up Two Lines" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WM0-SF-Vre">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="_Book Title That Takes up Two Lines" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WM0-SF-Vre">
                                 <rect key="frame" x="0.0" y="0.0" width="170" height="38.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="_Book author(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a41-c8-cvU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Book author(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a41-c8-cvU">
                                 <rect key="frame" x="0.0" y="40.5" width="170" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTw-VF-L3P" customClass="TagBubbleViewContainer" customModule="Prolific_Library" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="61.5" width="170" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Jse-nc-nmS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aTw-VF-L3P" secondAttribute="trailing" id="0cb-r3-uHu"/>
                             <constraint firstItem="WM0-SF-Vre" firstAttribute="leading" secondItem="PdW-l7-8aU" secondAttribute="leading" id="3Ys-7S-8C3"/>
                             <constraint firstItem="WM0-SF-Vre" firstAttribute="top" secondItem="PdW-l7-8aU" secondAttribute="top" id="9HY-Ki-bMG"/>
-                            <constraint firstAttribute="bottom" secondItem="a41-c8-cvU" secondAttribute="bottom" id="9To-kr-eYD"/>
                             <constraint firstAttribute="trailing" secondItem="a41-c8-cvU" secondAttribute="trailing" id="9ru-6I-IgF"/>
                             <constraint firstAttribute="trailing" secondItem="WM0-SF-Vre" secondAttribute="trailing" id="Mbq-99-Hdp"/>
                             <constraint firstItem="a41-c8-cvU" firstAttribute="top" secondItem="WM0-SF-Vre" secondAttribute="bottom" constant="2" id="PpC-Rd-QD1"/>
+                            <constraint firstItem="aTw-VF-L3P" firstAttribute="leading" secondItem="PdW-l7-8aU" secondAttribute="leading" id="V8y-J3-TAZ"/>
+                            <constraint firstItem="a41-c8-cvU" firstAttribute="bottom" secondItem="aTw-VF-L3P" secondAttribute="top" constant="-4" id="ggu-9h-64x"/>
+                            <constraint firstAttribute="bottom" secondItem="aTw-VF-L3P" secondAttribute="bottom" id="tVA-bw-jis"/>
                             <constraint firstItem="a41-c8-cvU" firstAttribute="leading" secondItem="PdW-l7-8aU" secondAttribute="leading" id="ual-jd-QXc"/>
-                        </constraints>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTw-VF-L3P" customClass="TagBubbleViewContainer" customModule="Prolific_Library" customModuleProvider="target">
-                        <rect key="frame" x="97" y="76" width="170" height="20"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="Jse-nc-nmS"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="aTw-VF-L3P" firstAttribute="trailing" secondItem="PdW-l7-8aU" secondAttribute="trailing" id="2Qb-aG-zqx"/>
-                    <constraint firstItem="aTw-VF-L3P" firstAttribute="leading" secondItem="PdW-l7-8aU" secondAttribute="leading" id="7GK-fn-woq"/>
+                    <constraint firstItem="PdW-l7-8aU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="11i-7u-6gF"/>
                     <constraint firstAttribute="trailing" secondItem="PdW-l7-8aU" secondAttribute="trailing" constant="20" id="AvH-iW-lMx"/>
                     <constraint firstItem="V9N-Oz-3Ur" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="BuN-PZ-FbR"/>
-                    <constraint firstItem="aTw-VF-L3P" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PdW-l7-8aU" secondAttribute="bottom" constant="8" id="FLv-be-fDC"/>
-                    <constraint firstItem="PdW-l7-8aU" firstAttribute="top" secondItem="V9N-Oz-3Ur" secondAttribute="top" constant="2" id="MIO-5r-KK3"/>
                     <constraint firstItem="PdW-l7-8aU" firstAttribute="leading" secondItem="V9N-Oz-3Ur" secondAttribute="trailing" constant="12" id="aaL-tn-GDh"/>
-                    <constraint firstItem="PdW-l7-8aU" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="V9N-Oz-3Ur" secondAttribute="bottom" constant="-20" id="eQ6-Vn-cTd"/>
                     <constraint firstAttribute="bottom" secondItem="V9N-Oz-3Ur" secondAttribute="bottom" constant="7.5" id="ncs-Gs-6vC"/>
                     <constraint firstItem="V9N-Oz-3Ur" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="qVx-hE-9fs"/>
-                    <constraint firstItem="aTw-VF-L3P" firstAttribute="bottom" secondItem="V9N-Oz-3Ur" secondAttribute="bottom" constant="-6" id="zF1-Yi-hY3"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
