@@ -16,6 +16,11 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         case BookDetail
     }
     
+    enum ViewStyle {
+        case List
+        case Cover
+    }
+    
     @IBOutlet internal var tableView: UITableView!
     
     internal var viewModels: [BookCellViewModel]? {
@@ -25,6 +30,8 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     internal var selectedViewModel: BookCellViewModel?
+    
+    internal var viewStyle: ViewStyle = .List
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +39,7 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         title = "Books"
         configureTableView()
         configureNavigation()
+        configureViewStyle(viewStyle)
         //fetchAllBooks()
         self.viewModels = BookCellViewModel.viewModels(fromModels: sampleBooks())
     }
@@ -57,7 +65,21 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     private func configureNavigation() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(BookListViewController.addBarButtonItemDidPress))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(BookListViewController.toggleViewStyleBarButtonItemDidPress))
+    }
+    
+    private func configureViewStyle(_ viewStyle: ViewStyle) {
+        switch (viewStyle) {
+        case .List:
+            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "cover-icon"), style: .plain, target: self, action: #selector(BookListViewController.toggleViewStyleButtonDidPress))
+            break
+        case .Cover:
+            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "list-icon"), style: .plain, target: self, action: #selector(BookListViewController.toggleViewStyleButtonDidPress))
+            break
+        }
+    }
+    
+    internal func toggleViewStyleButtonDidPress() {
+        
     }
     
     internal func addBarButtonItemDidPress() {
