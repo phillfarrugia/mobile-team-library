@@ -21,7 +21,7 @@ public class ImageHandler {
     public typealias DownloadAndCacheImageRequestCompletion = (_ image: UIImage?, _ error: Error?) -> Void
     
     public func downloadAndCacheImage(withImageURL imageURL: URL, completion: @escaping DownloadAndCacheImageRequestCompletion) {
-        if let cachedImage = imageDownloader.imageCache?.image(withIdentifier: imageURL.absoluteString) {
+        if let cachedImage = cachedImage(forURLString: imageURL.absoluteString) {
             completion(cachedImage, nil)
         }
         else {
@@ -43,6 +43,13 @@ public class ImageHandler {
         if let imageCache = imageDownloader.imageCache {
             imageCache.add(image, withIdentifier: urlString)
         }
+    }
+    
+    public func cachedImage(forURLString urlString: String) -> UIImage? {
+        if let imageCache = imageDownloader.imageCache {
+            return imageCache.image(withIdentifier: urlString)
+        }
+        return nil
     }
     
 }

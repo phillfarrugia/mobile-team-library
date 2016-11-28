@@ -65,10 +65,15 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     private func configureNavigation() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(BookListViewController.addBarButtonItemDidPress))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(BookListViewController.toggleViewStyleBarButtonItemDidPress))
     }
     
     internal func addBarButtonItemDidPress() {
         performSegueWithIdentifier(.AddBook, sender: self)
+    }
+    
+    internal func toggleViewStyleBarButtonItemDidPress() {
+        //
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
