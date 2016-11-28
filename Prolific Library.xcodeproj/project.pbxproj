@@ -342,14 +342,9 @@
 		F73BFBA81DE94E2300C0AAA5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F73BFBA61DE9474200C0AAA5 /* BookListViewController.swift */,
-				F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+TableView.swift */,
-				F7E662861DEC353A002717D6 /* BookListViewController+CollectionView.swift */,
-				F7C8FE2B1DEA6A4400BFEEDF /* BookListViewController+Errors.swift */,
-				F73BFBBC1DE9591200C0AAA5 /* AddBookViewController.h */,
-				F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */,
-				F73BFBC11DE95B9F00C0AAA5 /* BookDetailViewController.h */,
-				F73BFBC21DE95B9F00C0AAA5 /* BookDetailViewController.m */,
+				F7E662881DEC4164002717D6 /* Book List View Controller */,
+				F7E662891DEC4172002717D6 /* Add Book View Controller */,
+				F7E6628A1DEC4179002717D6 /* Book Detail View Controller */,
 				F7C8FED21DEBE73100BFEEDF /* NavigationController.swift */,
 			);
 			name = "View Controllers";
@@ -425,6 +420,35 @@
 				F7C8FED01DEBDF1600BFEEDF /* TagBubbleViewContainer.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		F7E662881DEC4164002717D6 /* Book List View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F73BFBA61DE9474200C0AAA5 /* BookListViewController.swift */,
+				F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+TableView.swift */,
+				F7E662861DEC353A002717D6 /* BookListViewController+CollectionView.swift */,
+				F7C8FE2B1DEA6A4400BFEEDF /* BookListViewController+Errors.swift */,
+			);
+			name = "Book List View Controller";
+			sourceTree = "<group>";
+		};
+		F7E662891DEC4172002717D6 /* Add Book View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F73BFBBC1DE9591200C0AAA5 /* AddBookViewController.h */,
+				F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */,
+			);
+			name = "Add Book View Controller";
+			sourceTree = "<group>";
+		};
+		F7E6628A1DEC4179002717D6 /* Book Detail View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F73BFBC11DE95B9F00C0AAA5 /* BookDetailViewController.h */,
+				F73BFBC21DE95B9F00C0AAA5 /* BookDetailViewController.m */,
+			);
+			name = "Book Detail View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
