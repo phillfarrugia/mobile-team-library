@@ -13,13 +13,17 @@
 
 @property (nonatomic, weak) BookCellViewModel *viewModel;
 
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
-@property (strong, nonatomic) IBOutlet UILabel *authorLabel;
+//@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+//@property (strong, nonatomic) IBOutlet UILabel *authorLabel;
+//
+//@property (strong, nonatomic) IBOutlet UILabel *publisherLabel;
+//@property (strong, nonatomic) IBOutlet UILabel *categoriesLabel;
+//
+//@property (strong, nonatomic) IBOutlet UILabel *lastCheckedOutLabel;
+@property (strong, nonatomic) IBOutlet UIView *coverImageHeaderView;
+@property (strong, nonatomic) IBOutlet UIImageView *coverImageView;
 
-@property (strong, nonatomic) IBOutlet UILabel *publisherLabel;
-@property (strong, nonatomic) IBOutlet UILabel *categoriesLabel;
-
-@property (strong, nonatomic) IBOutlet UILabel *lastCheckedOutLabel;
+@property (strong, nonatomic) IBOutlet UIButton *checkoutButton;
 
 @end
 
@@ -34,15 +38,23 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self.titleLabel setText:self.viewModel.title];
-    [self.authorLabel setText:self.viewModel.authors];
-    [self.publisherLabel setText:self.viewModel.publisher];
-    // TODO: Display Categories Views
-    [self.lastCheckedOutLabel setText:self.viewModel.lastCheckedOut];
+//    [self.titleLabel setText:self.viewModel.title];
+//    [self.authorLabel setText:self.viewModel.authors];
+//    [self.publisherLabel setText:self.viewModel.publisher];
+//    // TODO: Display Categories Views
+//    [self.lastCheckedOutLabel setText:self.viewModel.lastCheckedOut];
+    
+    self.checkoutButton.layer.cornerRadius = self.checkoutButton.frame.size.height/2;
 }
 
 - (void)configureForViewModel:(BookCellViewModel *)viewModel {
     self.viewModel = viewModel;
+    
+    [BookCellViewModel downloadAndCacheCoverImageForViewModel:viewModel completion:^(UIImage * _Nullable image, NSError * _Nullable error) {
+        if (image) {
+            self.coverImageView.image = image;
+        }
+    }];
 }
 
 - (IBAction)checkoutButtonDidPress:(id)sender {

@@ -84,27 +84,6 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    // MARK: Downloading Cover Images
-    
-    func downloadAndCacheCoverImage(forViewModel viewModel: BookCellViewModel, completion: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
-        GoogleImageSearch.performSearch(forQuery: "\(viewModel.title) \(viewModel.authors)", completion: {
-            imageURL, error in
-            if let imageURL = imageURL {
-                ImageHandler.sharedInstance.downloadAndCacheImage(withImageURL: imageURL, completion: {
-                    image, error in
-                    guard let image = image else {
-                        completion(nil, error)
-                        return
-                    }
-                    completion(image, nil)
-                })
-            }
-            else {
-                completion(nil, error)
-            }
-        })
-    }
-    
     // MARK: Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
