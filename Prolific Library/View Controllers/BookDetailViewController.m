@@ -39,6 +39,11 @@
     [super viewDidLoad];
     
     self.title = @"Detail";
+    [self configureNavigation];
+}
+
+- (void)configureNavigation {
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareBarButtonItemDidPress)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -67,6 +72,12 @@
     }];
 }
 
+- (void)shareBarButtonItemDidPress {
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[self.viewModel.shareableMessage] applicationActivities:nil];
+    activityViewController.excludedActivityTypes = @[UIActivityTypeAirDrop];
+    [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
 - (void)configureForViewModel:(BookCellViewModel *)viewModel {
     self.viewModel = viewModel;
     
@@ -85,11 +96,6 @@
             NSLog(@"%@", book);
         }
     }];
-}
-
-- (IBAction)shareButtonDidPress:(id)sender {
-    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[self.viewModel.shareableMessage] applicationActivities:nil];
-    [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
 
