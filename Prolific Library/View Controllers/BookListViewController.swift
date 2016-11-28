@@ -31,7 +31,11 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     internal var selectedViewModel: BookCellViewModel?
     
-    internal var viewStyle: ViewStyle = .List
+    internal var viewStyle: ViewStyle = .List {
+        didSet {
+            configureViewStyle(viewStyle)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +83,12 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     internal func toggleViewStyleButtonDidPress() {
-        
+        switch (viewStyle) {
+        case .List:
+            viewStyle = .Cover
+        case .Cover:
+            viewStyle = .List
+        }
     }
     
     internal func addBarButtonItemDidPress() {
