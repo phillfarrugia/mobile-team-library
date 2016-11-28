@@ -29,12 +29,14 @@ extension BookListViewController {
         }
         
         // Cover Image
-        BookCellViewModel.downloadAndCacheCoverImage(forViewModel: viewModels[indexPath.row], completion: {
+        let viewModel = viewModels[indexPath.row]
+        let queryString = "\(viewModel.title) \(viewModel.authors)"
+        ImageHandler.downloadAndCacheCoverImage(forQueryString: queryString, completion: {
             image, error in
             
             // Get Image Colours
             if let image = image {
-                BookCellViewModel.colors(forImage: image, completion: {
+                ImageColorsHandler.colors(forImage: image, completion: {
                     primary, secondary, detail in
                     let viewModel = viewModels[indexPath.row]
                     viewModel.primaryColor = primary

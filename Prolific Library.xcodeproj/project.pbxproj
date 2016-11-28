@@ -71,6 +71,7 @@
 		F7E662911DEC4ACC002717D6 /* TagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662901DEC4ACC002717D6 /* TagViewModel.swift */; };
 		F7E662931DEC4D53002717D6 /* GenericBookCoverListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662921DEC4D53002717D6 /* GenericBookCoverListViewController.swift */; };
 		F7E662951DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662941DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift */; };
+		F7E662991DEC5816002717D6 /* TagsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662981DEC5816002717D6 /* TagsViewController+TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,6 +203,7 @@
 		F7E662901DEC4ACC002717D6 /* TagViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagViewModel.swift; path = "View Models/TagViewModel.swift"; sourceTree = "<group>"; };
 		F7E662921DEC4D53002717D6 /* GenericBookCoverListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericBookCoverListViewController.swift; path = "View Controllers/GenericBookCoverListViewController.swift"; sourceTree = "<group>"; };
 		F7E662941DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GenericBookCoverListViewController+Errors.swift"; path = "View Controllers/GenericBookCoverListViewController+Errors.swift"; sourceTree = "<group>"; };
+		F7E662981DEC5816002717D6 /* TagsViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TagsViewController+TableView.swift"; path = "View Controllers/TagsViewController+TableView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				F7E6628C1DEC41B0002717D6 /* TagsViewController.swift */,
+				F7E662981DEC5816002717D6 /* TagsViewController+TableView.swift */,
 				F7E6628E1DEC4A83002717D6 /* TagsViewController+CollectionView.swift */,
 			);
 			name = "Tags View Controller";
@@ -671,6 +674,7 @@
 				F73BFB711DE934FE00C0AAA5 /* main.m in Sources */,
 				F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+TableView.swift in Sources */,
 				F7C8FED31DEBE73100BFEEDF /* NavigationController.swift in Sources */,
+				F7E662991DEC5816002717D6 /* TagsViewController+TableView.swift in Sources */,
 				F73BFBA71DE9474200C0AAA5 /* BookListViewController.swift in Sources */,
 				F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */,
 			);

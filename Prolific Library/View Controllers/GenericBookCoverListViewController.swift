@@ -16,8 +16,9 @@ protocol GenericBookCoverListViewController {
     
     var viewStyle: ViewStyle { get set }
     
-    // MARK: Configuration
+    var tableViewCellHeight: CGFloat { get set }
     
+    // MARK: Configuration
     func configureTableView()
     func configureCollectionView()
     
@@ -26,14 +27,13 @@ protocol GenericBookCoverListViewController {
     mutating func toggleViewStyleButtonDidPress()
     
     // MARK: Pull to Refresh
-    
     func didPullToRefresh()
     func endPullToRefresh()
     
     func fetchAllBooks(_ completion: @escaping ((_ books: [Book]) -> Void))
+    func sampleBooks() -> [Book]
     
-    // MARK: Error States 
-    
+    // MARK: Error States
     func handleGetBooksError()
     func handleDeleteBookError()
 }
@@ -42,7 +42,7 @@ extension GenericBookCoverListViewController where Self: UIViewController, Self:
     
     func configureTableView() {
         tableView.registerReusableCell(BookTableViewCell.self)
-        tableView.rowHeight = BookTableViewCell.cellHeight
+        tableView.rowHeight = tableViewCellHeight
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -63,6 +63,14 @@ extension GenericBookCoverListViewController where Self: UIViewController, Self:
             }
             completion(books)
         }
+    }
+    
+    func sampleBooks() -> [Book] {
+        let bookOne = Book(title: "Mastering iOS Frameworks", author: "Kyle Richter", publisher: "Random House Publishing", categories: "ios development,programming, dev")
+        let bookTwo = Book(title: "iOS Programming: The Big Nerd Ranch Guide", author: "Aaron Hilegass", publisher: nil, categories: "ios, programming, nerds")
+        let bookThree = Book(title: "iOS App Development For Dummies", author: "Jesse Feiler",publisher: nil, categories: "app development,for dummies")
+        let bookFour = Book(title: "The iPhone Developer's CookBook", author: "Erica Sadun", publisher: nil, categories: "iphone, developer, cookbook")
+        return [bookOne, bookTwo, bookThree, bookFour]
     }
     
 }

@@ -85,7 +85,8 @@
 - (void)configureForViewModel:(BookCellViewModel *)viewModel {
     self.viewModel = viewModel;
     
-    [BookCellViewModel downloadAndCacheCoverImageForViewModel:viewModel completion:^(UIImage * _Nullable image, NSError * _Nullable error) {
+    NSString *queryString = [NSString stringWithFormat:@"%@ %@", viewModel.title, viewModel.authors];
+    [ImageHandler downloadAndCacheCoverImageForQueryString:queryString completion:^(UIImage * _Nullable image, NSError * _Nullable error) {
         if (image) {
             self.coverImageView.image = image;
         }

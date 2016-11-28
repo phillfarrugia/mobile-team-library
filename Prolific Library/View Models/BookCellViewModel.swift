@@ -65,29 +65,4 @@ public class BookCellViewModel: NSObject {
         }
     }
     
-    public static func downloadAndCacheCoverImage(forViewModel viewModel: BookCellViewModel, completion: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
-        GoogleImageSearch.performSearch(forQuery: "\(viewModel.title) \(viewModel.authors)", completion: {
-            imageURL, error in
-            if let imageURL = imageURL {
-                ImageHandler.sharedInstance.downloadAndCacheImage(withImageURL: imageURL, completion: {
-                    image, error in
-                    guard let image = image else {
-                        completion(nil, error)
-                        return
-                    }
-                    completion(image, nil)
-                })
-            }
-            else {
-                completion(nil, error)
-            }
-        })
-    }
-    
-    public static func colors(forImage image: UIImage, completion: @escaping (_ primaryColor: UIColor, _ secondaryColor: UIColor, _ detailColor: UIColor) -> Void) {
-        image.getColors { (colors) in
-            completion(colors.primaryColor, colors.secondaryColor, colors.detailColor)
-        }
-    }
-    
 }

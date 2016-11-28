@@ -9,7 +9,7 @@
 import Foundation
 import AlamofireImage
 
-public class ImageHandler {
+public class ImageHandler: NSObject {
     
     public static let sharedInstance = ImageHandler()
     
@@ -50,6 +50,25 @@ public class ImageHandler {
             return imageCache.image(withIdentifier: urlString)
         }
         return nil
+    }
+    
+    public static func downloadAndCacheCoverImage(forQueryString queryString: String, completion: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
+        GoogleImageSearch.performSearch(forQuery: queryString, completion: {
+            imageURL, error in
+            if let imageURL = imageURL {
+                ImageHandler.sharedInstance.downloadAndCacheImage(withImageURL: imageURL, completion: {
+                    image, error in
+                    guard let image = image else {
+                        completion(nil, error)
+                        return
+                    }
+                    completion(image, nil)
+                })
+            }
+            else {
+                completion(nil, error)
+            }
+        })
     }
     
 }
