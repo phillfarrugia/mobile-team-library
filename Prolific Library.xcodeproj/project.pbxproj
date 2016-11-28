@@ -64,6 +64,9 @@
 		F7C8FED71DEBED8100BFEEDF /* UIImageColors.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FED41DEBED7900BFEEDF /* UIImageColors.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F7C8FED81DEBEDFB00BFEEDF /* UIImageColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FED41DEBED7900BFEEDF /* UIImageColors.framework */; };
 		F7C8FEDE1DEBEFCD00BFEEDF /* ImageColorsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FEDD1DEBEFCD00BFEEDF /* ImageColorsHandler.swift */; };
+		F7E662841DEC3472002717D6 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662821DEC3472002717D6 /* BookCollectionViewCell.swift */; };
+		F7E662851DEC3472002717D6 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E662831DEC3472002717D6 /* BookCollectionViewCell.xib */; };
+		F7E662871DEC353A002717D6 /* BookListViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662861DEC353A002717D6 /* BookListViewController+CollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,6 +191,9 @@
 		F7C8FED21DEBE73100BFEEDF /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = "View Controllers/NavigationController.swift"; sourceTree = "<group>"; };
 		F7C8FED41DEBED7900BFEEDF /* UIImageColors.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIImageColors.framework; path = Carthage/Build/iOS/UIImageColors.framework; sourceTree = "<group>"; };
 		F7C8FEDD1DEBEFCD00BFEEDF /* ImageColorsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageColorsHandler.swift; path = Controllers/ImageColorsHandler.swift; sourceTree = "<group>"; };
+		F7E662821DEC3472002717D6 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookCollectionViewCell.swift; path = Cells/BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7E662831DEC3472002717D6 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookCollectionViewCell.xib; path = Cells/BookCollectionViewCell.xib; sourceTree = "<group>"; };
+		F7E662861DEC353A002717D6 /* BookListViewController+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BookListViewController+CollectionView.swift"; path = "View Controllers/BookListViewController+CollectionView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +344,7 @@
 			children = (
 				F73BFBA61DE9474200C0AAA5 /* BookListViewController.swift */,
 				F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+TableView.swift */,
+				F7E662861DEC353A002717D6 /* BookListViewController+CollectionView.swift */,
 				F7C8FE2B1DEA6A4400BFEEDF /* BookListViewController+Errors.swift */,
 				F73BFBBC1DE9591200C0AAA5 /* AddBookViewController.h */,
 				F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */,
@@ -353,6 +360,8 @@
 			children = (
 				F73BFBAA1DE94EBA00C0AAA5 /* BookTableViewCell.swift */,
 				F73BFBAB1DE94EBA00C0AAA5 /* BookTableViewCell.xib */,
+				F7E662821DEC3472002717D6 /* BookCollectionViewCell.swift */,
+				F7E662831DEC3472002717D6 /* BookCollectionViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -573,6 +582,7 @@
 				F73BFB7F1DE934FE00C0AAA5 /* LaunchScreen.storyboard in Resources */,
 				F73BFB7C1DE934FE00C0AAA5 /* Assets.xcassets in Resources */,
 				F73BFB7A1DE934FE00C0AAA5 /* Main.storyboard in Resources */,
+				F7E662851DEC3472002717D6 /* BookCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,7 +616,9 @@
 			files = (
 				F7C8FE2C1DEA6A4400BFEEDF /* BookListViewController+Errors.swift in Sources */,
 				F7C8FED11DEBDF1600BFEEDF /* TagBubbleViewContainer.swift in Sources */,
+				F7E662871DEC353A002717D6 /* BookListViewController+CollectionView.swift in Sources */,
 				F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */,
+				F7E662841DEC3472002717D6 /* BookCollectionViewCell.swift in Sources */,
 				F73BFBAC1DE94EBA00C0AAA5 /* BookTableViewCell.swift in Sources */,
 				F73BFB741DE934FE00C0AAA5 /* AppDelegate.m in Sources */,
 				F73BFB711DE934FE00C0AAA5 /* main.m in Sources */,

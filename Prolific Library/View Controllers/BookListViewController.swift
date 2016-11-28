@@ -9,7 +9,7 @@
 import UIKit
 import ProlificLibraryCore
 
-class BookListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SegueHandlerType {
+class BookListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SegueHandlerType, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     enum SegueIdentifier: String {
         case AddBook
@@ -22,6 +22,7 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @IBOutlet internal var tableView: UITableView!
+    @IBOutlet internal var collectionView: UICollectionView!
     
     internal var viewModels: [BookCellViewModel]? {
         didSet {
@@ -42,6 +43,9 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
 
         title = "Books"
         configureTableView()
+        configureCollectionView()
+        
+        tableView.isHidden = true
         configureNavigation()
         configureViewStyle(viewStyle)
         //fetchAllBooks()
@@ -65,6 +69,12 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(BookListViewController.didPullToRefresh), for: .valueChanged)
         tableView.refreshControl = refreshControl
+    }
+    
+    private func configureCollectionView() {
+        collectionView.registerReusableCell(BookCollectionViewCell.self)
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     private func configureNavigation() {

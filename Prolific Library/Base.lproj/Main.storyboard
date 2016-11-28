@@ -25,6 +25,17 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oMI-Bp-nKX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="cga-7N-Vxi">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -32,10 +43,15 @@
                             <constraint firstAttribute="trailing" secondItem="f8g-7J-sJy" secondAttribute="trailing" id="Gdx-hx-Csi"/>
                             <constraint firstItem="f8g-7J-sJy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LLZ-hO-7Ia"/>
                             <constraint firstItem="f8g-7J-sJy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NH1-gR-lHf"/>
+                            <constraint firstItem="oMI-Bp-nKX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="b9M-FA-Mls"/>
+                            <constraint firstAttribute="trailing" secondItem="oMI-Bp-nKX" secondAttribute="trailing" id="fQm-fZ-Ig5"/>
+                            <constraint firstItem="oMI-Bp-nKX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="q7i-T4-FdH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oMI-Bp-nKX" secondAttribute="bottom" id="x0Q-jC-z2G"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VHf-xi-82Y"/>
                     <connections>
+                        <outlet property="collectionView" destination="oMI-Bp-nKX" id="5y4-1P-C04"/>
                         <outlet property="tableView" destination="f8g-7J-sJy" id="FOU-Za-Eun"/>
                         <segue destination="2qV-3c-Kqn" kind="presentation" identifier="AddBook" id="uBQ-Md-ARM"/>
                         <segue destination="A0l-LJ-kNd" kind="show" identifier="BookDetail" id="GsQ-TK-J5G"/>
