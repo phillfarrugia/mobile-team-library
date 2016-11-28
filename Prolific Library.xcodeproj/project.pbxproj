@@ -57,6 +57,8 @@
 		F7C8FECB1DEB9C0400BFEEDF /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FEC91DEB940300BFEEDF /* AlamofireImage.framework */; };
 		F7C8FECC1DEB9C0400BFEEDF /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FEC91DEB940300BFEEDF /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F7C8FECE1DEB9CA300BFEEDF /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FECD1DEB9CA300BFEEDF /* ImageHandler.swift */; };
+		F7C8FED11DEBDF1600BFEEDF /* TagBubbleViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FED01DEBDF1600BFEEDF /* TagBubbleViewContainer.swift */; };
+		F7C8FED31DEBE73100BFEEDF /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FED21DEBE73100BFEEDF /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +178,8 @@
 		F7C8FEC71DEA846700BFEEDF /* GoogleImageSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleImageSearch.swift; path = Controllers/GoogleImageSearch.swift; sourceTree = "<group>"; };
 		F7C8FEC91DEB940300BFEEDF /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		F7C8FECD1DEB9CA300BFEEDF /* ImageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHandler.swift; path = Controllers/ImageHandler.swift; sourceTree = "<group>"; };
+		F7C8FED01DEBDF1600BFEEDF /* TagBubbleViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagBubbleViewContainer.swift; path = Views/TagBubbleViewContainer.swift; sourceTree = "<group>"; };
+		F7C8FED21DEBE73100BFEEDF /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = "View Controllers/NavigationController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +278,7 @@
 			children = (
 				F73BFB721DE934FE00C0AAA5 /* AppDelegate.h */,
 				F73BFB731DE934FE00C0AAA5 /* AppDelegate.m */,
+				F7C8FECF1DEBDEDE00BFEEDF /* Views */,
 				F73BFBA91DE94E6400C0AAA5 /* Cells */,
 				F73BFBA81DE94E2300C0AAA5 /* View Controllers */,
 				F73BFB781DE934FE00C0AAA5 /* Main.storyboard */,
@@ -325,6 +330,7 @@
 				F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */,
 				F73BFBC11DE95B9F00C0AAA5 /* BookDetailViewController.h */,
 				F73BFBC21DE95B9F00C0AAA5 /* BookDetailViewController.m */,
+				F7C8FED21DEBE73100BFEEDF /* NavigationController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -389,6 +395,14 @@
 				F7C8FE901DEA6EF800BFEEDF /* Info.plist */,
 			);
 			path = ProlificLibraryCoreTests;
+			sourceTree = "<group>";
+		};
+		F7C8FECF1DEBDEDE00BFEEDF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F7C8FED01DEBDF1600BFEEDF /* TagBubbleViewContainer.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,11 +592,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C8FE2C1DEA6A4400BFEEDF /* BookListViewController+Errors.swift in Sources */,
+				F7C8FED11DEBDF1600BFEEDF /* TagBubbleViewContainer.swift in Sources */,
 				F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */,
 				F73BFBAC1DE94EBA00C0AAA5 /* BookTableViewCell.swift in Sources */,
 				F73BFB741DE934FE00C0AAA5 /* AppDelegate.m in Sources */,
 				F73BFB711DE934FE00C0AAA5 /* main.m in Sources */,
 				F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+TableView.swift in Sources */,
+				F7C8FED31DEBE73100BFEEDF /* NavigationController.swift in Sources */,
 				F73BFBA71DE9474200C0AAA5 /* BookListViewController.swift in Sources */,
 				F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */,
 			);

@@ -51,7 +51,7 @@
                             <constraint firstItem="a41-c8-cvU" firstAttribute="leading" secondItem="PdW-l7-8aU" secondAttribute="leading" id="ual-jd-QXc"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTw-VF-L3P">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTw-VF-L3P" customClass="TagBubbleViewContainer" customModule="Prolific_Library" customModuleProvider="target">
                         <rect key="frame" x="97" y="76" width="170" height="20"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>

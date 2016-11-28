@@ -38,9 +38,9 @@ public class BookCellViewModel: NSObject {
     public var lastCheckedOut: String {
         if let lastCheckedOutBy = book.lastCheckedOutBy,
             let lastCheckedOut = book.lastCheckedOut {
-            return "\(lastCheckedOutBy) @ \(DateFormatter.format(lastCheckedOutDate: lastCheckedOut))"
+            return "Last checked out by \(lastCheckedOutBy) on \(DateFormatter.format(lastCheckedOutDate: lastCheckedOut))"
         }
-        return "N/A"
+        return "Has not been checked out"
     }
     
     public var shareableMessage: String {
