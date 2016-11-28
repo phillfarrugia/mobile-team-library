@@ -13,11 +13,9 @@ class BookCollectionViewCell: UICollectionViewCell, Reusable {
     
     @IBOutlet var coverImageView: UIImageView!
     
-    private weak var viewModel: BookCellViewModel? {
-        didSet {
-            configure(forViewModel: viewModel)
-        }
-    }
+    static let cellSize = CGSize(width: 95, height: 137)
+    
+    private weak var viewModel: BookCellViewModel?
 
     // MARK: Factory Method
     
@@ -30,12 +28,6 @@ class BookCollectionViewCell: UICollectionViewCell, Reusable {
     }
     
     // MARK: Configuration
-    
-    private func configure(forViewModel viewModel: BookCellViewModel?) {
-        if let viewModel = viewModel {
-            // TODO: Configure Cell for View Model
-        }
-    }
     
     func setCoverImage(image: UIImage) {
         self.coverImageView.image = image
