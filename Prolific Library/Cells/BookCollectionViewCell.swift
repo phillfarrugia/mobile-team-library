@@ -11,6 +11,8 @@ import ProlificLibraryCore
 
 class BookCollectionViewCell: UICollectionViewCell, Reusable {
     
+    @IBOutlet var coverImageView: UIImageView!
+    
     private weak var viewModel: BookCellViewModel? {
         didSet {
             configure(forViewModel: viewModel)
@@ -31,8 +33,12 @@ class BookCollectionViewCell: UICollectionViewCell, Reusable {
     
     private func configure(forViewModel viewModel: BookCellViewModel?) {
         if let viewModel = viewModel {
-            // TODO:
+            // TODO: Configure Cell for View Model
         }
+    }
+    
+    func setCoverImage(image: UIImage) {
+        self.coverImageView.image = image
     }
 
 }

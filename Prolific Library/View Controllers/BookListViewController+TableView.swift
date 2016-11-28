@@ -8,7 +8,6 @@
 
 import UIKit
 import ProlificLibraryCore
-import AlamofireImage
 
 extension BookListViewController {
     

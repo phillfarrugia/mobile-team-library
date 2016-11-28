@@ -84,11 +84,17 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
     private func configureViewStyle(_ viewStyle: ViewStyle) {
         switch (viewStyle) {
         case .List:
-            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "cover-icon"), style: .plain, target: self, action: #selector(BookListViewController.toggleViewStyleButtonDidPress))
-            break
+            UIView.animate(withDuration: 0.3, animations: { 
+                self.collectionView.isHidden = true
+                self.tableView.isHidden = false
+            })
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "cover-icon"), style: .plain, target: self, action: #selector(BookListViewController.toggleViewStyleButtonDidPress))
         case .Cover:
-            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "list-icon"), style: .plain, target: self, action: #selector(BookListViewController.toggleViewStyleButtonDidPress))
-            break
+            UIView.animate(withDuration: 0.3, animations: { 
+                self.collectionView.isHidden = false
+                self.tableView.isHidden = true
+            })
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "list-icon"), style: .plain, target: self, action: #selector(BookListViewController.toggleViewStyleButtonDidPress))
         }
     }
     

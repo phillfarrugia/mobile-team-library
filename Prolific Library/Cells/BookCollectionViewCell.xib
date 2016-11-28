@@ -18,9 +18,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="95" height="137"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FtX-J2-OnP">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FtX-J2-OnP">
                         <rect key="frame" x="0.0" y="0.0" width="95" height="137"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="137" id="fmh-S0-sLx"/>
                             <constraint firstAttribute="width" constant="95" id="gKi-bs-y3g"/>
@@ -34,6 +33,9 @@
                 <constraint firstAttribute="bottom" secondItem="FtX-J2-OnP" secondAttribute="bottom" id="feq-my-odV"/>
                 <constraint firstItem="FtX-J2-OnP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tfq-Yz-vlu"/>
             </constraints>
+            <connections>
+                <outlet property="coverImageView" destination="FtX-J2-OnP" id="Yxr-qn-Uck"/>
+            </connections>
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </collectionViewCell>
     </objects>
