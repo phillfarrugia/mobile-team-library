@@ -20,11 +20,11 @@ public class BookCellViewModel: NSObject {
         return book.author
     }
     
-    public var publisher: String {
+    public var publisher: String? {
         if let publisher = book.publisher {
             return "Publisher: \(publisher)"
         }
-        return "N/A"
+        return nil
     }
     
     public var categories: [String]? {

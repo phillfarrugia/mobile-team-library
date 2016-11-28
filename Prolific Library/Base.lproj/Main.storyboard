@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -73,14 +74,66 @@
                                             <constraint firstAttribute="height" constant="180" id="TEQ-fK-whU"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9H-Y2-9rx">
+                                        <rect key="frame" x="0.0" y="180" width="375" height="423"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Mastering iOS Frameworks" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxO-jf-ZjM">
+                                                <rect key="frame" x="20" y="20" width="281" height="53"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Kyle Richter" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HL0-mJ-iix">
+                                                <rect key="frame" x="20" y="81" width="281" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIY-j4-ZQD">
+                                                <rect key="frame" x="321" y="9" width="46" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="46" id="5O1-Fk-vgO"/>
+                                                </constraints>
+                                                <state key="normal" title="Share"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Publisher: Random House" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfH-xv-AVp">
+                                                <rect key="frame" x="20" y="109" width="281" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="y8V-l3-k2b"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="mfH-xv-AVp" secondAttribute="trailing" constant="74" id="90e-D1-Kmc"/>
+                                            <constraint firstItem="HL0-mJ-iix" firstAttribute="top" secondItem="RxO-jf-ZjM" secondAttribute="bottom" constant="8" id="9CM-L4-WAP"/>
+                                            <constraint firstItem="fIY-j4-ZQD" firstAttribute="leading" secondItem="RxO-jf-ZjM" secondAttribute="trailing" constant="20" id="Aiw-SV-53l"/>
+                                            <constraint firstItem="HL0-mJ-iix" firstAttribute="leading" secondItem="O9H-Y2-9rx" secondAttribute="leading" constant="20" id="DUv-aA-yFi"/>
+                                            <constraint firstAttribute="trailing" secondItem="fIY-j4-ZQD" secondAttribute="trailing" constant="8" id="HDR-i4-TVG"/>
+                                            <constraint firstItem="mfH-xv-AVp" firstAttribute="leading" secondItem="O9H-Y2-9rx" secondAttribute="leading" constant="20" id="ZS7-sj-5yc"/>
+                                            <constraint firstAttribute="trailing" secondItem="HL0-mJ-iix" secondAttribute="trailing" constant="74" id="btE-ah-7lu"/>
+                                            <constraint firstItem="RxO-jf-ZjM" firstAttribute="leading" secondItem="O9H-Y2-9rx" secondAttribute="leading" constant="20" id="j8h-WG-y6Z"/>
+                                            <constraint firstItem="RxO-jf-ZjM" firstAttribute="top" secondItem="O9H-Y2-9rx" secondAttribute="top" constant="20" id="kau-DZ-aE0"/>
+                                            <constraint firstItem="fIY-j4-ZQD" firstAttribute="top" secondItem="O9H-Y2-9rx" secondAttribute="top" constant="9" id="nyw-EA-YC1"/>
+                                            <constraint firstItem="fIY-j4-ZQD" firstAttribute="firstBaseline" secondItem="RxO-jf-ZjM" secondAttribute="firstBaseline" id="rke-GZ-61a"/>
+                                            <constraint firstItem="mfH-xv-AVp" firstAttribute="top" secondItem="HL0-mJ-iix" secondAttribute="bottom" constant="8" id="wkh-Qb-CpO"/>
+                                            <constraint firstAttribute="height" constant="423" id="zKG-cn-Pjb"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="9Q0-I7-cGe" firstAttribute="leading" secondItem="eK2-bF-fN9" secondAttribute="leading" id="5OW-At-1Sq"/>
                                     <constraint firstItem="9Q0-I7-cGe" firstAttribute="centerX" secondItem="eK2-bF-fN9" secondAttribute="centerX" id="Czz-i8-IRN"/>
-                                    <constraint firstAttribute="bottom" secondItem="9Q0-I7-cGe" secondAttribute="bottom" constant="423" id="OS1-Mp-a2J"/>
+                                    <constraint firstAttribute="trailing" secondItem="O9H-Y2-9rx" secondAttribute="trailing" id="E7t-sf-NdU"/>
+                                    <constraint firstItem="O9H-Y2-9rx" firstAttribute="top" secondItem="9Q0-I7-cGe" secondAttribute="bottom" id="LAH-A9-DH7"/>
                                     <constraint firstAttribute="trailing" secondItem="9Q0-I7-cGe" secondAttribute="trailing" id="R1x-cD-1vL"/>
+                                    <constraint firstAttribute="bottom" secondItem="O9H-Y2-9rx" secondAttribute="bottom" id="jp7-TK-e0i"/>
                                     <constraint firstItem="9Q0-I7-cGe" firstAttribute="top" secondItem="eK2-bF-fN9" secondAttribute="top" id="lzl-jd-PCt"/>
+                                    <constraint firstItem="O9H-Y2-9rx" firstAttribute="leading" secondItem="eK2-bF-fN9" secondAttribute="leading" id="ygA-Jn-SOn"/>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wa-Ij-L63">
@@ -110,9 +163,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="vG0-XF-A6c"/>
                     <connections>
+                        <outlet property="authorLabel" destination="HL0-mJ-iix" id="Fhs-YB-Aio"/>
                         <outlet property="checkoutButton" destination="3wa-Ij-L63" id="SW4-w3-9Er"/>
                         <outlet property="coverImageHeaderView" destination="9Q0-I7-cGe" id="I92-M3-4oo"/>
                         <outlet property="coverImageView" destination="pEh-80-7ci" id="ev5-UC-ueW"/>
+                        <outlet property="publisherLabel" destination="mfH-xv-AVp" id="BmH-ch-j7i"/>
+                        <outlet property="publisherLabelHeightConstraint" destination="y8V-l3-k2b" id="bWK-TK-uMO"/>
+                        <outlet property="titleLabel" destination="RxO-jf-ZjM" id="kIs-MI-4Z9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0f-q6-6ne" userLabel="First Responder" sceneMemberID="firstResponder"/>
