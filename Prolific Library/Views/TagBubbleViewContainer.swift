@@ -14,6 +14,7 @@ class TagBubbleViewContainer: UIView {
         var xOrigins: CGFloat = bounds.origin.x
         let kHoriontalMargin: CGFloat = 8.0
         removeTagViews()
+        
         for tag in tags {
             let label = UILabel()
             label.font = UIFont.systemFont(ofSize: 12.0)
@@ -31,9 +32,11 @@ class TagBubbleViewContainer: UIView {
             labelFrame.origin = CGPoint(x: 10, y: 4)
             label.frame = labelFrame
             
-            addSubview(circularView)
-            
-            xOrigins += (circularView.frame.size.width + kHoriontalMargin)
+            // Only adds tag if it fits within the remaining space of container width
+            if (xOrigins + (circularView.frame.size.width + kHoriontalMargin) < bounds.size.width) {
+                addSubview(circularView)
+                xOrigins += (circularView.frame.size.width + kHoriontalMargin)
+            }
         }
     }
     

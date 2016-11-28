@@ -36,6 +36,10 @@
                                                                                            action:@selector(confirmBarButtonItemDidPress)];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)cancelBarButtonItemDidPress {
     if ([self validationState] == AddBookValidationStateIncomplete) {
         [self handleIncompleteState];

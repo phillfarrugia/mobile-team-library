@@ -295,11 +295,16 @@
         <!--Navigation Controller-->
         <scene sceneID="4xH-ue-Vgc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2qV-3c-Kqn" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2qV-3c-Kqn" customClass="NavigationController" customModule="Prolific_Library" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3ey-kf-Op0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3ey-kf-Op0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.57828801870000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
