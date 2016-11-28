@@ -63,14 +63,14 @@ class BookTableViewCell: UITableViewCell, Reusable {
             label.sizeToFit()
             
             let circularView = UIView()
-            circularView.frame = CGRect(x: xOrigins, y: tagViewContainer.bounds.origin.y, width: label.frame.width + 12, height: label.frame.height + 8)
-            circularView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
+            circularView.frame = CGRect(x: xOrigins, y: tagViewContainer.bounds.origin.y, width: label.frame.width + 20, height: label.frame.height + 8)
+            circularView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
             circularView.layer.cornerRadius = circularView.frame.height/2
             circularView.addSubview(label)
             
             var labelFrame = label.frame
-            label.textColor = .darkGray
-            labelFrame.origin = CGPoint(x: 6, y: 4)
+            label.textColor = UIColor.darkGray.withAlphaComponent(0.8)
+            labelFrame.origin = CGPoint(x: 10, y: 4)
             label.frame = labelFrame
             
             tagViewContainer.addSubview(circularView)
