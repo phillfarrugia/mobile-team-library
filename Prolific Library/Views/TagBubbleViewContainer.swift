@@ -10,7 +10,7 @@ import UIKit
 
 class TagBubbleViewContainer: UIView {
 
-    func layoutTagViews(forTags tags: [String]) {
+    func layoutTagViews(forTags tags: [String], withColor color: UIColor) {
         var xOrigins: CGFloat = bounds.origin.x
         let kHoriontalMargin: CGFloat = 8.0
         removeTagViews()
@@ -23,12 +23,12 @@ class TagBubbleViewContainer: UIView {
             
             let circularView = UIView()
             circularView.frame = CGRect(x: xOrigins, y: bounds.origin.y, width: label.frame.width + 20, height: label.frame.height + 8)
-            circularView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+            circularView.backgroundColor = color
             circularView.layer.cornerRadius = circularView.frame.height/2
             circularView.addSubview(label)
             
             var labelFrame = label.frame
-            label.textColor = UIColor.darkGray.withAlphaComponent(0.8)
+            label.textColor = .white
             labelFrame.origin = CGPoint(x: 10, y: 4)
             label.frame = labelFrame
             

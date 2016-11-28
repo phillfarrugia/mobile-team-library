@@ -51,6 +51,12 @@ public class BookCellViewModel: NSObject {
         self.book = book
     }
     
+    public var primaryColor: UIColor = .lightGray
+    
+    public var secondaryColor: UIColor = .lightGray
+    
+    public var detailColor: UIColor = .lightGray
+    
     // MARK: Static Functions
     
     public static func viewModels(fromModels models: [Book]) -> [BookCellViewModel] {
@@ -76,6 +82,12 @@ public class BookCellViewModel: NSObject {
                 completion(nil, error)
             }
         })
+    }
+    
+    public static func colors(forImage image: UIImage, completion: @escaping (_ primaryColor: UIColor, _ secondaryColor: UIColor, _ detailColor: UIColor) -> Void) {
+        image.getColors { (colors) in
+            completion(colors.primaryColor, colors.secondaryColor, colors.detailColor)
+        }
     }
     
 }

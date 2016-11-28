@@ -36,6 +36,14 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
         self.viewModels = BookCellViewModel.viewModels(fromModels: sampleBooks())
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let navigationController = self.navigationController {
+            navigationController.navigationBar.barTintColor = UIColor(red:0.18, green:0.64, blue:0.98, alpha:1.0)
+        }
+    }
+    
     private func sampleBooks() -> [Book] {
         let bookOne = Book(title: "Mastering iOS Frameworks", author: "Kyle Richter", publisher: "Random House Publishing", categories: "ios development,programming, dev")
         let bookTwo = Book(title: "iOS Programming: The Big Nerd Ranch Guide", author: "Aaron Hilegass", publisher: nil, categories: "ios, programming, nerds")

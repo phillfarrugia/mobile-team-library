@@ -21,16 +21,28 @@ public class ImageHandler {
     public typealias DownloadAndCacheImageRequestCompletion = (_ image: UIImage?, _ error: Error?) -> Void
     
     public func downloadAndCacheImage(withImageURL imageURL: URL, completion: @escaping DownloadAndCacheImageRequestCompletion) {
-        let urlRequest = URLRequest(url: imageURL)
-        imageDownloader.download(urlRequest, completion: {
-            response in
-            switch (response.result) {
-            case .success(let image):
-                completion(image, nil)
-            case .failure(let error):
-                completion(nil, error)
-            }
-        })
+        if let cachedImage = imageDownloader.imageCache?.image(withIdentifier: imageURL.absoluteString) {
+            completion(cachedImage, nil)
+        }
+        else {
+            let urlRequest = URLRequest(url: imageURL)
+            imageDownloader.download(urlRequest, completion: {
+                response in
+                switch (response.result) {
+                case .success(let image):
+                    self.cache(image: image, forURLString: imageURL.absoluteString)
+                    completion(image, nil)
+                case .failure(let error):
+                    completion(nil, error)
+                }
+            })
+        }
+    }
+    
+    private func cache(image: UIImage, forURLString urlString: String) {
+        if let imageCache = imageDownloader.imageCache {
+            imageCache.add(image, withIdentifier: urlString)
+        }
     }
     
 }

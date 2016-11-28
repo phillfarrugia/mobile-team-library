@@ -40,10 +40,13 @@ class BookTableViewCell: UITableViewCell, Reusable {
         if let viewModel = viewModel {
             titleLabel.text = viewModel.title
             authorLabel.text = viewModel.authors
-            
-            if let categories = viewModel.categories {
-                tagViewContainer.layoutTagViews(forTags: categories)
-            }
+            layoutTagViews()
+        }
+    }
+    
+    func layoutTagViews() {
+        if let viewModel = self.viewModel, let categories = viewModel.categories {
+            tagViewContainer.layoutTagViews(forTags: categories, withColor: viewModel.detailColor)
         }
     }
     

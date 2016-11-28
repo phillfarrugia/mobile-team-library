@@ -57,10 +57,14 @@
     }
     
     self.checkoutButton.layer.cornerRadius = self.checkoutButton.frame.size.height/2;
-    
-    [self.tagViewContainer layoutTagViewsForTags:self.viewModel.categories];
-    
+    [self.tagViewContainer layoutTagViewsForTags:self.viewModel.categories withColor:self.viewModel.detailColor];
     self.bodyViewHeightConstraint.constant = self.view.bounds.size.height - self.coverImageView.bounds.size.height;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.navigationController.navigationBar setBarTintColor:self.viewModel.primaryColor];
+        self.coverImageHeaderView.backgroundColor = self.viewModel.secondaryColor;
+        self.checkoutButton.backgroundColor = self.viewModel.primaryColor;
+    }];
 }
 
 - (void)configureForViewModel:(BookCellViewModel *)viewModel {

@@ -29,8 +29,30 @@ extension BookListViewController {
                 return UITableViewCell()
         }
         
+        // Cover Image
         BookCellViewModel.downloadAndCacheCoverImage(forViewModel: viewModels[indexPath.row], completion: {
             image, error in
+            
+            // Get Image Colours
+            if let image = image {
+                BookCellViewModel.colors(forImage: image, completion: {
+                    primary, secondary, detail in
+                    let viewModel = viewModels[indexPath.row]
+                    viewModel.primaryColor = primary
+                    viewModel.secondaryColor = secondary
+                    viewModel.detailColor = detail
+                    
+                    // Set Colours on Cell
+                    guard let cell = tableView.cellForRow(at: indexPath) as? BookTableViewCell else {
+                        // Cell at IndexPath is no longer visible on screen
+                        // Request Image response is cached locally by AlamofireImage
+                        return
+                    }
+                    cell.layoutTagViews()
+                })
+            }
+            
+            // Set Image on Cell
             guard let cell = tableView.cellForRow(at: indexPath) as? BookTableViewCell,
                 let image = image else {
                 // Cell at IndexPath is no longer visible on screen
@@ -39,6 +61,7 @@ extension BookListViewController {
             }
             cell.setCoverImage(image: image)
         })
+        
         return bookCell
     }
     
