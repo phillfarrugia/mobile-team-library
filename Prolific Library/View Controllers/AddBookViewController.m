@@ -16,6 +16,10 @@
 @property (strong, nonatomic) IBOutlet UITextField *publisherTextField;
 @property (strong, nonatomic) IBOutlet UITextField *categoriesTextField;
 
+@property (nonatomic) BOOL isEditingBookMode;
+
+@property (nonatomic) Book *existingBookModel;
+
 @end
 
 @implementation AddBookViewController
@@ -23,7 +27,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Add Book";
+    if (self.isEditingBookMode) {
+        self.title = @"Edit Book";
+    }
+    else {
+        self.title = @"Add Book";
+    }
+    
     [self configureNavigation];
     [self configureTextFields];
 }
@@ -32,7 +42,12 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                           target:self
                                                                                           action:@selector(cancelBarButtonItemDidPress)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add"
+    
+    NSString *confirmButtonTitle = @"Add";
+    if (self.isEditingBookMode) {
+        confirmButtonTitle = @"Update";
+    }
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:confirmButtonTitle
                                                                               style:UIBarButtonItemStylePlain
                                                                              target:self
                                                                              action:@selector(confirmBarButtonItemDidPress)];
@@ -43,10 +58,23 @@
     self.authorTextField.delegate = self;
     self.publisherTextField.delegate = self;
     self.categoriesTextField.delegate = self;
+    
+    if (self.isEditingBookMode) {
+        self.titleTextField.text = self.existingBookModel.title;
+        self.authorTextField.text = self.existingBookModel.author;
+        self.publisherTextField.text = self.existingBookModel.publisher;
+        self.categoriesTextField.text = self.existingBookModel.categories;
+    }
+}
+
+- (void)configureForEditingExistingBook:(Book *)existingBook {
+    self.isEditingBookMode = YES;
+    self.existingBookModel = existingBook;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
     [self.titleTextField becomeFirstResponder];
 }
 
@@ -124,7 +152,31 @@
     NSString *publisher = self.publisherTextField.text;
     NSString *categories = self.categoriesTextField.text;
     
-    Book *newBook = [[Book alloc] initWithTitle:title author:author publisher:publisher categories:categories];
+    Book *book = [[Book alloc] initWithTitle:title author:author publisher:publisher categories:categories];
+    
+    if (self.isEditingBookMode) {
+        [self updateExistingBook:book];
+    }
+    else {
+        [self addNewBook:book];
+    }
+}
+
+- (void)updateExistingBook:(Book *)existingBook {
+    [NetworkRequestManager updateBookRequestWithBook:existingBook completion:^(Book * _Nullable book, NSError * _Nullable error) {
+        if (book == nil) {
+            [self handleAddBookRequestError];
+        }
+        else {
+            if (self.bookAddedAction) {
+                self.bookAddedAction();
+            }
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }];
+}
+
+- (void)addNewBook:(Book *)newBook {
     [NetworkRequestManager postNewBookRequestWithBook:newBook completion:^(Book * _Nullable book, NSError * _Nullable error) {
         if (book == nil) {
             [self handleAddBookRequestError];

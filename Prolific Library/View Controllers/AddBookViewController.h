@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class Book;
 @interface AddBookViewController : UIViewController
 
 @property (nonatomic) void (^bookAddedAction)(void);
+
+- (void)configureForEditingExistingBook:(Book *)existingBook;
 
 @end

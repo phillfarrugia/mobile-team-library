@@ -293,6 +293,7 @@
                         <outlet property="publisherLabelTopConstraint" destination="wkh-Qb-CpO" id="Zp3-Ro-09p"/>
                         <outlet property="tagViewContainer" destination="UqX-p5-5ev" id="KRN-F9-XY2"/>
                         <outlet property="titleLabel" destination="RxO-jf-ZjM" id="kIs-MI-4Z9"/>
+                        <segue destination="2qV-3c-Kqn" kind="presentation" identifier="EditBook" id="GQg-L9-L36"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0f-q6-6ne" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -589,5 +590,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="GsQ-TK-J5G"/>
+        <segue reference="GQg-L9-L36"/>
     </inferredMetricsTieBreakers>
 </document>

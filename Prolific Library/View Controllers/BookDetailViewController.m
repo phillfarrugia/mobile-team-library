@@ -7,6 +7,7 @@
 //
 
 #import "BookDetailViewController.h"
+#import "AddBookViewController.h"
 #import "ProlificLibraryCore.h"
 #import "Prolific_Library-Swift.h"
 
@@ -97,7 +98,7 @@
 }
 
 - (void)editButtonDidPress {
-    
+    [self performSegueWithIdentifier:@"EditBook" sender:self];
 }
 
 - (void)deleteButtonDidPress {
@@ -123,6 +124,14 @@
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[self.viewModel.shareableMessage] applicationActivities:nil];
     activityViewController.excludedActivityTypes = @[UIActivityTypeAirDrop];
     [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"EditBook"]) {
+        UINavigationController *destinationViewController = [segue destinationViewController];
+        AddBookViewController *addBookViewController = destinationViewController.viewControllers.firstObject;
+        [addBookViewController configureForEditingExistingBook:self.viewModel.book];
+    }
 }
 
 - (void)configureForViewModel:(BookCellViewModel *)viewModel {
@@ -162,7 +171,18 @@
 }
 
 - (void)handleDeleteBookError {
-    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Uh oh!"
+                                                                             message:@"We were unable to delete this book. Would you like to try again?"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertController addAction:confirmAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end
