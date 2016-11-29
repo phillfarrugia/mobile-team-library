@@ -100,7 +100,7 @@
 }
 
 - (void)moreBarButtonItemDidPress {
-    ModalAlertMessage *alertMessage = [[ModalAlertMessage alloc] initWithTitle:@"More Options" body:@"Select an option" topButtonTitle:@"Share" middleButtonTitle:@"Edit" bottomButtonTitle:@"Delete" primaryColor:self.viewModel.primaryColor secondaryColor:self.viewModel.secondaryColor detailColor:self.viewModel.detailColor];
+    ModalAlertMessage *alertMessage = [[ModalAlertMessage alloc] initWithTitle:nil body:nil topButtonTitle:@"Share" middleButtonTitle:@"Edit" bottomButtonTitle:@"Delete" primaryColor:self.viewModel.primaryColor secondaryColor:self.viewModel.secondaryColor detailColor:self.viewModel.detailColor];
     [self presentModalAlertViewWithMessage:alertMessage completion:^(enum ModalAlertResult completion) {
         switch (completion) {
             case ModalAlertResultTop:
@@ -158,11 +158,20 @@
 }
 
 - (IBAction)checkoutButtonDidPress:(id)sender {
-    // TODO: Send Network Request to Checkout Book
-    [NetworkRequestManager checkoutBookRequestWithBook:self.viewModel.book checkedOutBy:@"Phill Farrugia" completion:^(Book * _Nullable book, NSError * _Nullable error) {
-        NSLog(@"%@", book.lastCheckedOutBy);
-        if (error) {
-            NSLog(@"%@", book);
+    [self presentCheckoutAlert];
+}
+
+- (void)presentCheckoutAlert {
+    ModalAlertMessage *alertMessage = [[ModalAlertMessage alloc] initWithTitle:@"More Options" body:@"Select an option" topButtonTitle:@"Cancel" middleButtonTitle:nil bottomButtonTitle:@"Confirm" primaryColor:self.viewModel.secondaryColor secondaryColor:self.viewModel.secondaryColor detailColor:self.viewModel.primaryColor];
+    [self presentModalAlertViewWithMessage:alertMessage completion:^(enum ModalAlertResult result) {
+        if (result == ModalAlertResultBottom) {
+            // TODO: Send Network Request to Checkout Book
+//            [NetworkRequestManager checkoutBookRequestWithBook:self.viewModel.book checkedOutBy:@"Phill Farrugia" completion:^(Book * _Nullable book, NSError * _Nullable error) {
+//                NSLog(@"%@", book.lastCheckedOutBy);
+//                if (error) {
+//                    NSLog(@"%@", book);
+//                }
+//            }];
         }
     }];
 }

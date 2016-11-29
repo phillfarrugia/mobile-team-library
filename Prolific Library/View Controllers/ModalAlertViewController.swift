@@ -17,18 +17,18 @@ enum ModalAlertResult: Int {
 
 class ModalAlertMessage: NSObject {
     
-    let title: String
-    let body: String
+    var title: String?
+    var body: String?
     
-    let topButtonTitle: String
-    let middleButtonTitle: String
-    let bottomButtonTitle: String
+    let topButtonTitle: String?
+    let middleButtonTitle: String?
+    let bottomButtonTitle: String?
     
     let primaryColor: UIColor
     let secondaryColor: UIColor
     let detailColor: UIColor
     
-    init(title: String, body: String, topButtonTitle: String, middleButtonTitle: String, bottomButtonTitle: String, primaryColor: UIColor, secondaryColor: UIColor, detailColor: UIColor) {
+    init(title: String?, body: String?, topButtonTitle: String?, middleButtonTitle: String?, bottomButtonTitle: String?, primaryColor: UIColor, secondaryColor: UIColor, detailColor: UIColor) {
         self.title = title
         self.body = body
         self.topButtonTitle = topButtonTitle
@@ -55,12 +55,24 @@ class ModalAlertViewController: UIViewController {
     @IBOutlet internal var backgroundOverlayView: UIView!
     @IBOutlet internal var messageModalView: UIView!
     
+    @IBOutlet var titleLabelHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var bodyLabelHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var bodyLabelTopVerticalConstraint: NSLayoutConstraint!
+    @IBOutlet var bodyLabelBottomVerticalConstraint: NSLayoutConstraint!
+    
     @IBOutlet internal var titleLabel: UILabel!
     @IBOutlet var bodyLabel: UILabel!
 
     @IBOutlet internal var topButton: UIButton!
+    @IBOutlet var topButtonHeightConstraint: NSLayoutConstraint!
+    
     @IBOutlet internal var middleButton: UIButton!
+    @IBOutlet var middleVerticalConstraint: NSLayoutConstraint!
+    @IBOutlet var middleButtonHeightConstraint: NSLayoutConstraint!
+    
     @IBOutlet internal var bottomButton: UIButton!
+    @IBOutlet var bottomVerticalConstraint: NSLayoutConstraint!
+    @IBOutlet var bottomButtonHeightConstraint: NSLayoutConstraint!
     
     internal var alertMessage: ModalAlertMessage
     internal var completion: ModalAlertViewCompletion
@@ -98,7 +110,6 @@ class ModalAlertViewController: UIViewController {
         view.layer.cornerRadius = topButton.bounds.size.height/2
         view.backgroundColor = .clear
         view.isOpaque = false
-        bodyLabel.isHidden = true
         messageModalView.layer.cornerRadius  = 10.0
         messageModalView.layer.masksToBounds = true
     }
@@ -106,17 +117,56 @@ class ModalAlertViewController: UIViewController {
     // MARK: Message
     
     private func configure(alertMessage: ModalAlertMessage) {
-        titleLabel.text = alertMessage.title
-        bodyLabel.text = alertMessage.body
-        topButton.setTitle(alertMessage.topButtonTitle, for: .normal)
-        middleButton.setTitle(alertMessage.middleButtonTitle, for: .normal)
-        bottomButton.setTitle(alertMessage.bottomButtonTitle, for: .normal)
-        topButton.backgroundColor = alertMessage.primaryColor
-        middleButton.backgroundColor = alertMessage.secondaryColor
-        bottomButton.backgroundColor = alertMessage.detailColor
-        topButton.layer.cornerRadius = topButton.bounds.size.height/2
-        middleButton.layer.cornerRadius = middleButton.bounds.size.height/2
-        bottomButton.layer.cornerRadius = bottomButton.bounds.size.height/2
+        if let title = alertMessage.title {
+            titleLabel.text = title
+        }
+        else {
+            titleLabel.isHidden = true
+            titleLabelHeightConstraint.isActive = true
+            bodyLabelTopVerticalConstraint.constant = 0
+            bodyLabelBottomVerticalConstraint.constant = 0
+        }
+        
+        if let body = alertMessage.body {
+            bodyLabel.text = body
+        }
+        else {
+            bodyLabel.isHidden = true
+            bodyLabelHeightConstraint.isActive = true
+        }
+        
+        if let topButtonTitle = alertMessage.topButtonTitle {
+            topButton.setTitle(topButtonTitle, for: .normal)
+            topButton.backgroundColor = alertMessage.primaryColor
+            topButton.layer.cornerRadius = topButton.bounds.size.height/2
+        }
+        else {
+            topButton.isHidden = true
+            topButtonHeightConstraint.constant = 0
+        }
+        
+        if let middleButtonTitle = alertMessage.middleButtonTitle {
+            middleButton.setTitle(middleButtonTitle, for: .normal)
+            middleButton.backgroundColor = alertMessage.secondaryColor
+            middleButton.layer.cornerRadius = bottomButton.bounds.size.height/2
+        }
+        else {
+            middleButton.isHidden = true
+            middleButtonHeightConstraint.constant = 0
+            middleVerticalConstraint.constant = 0
+        }
+        
+        if let bottomButtonTitle = alertMessage.bottomButtonTitle {
+            bottomButton.setTitle(bottomButtonTitle, for: .normal)
+            bottomButton.backgroundColor = alertMessage.detailColor
+            bottomButton.layer.cornerRadius = bottomButton.bounds.size.height/2
+        }
+        else {
+            bottomButton.isHidden = true
+            bottomButtonHeightConstraint.constant = 0
+            bodyLabelBottomVerticalConstraint.constant = 0
+            bottomVerticalConstraint.constant = 0
+        }
     }
     
     @IBAction func topButtonDidPress(_ sender: Any) {
