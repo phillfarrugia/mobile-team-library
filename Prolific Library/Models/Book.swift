@@ -57,12 +57,11 @@ public class Book: NSObject, Decodable {
     // MARK: Deserialization
     
     public required init?(json: JSON) {
-        guard let identifier: Int = "id" <~~ json else { return nil }
         guard let url: String = "url" <~~ json else { return nil }
         guard let title: String = "title" <~~ json else { return nil }
         guard let author: String = "author" <~~ json else { return nil }
         
-        self.identifier = identifier
+        self.identifier = "id" <~~ json
         self.url = url
         self.title = title
         self.author = author
