@@ -31,6 +31,9 @@ extension BookListViewController {
         let viewModel = viewModels[indexPath.row]
         let queryString = "\(viewModel.title) \(viewModel.authors)"
         bookCell.cellStyle = .CoverImage
+        if let placeholderImage = UIImage(named: "placeholder-cover") {
+            bookCell.setCoverImage(image: placeholderImage)
+        }
         ImageHandler.downloadAndCacheCoverImage(forQueryString: queryString, completion: {
             image, error in
             

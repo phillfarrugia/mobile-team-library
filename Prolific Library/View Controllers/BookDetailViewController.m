@@ -16,6 +16,7 @@
 
 @property (strong, nonatomic) IBOutlet UIView *coverImageHeaderView;
 @property (strong, nonatomic) IBOutlet UIImageView *coverImageView;
+@property (strong, nonatomic) IBOutlet UILabel *coverImageUnavailableLabel;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *bodyViewHeightConstraint;
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
@@ -53,6 +54,8 @@
     [self.authorLabel setText:self.viewModel.authors];
     [self.lastCheckedOutLabel setText:self.viewModel.lastCheckedOut];
     
+    self.coverImageUnavailableLabel.hidden = true;
+    
     if (self.viewModel.publisher) {
         [self.publisherLabel setText:self.viewModel.publisher];
     }
@@ -89,6 +92,10 @@
     [ImageHandler downloadAndCacheCoverImageForQueryString:queryString completion:^(UIImage * _Nullable image, NSError * _Nullable error) {
         if (image) {
             self.coverImageView.image = image;
+        }
+        else {
+            self.coverImageView.hidden = true;
+            self.coverImageUnavailableLabel.hidden = false;
         }
     }];
 }

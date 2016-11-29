@@ -24,6 +24,7 @@ public class GoogleImageSearch {
             let url = URL(string: "\(GoogleImageSearch.baseURL)?q=\(encodedQuery)&searchtype=image&key=\(GoogleImageSearch.apiKey)&cx=\(GoogleImageSearch.customSearchEngineId)") else { return }
         Alamofire.request(url).responseJSON {
             response in
+            print(response)
             switch response.result {
             case .success(let data):
                 guard let json = data as? JSON, let imageURLString = GoogleImageSearch.parseImageURL(fromJSON: json),

@@ -50,9 +50,11 @@ class BookCollectionViewCell: UICollectionViewCell, Reusable {
         switch (cellStyle) {
         case .CoverImage:
             coverImageView.isHidden = false
+            borderView.isHidden = true
             titleLabel.isHidden = true
         case .ColouredLabel:
             coverImageView.isHidden = true
+            borderView.isHidden = false
             titleLabel.isHidden = false
         }
     }
