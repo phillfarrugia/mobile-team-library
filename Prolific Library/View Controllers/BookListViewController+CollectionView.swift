@@ -23,12 +23,14 @@ extension BookListViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let viewModels = viewModels, viewModels.count > indexPath.row, let bookCell = BookCollectionViewCell.collectionView(collectionView: collectionView, dequeueReusableCellForViewModel: viewModels[indexPath.row], atIndexPath: indexPath) else {
+        guard let viewModels = viewModels, viewModels.count > indexPath.row,
+            let bookCell = BookCollectionViewCell.collectionView(collectionView: collectionView, dequeueReusableCellAtIndexPath: indexPath) else {
             return UICollectionViewCell()
         }
         
         let viewModel = viewModels[indexPath.row]
         let queryString = "\(viewModel.title) \(viewModel.authors)"
+        bookCell.cellStyle = .CoverImage
         ImageHandler.downloadAndCacheCoverImage(forQueryString: queryString, completion: {
             image, error in
             
@@ -46,7 +48,7 @@ extension BookListViewController {
             guard let cell = collectionView.cellForItem(at: indexPath) as? BookCollectionViewCell,
                 let image = image else {
                     // Cell at IndexPath is no longer visible on screen
-                    // Reqyest image response is cached locally by AlamofireImage
+                    // Request image response is cached locally by AlamofireImage
                     return
             }
             cell.setCoverImage(image: image)

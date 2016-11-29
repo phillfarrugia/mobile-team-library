@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ProlificLibraryCore
 
 extension TagsViewController {
     
@@ -22,11 +23,29 @@ extension TagsViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let viewModels = viewModels, viewModels.count > indexPath.row, let bookCell = BookCollectionViewCell.collectionView(collectionView: collectionView, dequeueReusableCellForViewModel: viewModels[indexPath.row], atIndexPath: indexPath) else {
-//            return UICollectionViewCell()
-//        }
+        guard let viewModels = viewModels, viewModels.count > indexPath.row,
+        let bookCell = BookCollectionViewCell.collectionView(collectionView: collectionView, dequeueReusableCellAtIndexPath: indexPath) else {
+            return UICollectionViewCell()
+        }
         
-        return UICollectionViewCell()
+        let viewModel = viewModels[indexPath.row]
+        bookCell.cellStyle = .ColouredLabel
+        bookCell.setTitle(viewModel.title)
+        bookCell.backgroundColor = UIColor.getRandomColor()
+        
+        return bookCell
+    }
+    
+    // MARK: UICollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return BookCollectionViewCell.cellSize
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewModels = viewModels, viewModels.count > indexPath.row else { return }
+        selectedViewModel = viewModels[indexPath.row]
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
     
 }

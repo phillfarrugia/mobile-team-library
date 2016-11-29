@@ -40,6 +40,14 @@ class TagsViewController: UIViewController, GenericBookCoverListViewController, 
         configureRefreshControl()
         configureViewStyle(viewStyle)
         
+        // Server Books
+//        fetchAllBooks {
+//            books in
+//            let bookCellViewModels = BookCellViewModel.viewModels(fromModels: books)
+//            self.viewModels = TagViewModel.tagViewModels(fromBookCellViewModels: bookCellViewModels)
+//        }
+//        
+        // Sample Books
         let sampleViewModels = BookCellViewModel.viewModels(fromModels: sampleBooks())
         self.viewModels = TagViewModel.tagViewModels(fromBookCellViewModels: sampleViewModels)
     }

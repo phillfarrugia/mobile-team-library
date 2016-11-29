@@ -72,6 +72,7 @@
 		F7E662931DEC4D53002717D6 /* GenericBookCoverListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662921DEC4D53002717D6 /* GenericBookCoverListViewController.swift */; };
 		F7E662951DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662941DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift */; };
 		F7E662991DEC5816002717D6 /* TagsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662981DEC5816002717D6 /* TagsViewController+TableView.swift */; };
+		F7E6629F1DED0FE0002717D6 /* UIColor+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E6629E1DED0FE0002717D6 /* UIColor+Random.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +205,7 @@
 		F7E662921DEC4D53002717D6 /* GenericBookCoverListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericBookCoverListViewController.swift; path = "View Controllers/GenericBookCoverListViewController.swift"; sourceTree = "<group>"; };
 		F7E662941DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GenericBookCoverListViewController+Errors.swift"; path = "View Controllers/GenericBookCoverListViewController+Errors.swift"; sourceTree = "<group>"; };
 		F7E662981DEC5816002717D6 /* TagsViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TagsViewController+TableView.swift"; path = "View Controllers/TagsViewController+TableView.swift"; sourceTree = "<group>"; };
+		F7E6629E1DED0FE0002717D6 /* UIColor+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Random.swift"; path = "Utilities/UIColor+Random.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +392,7 @@
 				F73BFBB21DE94FD000C0AAA5 /* Reusable.swift */,
 				F73BFBBF1DE9594700C0AAA5 /* SegueHandlerType.swift */,
 				F7C8FEC31DEA7B8600BFEEDF /* DateFormatter+Book.swift */,
+				F7E6629E1DED0FE0002717D6 /* UIColor+Random.swift */,
 			);
 			name = Utilities;
 			path = "../Prolific Library";
@@ -700,6 +703,7 @@
 				F7E662911DEC4ACC002717D6 /* TagViewModel.swift in Sources */,
 				F7C8FEC41DEA7B8600BFEEDF /* DateFormatter+Book.swift in Sources */,
 				F7C8FECE1DEB9CA300BFEEDF /* ImageHandler.swift in Sources */,
+				F7E6629F1DED0FE0002717D6 /* UIColor+Random.swift in Sources */,
 				F7C8FEA71DEA724A00BFEEDF /* NetworkRequestManager.swift in Sources */,
 				F7C8FEAB1DEA725300BFEEDF /* NetworkRequestManager+DELETE.swift in Sources */,
 				F7C8FEAA1DEA725100BFEEDF /* NetworkRequestManager+PUT.swift in Sources */,

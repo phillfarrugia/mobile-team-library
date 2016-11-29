@@ -11,17 +11,34 @@ import ProlificLibraryCore
 
 class BookCollectionViewCell: UICollectionViewCell, Reusable {
     
+    enum CellStyle {
+        case CoverImage
+        case ColouredLabel
+    }
+    
     @IBOutlet var coverImageView: UIImageView!
+    @IBOutlet var borderView: UIView!
+    @IBOutlet var titleLabel: UILabel!
     
     static let cellSize = CGSize(width: 95, height: 137)
     
-    private weak var viewModel: BookCellViewModel?
+    var cellStyle: CellStyle = .CoverImage {
+        didSet {
+            configure(forCellStyle: cellStyle)
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        borderView.layer.borderWidth = 1.0
+        borderView.layer.borderColor = UIColor.white.cgColor
+    }
 
     // MARK: Factory Method
     
-    class func collectionView(collectionView: UICollectionView, dequeueReusableCellForViewModel viewModel: BookCellViewModel? = nil, atIndexPath indexPath: IndexPath) -> BookCollectionViewCell? {
+    class func collectionView(collectionView: UICollectionView, dequeueReusableCellAtIndexPath indexPath: IndexPath) -> BookCollectionViewCell? {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? BookCollectionViewCell {
-            cell.viewModel = viewModel
             return cell
         }
         return nil
@@ -29,8 +46,23 @@ class BookCollectionViewCell: UICollectionViewCell, Reusable {
     
     // MARK: Configuration
     
+    private func configure(forCellStyle cellStyle: CellStyle) {
+        switch (cellStyle) {
+        case .CoverImage:
+            coverImageView.isHidden = false
+            titleLabel.isHidden = true
+        case .ColouredLabel:
+            coverImageView.isHidden = true
+            titleLabel.isHidden = false
+        }
+    }
+    
     func setCoverImage(image: UIImage) {
         self.coverImageView.image = image
+    }
+    
+    func setTitle(_ title: String) {
+        self.titleLabel.text = title
     }
 
 }

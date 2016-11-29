@@ -25,16 +25,40 @@
                             <constraint firstAttribute="width" constant="95" id="gKi-bs-y3g"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="onY-6f-Xap">
+                        <rect key="frame" x="10" y="54" width="75" height="29.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ios programming" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRJ-Yi-p9Q">
+                                <rect key="frame" x="4.5" y="2" width="65.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yRJ-Yi-p9Q" secondAttribute="trailing" constant="5" id="20M-sv-iSB"/>
+                            <constraint firstItem="yRJ-Yi-p9Q" firstAttribute="top" secondItem="onY-6f-Xap" secondAttribute="top" constant="2" id="i5t-At-qf0"/>
+                            <constraint firstItem="yRJ-Yi-p9Q" firstAttribute="leading" secondItem="onY-6f-Xap" secondAttribute="leading" constant="4" id="ojV-Tg-G1N"/>
+                            <constraint firstAttribute="bottom" secondItem="yRJ-Yi-p9Q" secondAttribute="bottom" constant="3.5" id="xb9-P2-hFx"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="FtX-J2-OnP" secondAttribute="trailing" id="G6b-Pc-Q7i"/>
                 <constraint firstItem="FtX-J2-OnP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="H4Z-Rg-Yci"/>
+                <constraint firstItem="onY-6f-Xap" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="e7z-wP-TR3"/>
                 <constraint firstAttribute="bottom" secondItem="FtX-J2-OnP" secondAttribute="bottom" id="feq-my-odV"/>
+                <constraint firstItem="onY-6f-Xap" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="k0r-NP-5HZ"/>
+                <constraint firstAttribute="trailing" secondItem="onY-6f-Xap" secondAttribute="trailing" constant="10" id="o2h-XV-XaI"/>
+                <constraint firstItem="onY-6f-Xap" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="sOj-o6-FNU"/>
                 <constraint firstItem="FtX-J2-OnP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tfq-Yz-vlu"/>
             </constraints>
             <connections>
+                <outlet property="borderView" destination="onY-6f-Xap" id="Khr-fF-WzC"/>
                 <outlet property="coverImageView" destination="FtX-J2-OnP" id="Yxr-qn-Uck"/>
+                <outlet property="titleLabel" destination="yRJ-Yi-p9Q" id="TSP-d4-s2q"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </collectionViewCell>
