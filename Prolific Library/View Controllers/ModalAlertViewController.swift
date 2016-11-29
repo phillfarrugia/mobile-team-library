@@ -28,9 +28,12 @@ class ModalAlertMessage: NSObject {
     let secondaryColor: UIColor
     let detailColor: UIColor
     
-    init(title: String?, body: String?, topButtonTitle: String?, middleButtonTitle: String?, bottomButtonTitle: String?, primaryColor: UIColor, secondaryColor: UIColor, detailColor: UIColor) {
+    var showTextField: Bool = false
+    
+    init(title: String?, body: String?, topButtonTitle: String?, middleButtonTitle: String?, bottomButtonTitle: String?, primaryColor: UIColor, secondaryColor: UIColor, detailColor: UIColor, showTextField: Bool) {
         self.title = title
         self.body = body
+        self.showTextField = showTextField
         self.topButtonTitle = topButtonTitle
         self.middleButtonTitle = middleButtonTitle
         self.bottomButtonTitle = bottomButtonTitle
@@ -58,10 +61,14 @@ class ModalAlertViewController: UIViewController {
     @IBOutlet var titleLabelHeightConstraint: NSLayoutConstraint!
     @IBOutlet var bodyLabelHeightConstraint: NSLayoutConstraint!
     @IBOutlet var bodyLabelTopVerticalConstraint: NSLayoutConstraint!
-    @IBOutlet var bodyLabelBottomVerticalConstraint: NSLayoutConstraint!
     
     @IBOutlet internal var titleLabel: UILabel!
     @IBOutlet var bodyLabel: UILabel!
+    
+    @IBOutlet var textField: UITextField!
+    @IBOutlet var textFieldHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var textFieldTopConstraint: NSLayoutConstraint!
+    @IBOutlet var textFieldBottomConstraint: NSLayoutConstraint!
 
     @IBOutlet internal var topButton: UIButton!
     @IBOutlet var topButtonHeightConstraint: NSLayoutConstraint!
@@ -101,6 +108,7 @@ class ModalAlertViewController: UIViewController {
     }
     
     internal func didTapOverlayView() {
+        view.endEditing(true)
         dismissModalView(completion: nil)
     }
     
@@ -124,7 +132,15 @@ class ModalAlertViewController: UIViewController {
             titleLabel.isHidden = true
             titleLabelHeightConstraint.isActive = true
             bodyLabelTopVerticalConstraint.constant = 0
-            bodyLabelBottomVerticalConstraint.constant = 0
+            textFieldTopConstraint.constant = 0
+        }
+        
+        if (!alertMessage.showTextField) {
+            textFieldHeightConstraint.constant = 0
+            textFieldBottomConstraint.constant = 0
+        }
+        else {
+            textField.becomeFirstResponder()
         }
         
         if let body = alertMessage.body {
@@ -164,24 +180,27 @@ class ModalAlertViewController: UIViewController {
         else {
             bottomButton.isHidden = true
             bottomButtonHeightConstraint.constant = 0
-            bodyLabelBottomVerticalConstraint.constant = 0
+            textFieldTopConstraint.constant = 0
             bottomVerticalConstraint.constant = 0
         }
     }
     
     @IBAction func topButtonDidPress(_ sender: Any) {
+        view.endEditing(true)
         dismissModalView {
             self.completion(.Top)
         }
     }
     
     @IBAction func middleButtonDidPress(_ sender: Any) {
+        view.endEditing(true)
         dismissModalView {
             self.completion(.Middle)
         }
     }
     
     @IBAction func bottomButtonDidPress(_ sender: Any) {
+        view.endEditing(true)
         dismissModalView {
             self.completion(.Bottom)
         }

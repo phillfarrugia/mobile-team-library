@@ -100,7 +100,7 @@
 }
 
 - (void)moreBarButtonItemDidPress {
-    ModalAlertMessage *alertMessage = [[ModalAlertMessage alloc] initWithTitle:nil body:nil topButtonTitle:@"Share" middleButtonTitle:@"Edit" bottomButtonTitle:@"Delete" primaryColor:self.viewModel.primaryColor secondaryColor:self.viewModel.secondaryColor detailColor:self.viewModel.detailColor];
+    ModalAlertMessage *alertMessage = [[ModalAlertMessage alloc] initWithTitle:nil body:nil topButtonTitle:@"Share" middleButtonTitle:@"Edit" bottomButtonTitle:@"Delete" primaryColor:self.viewModel.primaryColor secondaryColor:self.viewModel.secondaryColor detailColor:self.viewModel.detailColor showTextField:NO];
     [self presentModalAlertViewWithMessage:alertMessage completion:^(enum ModalAlertResult completion) {
         switch (completion) {
             case ModalAlertResultTop:
@@ -161,7 +161,7 @@
 }
 
 - (void)presentCheckoutAlert {
-    ModalAlertMessage *alertMessage = [[ModalAlertMessage alloc] initWithTitle:@"More Options" body:@"Select an option" topButtonTitle:@"Cancel" middleButtonTitle:nil bottomButtonTitle:@"Confirm" primaryColor:self.viewModel.secondaryColor secondaryColor:self.viewModel.secondaryColor detailColor:self.viewModel.primaryColor];
+    ModalAlertMessage *alertMessage = [[ModalAlertMessage alloc] initWithTitle:@"Checkout Book" body:@"Enter your name in order to checkout this book" topButtonTitle:@"Cancel" middleButtonTitle:nil bottomButtonTitle:@"Confirm" primaryColor:self.viewModel.secondaryColor secondaryColor:self.viewModel.secondaryColor detailColor:self.viewModel.primaryColor showTextField:YES];
     [self presentModalAlertViewWithMessage:alertMessage completion:^(enum ModalAlertResult result) {
         if (result == ModalAlertResultBottom) {
             // TODO: Send Network Request to Checkout Book
