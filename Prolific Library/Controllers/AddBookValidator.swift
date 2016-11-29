@@ -10,6 +10,7 @@ import Foundation
 
 @objc
 public enum AddBookValidationState: Int {
+    case Empty
     case RequiredFieldsIncomplete
     case Incomplete
     case Complete
@@ -23,7 +24,10 @@ public enum AddBookValidationState: Int {
         let hasPublisherText = publisherText.characters.count > 0
         let hasCategoriesText = categoriesText.characters.count > 0
         
-        if (!hasTitleText || !hasAuthorText) {
+        if (!hasTitleText && !hasAuthorText && !hasPublisherText && !hasCategoriesText) {
+            return .Empty
+        }
+        else if (!hasTitleText || !hasAuthorText) {
             return .RequiredFieldsIncomplete
         }
         else if (!hasPublisherText || !hasCategoriesText) {

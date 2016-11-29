@@ -27,6 +27,9 @@
 		F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBA1DE9583A00C0AAA5 /* BookListViewController+TableView.swift */; };
 		F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBBD1DE9591200C0AAA5 /* AddBookViewController.m */; };
 		F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BFBC21DE95B9F00C0AAA5 /* BookDetailViewController.m */; };
+		F77F22241DED523D008146CF /* ModalAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77F22221DED523D008146CF /* ModalAlertViewController.swift */; };
+		F77F22251DED523D008146CF /* ModalAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77F22231DED523D008146CF /* ModalAlertViewController.xib */; };
+		F77F22271DED58FA008146CF /* UIViewController+ModalAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77F22261DED58FA008146CF /* UIViewController+ModalAlertView.swift */; };
 		F7C8FE881DEA6EF800BFEEDF /* ProlificLibraryCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FE7F1DEA6EF800BFEEDF /* ProlificLibraryCore.framework */; };
 		F7C8FE911DEA6EF800BFEEDF /* ProlificLibraryCore.h in Headers */ = {isa = PBXBuildFile; fileRef = F7C8FE811DEA6EF800BFEEDF /* ProlificLibraryCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7C8FE941DEA6EF800BFEEDF /* ProlificLibraryCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C8FE7F1DEA6EF800BFEEDF /* ProlificLibraryCore.framework */; };
@@ -188,6 +191,9 @@
 		F73BFBBF1DE9594700C0AAA5 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegueHandlerType.swift; path = Utilities/SegueHandlerType.swift; sourceTree = "<group>"; };
 		F73BFBC11DE95B9F00C0AAA5 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookDetailViewController.h; path = "View Controllers/BookDetailViewController.h"; sourceTree = "<group>"; };
 		F73BFBC21DE95B9F00C0AAA5 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookDetailViewController.m; path = "View Controllers/BookDetailViewController.m"; sourceTree = "<group>"; };
+		F77F22221DED523D008146CF /* ModalAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModalAlertViewController.swift; path = "View Controllers/ModalAlertViewController.swift"; sourceTree = "<group>"; };
+		F77F22231DED523D008146CF /* ModalAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ModalAlertViewController.xib; path = "View Controllers/ModalAlertViewController.xib"; sourceTree = "<group>"; };
+		F77F22261DED58FA008146CF /* UIViewController+ModalAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+ModalAlertView.swift"; path = "View Controllers/UIViewController+ModalAlertView.swift"; sourceTree = "<group>"; };
 		F7C8FE7F1DEA6EF800BFEEDF /* ProlificLibraryCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProlificLibraryCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C8FE811DEA6EF800BFEEDF /* ProlificLibraryCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProlificLibraryCore.h; sourceTree = "<group>"; };
 		F7C8FE821DEA6EF800BFEEDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -369,6 +375,7 @@
 		F73BFBA81DE94E2300C0AAA5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F77F22211DED5222008146CF /* Alert View Controller */,
 				F7E662921DEC4D53002717D6 /* GenericBookCoverListViewController.swift */,
 				F7E662941DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift */,
 				F7E662AD1DED2F4C002717D6 /* Settings View Controller */,
@@ -424,6 +431,16 @@
 			);
 			name = Models;
 			path = "../Prolific Library";
+			sourceTree = "<group>";
+		};
+		F77F22211DED5222008146CF /* Alert View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F77F22221DED523D008146CF /* ModalAlertViewController.swift */,
+				F77F22261DED58FA008146CF /* UIViewController+ModalAlertView.swift */,
+				F77F22231DED523D008146CF /* ModalAlertViewController.xib */,
+			);
+			name = "Alert View Controller";
 			sourceTree = "<group>";
 		};
 		F7C8FE801DEA6EF800BFEEDF /* ProlificLibraryCore */ = {
@@ -669,6 +686,7 @@
 				F73BFBAD1DE94EBA00C0AAA5 /* BookTableViewCell.xib in Resources */,
 				F73BFB7F1DE934FE00C0AAA5 /* LaunchScreen.storyboard in Resources */,
 				F73BFB7C1DE934FE00C0AAA5 /* Assets.xcassets in Resources */,
+				F77F22251DED523D008146CF /* ModalAlertViewController.xib in Resources */,
 				F73BFB7A1DE934FE00C0AAA5 /* Main.storyboard in Resources */,
 				F7E662851DEC3472002717D6 /* BookCollectionViewCell.xib in Resources */,
 			);
@@ -719,8 +737,10 @@
 				F73BFB741DE934FE00C0AAA5 /* AppDelegate.m in Sources */,
 				F73BFB711DE934FE00C0AAA5 /* main.m in Sources */,
 				F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+TableView.swift in Sources */,
+				F77F22241DED523D008146CF /* ModalAlertViewController.swift in Sources */,
 				F7C8FED31DEBE73100BFEEDF /* NavigationController.swift in Sources */,
 				F7E662991DEC5816002717D6 /* TagsViewController+TableView.swift in Sources */,
+				F77F22271DED58FA008146CF /* UIViewController+ModalAlertView.swift in Sources */,
 				F73BFBA71DE9474200C0AAA5 /* BookListViewController.swift in Sources */,
 				F73BFBBE1DE9591200C0AAA5 /* AddBookViewController.m in Sources */,
 			);

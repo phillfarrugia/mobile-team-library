@@ -44,8 +44,7 @@
 }
 
 - (void)configureNavigation {
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"more-dots-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(shareBarButtonItemDidPress)];
-    //[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareBarButtonItemDidPress)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"more-dots-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(moreBarButtonItemDidPress)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -80,7 +79,47 @@
     [self.navigationController.navigationBar setBarTintColor:nil];
 }
 
-- (void)shareBarButtonItemDidPress {
+- (void)moreBarButtonItemDidPress {
+    ModalAlertMessage *alertMessage = [[ModalAlertMessage alloc] initWithTitle:@"More Options" body:@"Select an option" topButtonTitle:@"Share" middleButtonTitle:@"Edit" bottomButtonTitle:@"Delete" primaryColor:self.viewModel.primaryColor secondaryColor:self.viewModel.secondaryColor detailColor:self.viewModel.detailColor];
+    [self presentModalAlertViewWithMessage:alertMessage completion:^(enum ModalAlertResult completion) {
+        switch (completion) {
+            case ModalAlertResultTop:
+                [self shareButtonDidPress];
+                break;
+            case ModalAlertResultMiddle:
+                [self editButtonDidPress];
+                break;
+            case ModalAlertResultBottom:
+                [self deleteButtonDidPress];
+                break;
+        }
+    }];
+}
+
+- (void)editButtonDidPress {
+    
+}
+
+- (void)deleteButtonDidPress {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Are you sure?"
+                                                                             message:@"Deleting a book cannot be undone."
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [self deleteBookWithCompletion:^{
+            [alertController dismissViewControllerAnimated:YES completion:^{
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }];
+        }];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertController addAction:confirmAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)shareButtonDidPress {
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[self.viewModel.shareableMessage] applicationActivities:nil];
     activityViewController.excludedActivityTypes = @[UIActivityTypeAirDrop];
     [self presentViewController:activityViewController animated:YES completion:nil];
@@ -111,5 +150,19 @@
     }];
 }
 
+- (void)deleteBookWithCompletion:(void (^)())completion {
+    [NetworkRequestManager deleteBookRequestWithBook:self.viewModel.book completion:^(NSError * _Nullable error) {
+        if (error) {
+            [self handleDeleteBookError];
+        }
+        else {
+            completion();
+        }
+    }];
+}
+
+- (void)handleDeleteBookError {
+    
+}
 
 @end

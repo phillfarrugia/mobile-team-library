@@ -9,7 +9,7 @@
 #import "AddBookViewController.h"
 #import "ProlificLibraryCore.h"
 
-@interface AddBookViewController ()
+@interface AddBookViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *titleTextField;
 @property (strong, nonatomic) IBOutlet UITextField *authorTextField;
@@ -25,15 +25,29 @@
     
     self.title = @"Add Book";
     [self configureNavigation];
+    [self configureTextFields];
 }
 
 - (void)configureNavigation {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                           target:self
                                                                                           action:@selector(cancelBarButtonItemDidPress)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                           target:self
-                                                                                           action:@selector(confirmBarButtonItemDidPress)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add"
+                                                                              style:UIBarButtonItemStylePlain
+                                                                             target:self
+                                                                             action:@selector(confirmBarButtonItemDidPress)];
+}
+
+- (void)configureTextFields {
+    self.titleTextField.delegate = self;
+    self.authorTextField.delegate = self;
+    self.publisherTextField.delegate = self;
+    self.categoriesTextField.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.titleTextField becomeFirstResponder];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -41,7 +55,8 @@
 }
 
 - (void)cancelBarButtonItemDidPress {
-    if ([self validationState] == AddBookValidationStateIncomplete) {
+    AddBookValidationState validationState = [self validationState];
+    if (validationState == AddBookValidationStateIncomplete || validationState == AddBookValidationStateRequiredFieldsIncomplete) {
         [self handleIncompleteState];
     }
     else {
@@ -51,6 +66,7 @@
 
 - (void)confirmBarButtonItemDidPress {
     switch ([self validationState]) {
+        case AddBookValidationStateEmpty:
         case AddBookValidationStateRequiredFieldsIncomplete:
             [self handleRequiredFieldsIncompleteState];
             break;
@@ -135,6 +151,24 @@
     [alertController addAction:confirmAction];
     [alertController addAction:cancelAction];
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+// MARK: UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.titleTextField) {
+        [self.authorTextField becomeFirstResponder];
+    }
+    else if (textField == self.authorTextField) {
+        [self.publisherTextField becomeFirstResponder];
+    }
+    else if (textField == self.publisherTextField) {
+        [self.categoriesTextField becomeFirstResponder];
+    }
+    else if (textField == self.categoriesTextField) {
+        [self.view endEditing:YES];
+    }
+    return YES;
 }
 
 @end
