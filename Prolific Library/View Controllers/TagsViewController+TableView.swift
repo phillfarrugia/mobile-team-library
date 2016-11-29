@@ -22,7 +22,10 @@ extension TagsViewController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let viewModels = viewModels, viewModels.count > indexPath.row, let tagCell = TagTableViewCell.tableView(tableView: tableView, dequeueReusableCellForViewModel: viewModels[indexPath.row], atIndexPath: indexPath) else {
+            return UITableViewCell()
+        }
+        return tagCell
     }
     
     // MARK: UITableViewDelegate

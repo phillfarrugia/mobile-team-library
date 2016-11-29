@@ -42,6 +42,7 @@ extension GenericBookCoverListViewController where Self: UIViewController, Self:
     
     func configureTableView() {
         tableView.registerReusableCell(BookTableViewCell.self)
+        tableView.registerReusableCell(TagTableViewCell.self)
         tableView.rowHeight = tableViewCellHeight
         tableView.dataSource = self
         tableView.delegate = self

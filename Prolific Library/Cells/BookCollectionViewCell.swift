@@ -16,9 +16,9 @@ class BookCollectionViewCell: UICollectionViewCell, Reusable {
         case ColouredLabel
     }
     
-    @IBOutlet var coverImageView: UIImageView!
-    @IBOutlet var borderView: UIView!
-    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet internal var coverImageView: UIImageView!
+    @IBOutlet internal var borderView: UIView!
+    @IBOutlet internal var titleLabel: UILabel!
     
     static let cellSize = CGSize(width: 95, height: 137)
     

@@ -31,7 +31,7 @@ extension TagsViewController {
         let viewModel = viewModels[indexPath.row]
         bookCell.cellStyle = .ColouredLabel
         bookCell.setTitle(viewModel.title)
-        bookCell.backgroundColor = UIColor.getRandomColor()
+        bookCell.backgroundColor = viewModel.color
         
         return bookCell
     }

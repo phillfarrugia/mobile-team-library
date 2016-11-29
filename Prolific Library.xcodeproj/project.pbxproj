@@ -73,6 +73,8 @@
 		F7E662951DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662941DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift */; };
 		F7E662991DEC5816002717D6 /* TagsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662981DEC5816002717D6 /* TagsViewController+TableView.swift */; };
 		F7E6629F1DED0FE0002717D6 /* UIColor+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E6629E1DED0FE0002717D6 /* UIColor+Random.swift */; };
+		F7E662A21DED1FC5002717D6 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662A01DED1FC5002717D6 /* TagTableViewCell.swift */; };
+		F7E662A31DED1FC5002717D6 /* TagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E662A11DED1FC5002717D6 /* TagTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,6 +208,8 @@
 		F7E662941DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GenericBookCoverListViewController+Errors.swift"; path = "View Controllers/GenericBookCoverListViewController+Errors.swift"; sourceTree = "<group>"; };
 		F7E662981DEC5816002717D6 /* TagsViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TagsViewController+TableView.swift"; path = "View Controllers/TagsViewController+TableView.swift"; sourceTree = "<group>"; };
 		F7E6629E1DED0FE0002717D6 /* UIColor+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Random.swift"; path = "Utilities/UIColor+Random.swift"; sourceTree = "<group>"; };
+		F7E662A01DED1FC5002717D6 /* TagTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagTableViewCell.swift; path = Cells/TagTableViewCell.swift; sourceTree = "<group>"; };
+		F7E662A11DED1FC5002717D6 /* TagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TagTableViewCell.xib; path = Cells/TagTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +376,8 @@
 				F73BFBAB1DE94EBA00C0AAA5 /* BookTableViewCell.xib */,
 				F7E662821DEC3472002717D6 /* BookCollectionViewCell.swift */,
 				F7E662831DEC3472002717D6 /* BookCollectionViewCell.xib */,
+				F7E662A01DED1FC5002717D6 /* TagTableViewCell.swift */,
+				F7E662A11DED1FC5002717D6 /* TagTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -628,6 +634,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7E662A31DED1FC5002717D6 /* TagTableViewCell.xib in Resources */,
 				F73BFBAD1DE94EBA00C0AAA5 /* BookTableViewCell.xib in Resources */,
 				F73BFB7F1DE934FE00C0AAA5 /* LaunchScreen.storyboard in Resources */,
 				F73BFB7C1DE934FE00C0AAA5 /* Assets.xcassets in Resources */,
@@ -670,6 +677,7 @@
 				F7E662951DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift in Sources */,
 				F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */,
 				F7E662841DEC3472002717D6 /* BookCollectionViewCell.swift in Sources */,
+				F7E662A21DED1FC5002717D6 /* TagTableViewCell.swift in Sources */,
 				F73BFBAC1DE94EBA00C0AAA5 /* BookTableViewCell.swift in Sources */,
 				F7E6628D1DEC41B0002717D6 /* TagsViewController.swift in Sources */,
 				F7E662931DEC4D53002717D6 /* GenericBookCoverListViewController.swift in Sources */,

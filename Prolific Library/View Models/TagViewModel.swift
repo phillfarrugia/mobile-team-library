@@ -12,8 +12,11 @@ public class TagViewModel: NSObject {
     
     public let title: String
     
+    public let color: UIColor
+    
     init(title: String) {
         self.title = title
+        self.color = UIColor.getRandomColor()
     }
     
     public static func tagViewModels(fromBookCellViewModels bookViewModels: [BookCellViewModel]) -> [TagViewModel] {
