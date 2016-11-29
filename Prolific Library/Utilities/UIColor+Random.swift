@@ -11,9 +11,9 @@ import Foundation
 public extension UIColor {
     
     public static func getRandomColor() -> UIColor{
-        let randomRed:CGFloat = CGFloat(drand48())
-        let randomGreen:CGFloat = CGFloat(drand48())
-        let randomBlue:CGFloat = CGFloat(drand48())
+        let randomRed:CGFloat = CGFloat(arc4random()) / CGFloat(UInt32.max)
+        let randomGreen:CGFloat = CGFloat(arc4random()) / CGFloat(UInt32.max)
+        let randomBlue:CGFloat = CGFloat(arc4random()) / CGFloat(UInt32.max)
         return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
     }
     
