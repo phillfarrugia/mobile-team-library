@@ -9,7 +9,11 @@
 import Foundation
 import ProlificLibraryCore
 
-class TagsViewController: UIViewController, GenericBookCoverListViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class TagsViewController: UIViewController, SegueHandlerType, GenericBookCoverListViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    enum SegueIdentifier: String {
+        case TagSelected
+    }
     
     @IBOutlet internal var tableView: UITableView!
     @IBOutlet internal var collectionView: UICollectionView!
@@ -20,6 +24,8 @@ class TagsViewController: UIViewController, GenericBookCoverListViewController, 
             collectionView.reloadData()
         }
     }
+    
+    internal var bookViewModels: [BookCellViewModel]?
     
     internal var selectedViewModel: TagViewModel?
     
@@ -48,8 +54,10 @@ class TagsViewController: UIViewController, GenericBookCoverListViewController, 
 //        }
 //        
         // Sample Books
-        let sampleViewModels = BookCellViewModel.viewModels(fromModels: sampleBooks())
-        self.viewModels = TagViewModel.tagViewModels(fromBookCellViewModels: sampleViewModels)
+        self.bookViewModels = BookCellViewModel.viewModels(fromModels: sampleBooks())
+        if let bookViewModels = self.bookViewModels {
+            self.viewModels = TagViewModel.tagViewModels(fromBookCellViewModels: bookViewModels)
+        }
     }
     
     // MARK: View Style
@@ -105,6 +113,22 @@ class TagsViewController: UIViewController, GenericBookCoverListViewController, 
             self.tableView.refreshControl?.endRefreshing()
         case .Cover:
             self.collectionView.refreshControl?.endRefreshing()
+        }
+    }
+    
+    // MARK: Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segueIdentifierForSegue(segue) {
+        case .TagSelected:
+            if let destinationViewController = segue.destination as? TagResultsViewController {
+                // set filtered view models
+                if let bookViewModels = self.bookViewModels, let selectedViewModel = selectedViewModel {
+                    destinationViewController.tagViewModel = selectedViewModel
+                    destinationViewController.viewModels = BookFilterController.fitler(viewModels: bookViewModels, forTag: selectedViewModel.title)
+                }
+                selectedViewModel = nil
+            }
         }
     }
     

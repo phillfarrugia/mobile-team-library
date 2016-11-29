@@ -102,11 +102,41 @@
                     <connections>
                         <outlet property="collectionView" destination="9As-FV-7OZ" id="nSH-JD-VIc"/>
                         <outlet property="tableView" destination="kuF-Io-dgv" id="q48-kp-nQc"/>
+                        <segue destination="Ut6-85-sqa" kind="show" identifier="TagSelected" id="bMb-xC-zmN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Npp-Kq-q84" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2220" y="1580.9595202398802"/>
+        </scene>
+        <!--Tag Results View Controller-->
+        <scene sceneID="q5L-MD-ZIX">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ut6-85-sqa" customClass="TagResultsViewController" customModule="Prolific_Library" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wr1-If-whH"/>
+                        <viewControllerLayoutGuide type="bottom" id="ejM-BI-dtN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UP4-Gx-FyP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u0A-mc-PTq">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="u0A-mc-PTq" id="pKD-Kh-n1p"/>
+                        <segue destination="A0l-LJ-kNd" kind="show" identifier="BookDetail" id="3lt-DI-8uU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="icZ-tj-EXW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3084" y="1580.9595202398802"/>
         </scene>
         <!--Book Detail View Controller-->
         <scene sceneID="sOs-WU-CLh">
@@ -413,4 +443,7 @@
         <image name="book-icon" width="24" height="30"/>
         <image name="tag-icon" width="31" height="31"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="GsQ-TK-J5G"/>
+    </inferredMetricsTieBreakers>
 </document>

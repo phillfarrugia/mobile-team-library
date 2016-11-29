@@ -33,6 +33,7 @@ extension TagsViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewModels = viewModels, viewModels.count > indexPath.row else { return }
         selectedViewModel = viewModels[indexPath.row]
+        performSegueWithIdentifier(.TagSelected, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

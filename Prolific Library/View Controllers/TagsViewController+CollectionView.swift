@@ -45,6 +45,7 @@ extension TagsViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewModels = viewModels, viewModels.count > indexPath.row else { return }
         selectedViewModel = viewModels[indexPath.row]
+        performSegueWithIdentifier(.TagSelected, sender: self)
         collectionView.deselectItem(at: indexPath, animated: true)
     }
     

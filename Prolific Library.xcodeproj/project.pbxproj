@@ -75,6 +75,9 @@
 		F7E6629F1DED0FE0002717D6 /* UIColor+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E6629E1DED0FE0002717D6 /* UIColor+Random.swift */; };
 		F7E662A21DED1FC5002717D6 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662A01DED1FC5002717D6 /* TagTableViewCell.swift */; };
 		F7E662A31DED1FC5002717D6 /* TagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E662A11DED1FC5002717D6 /* TagTableViewCell.xib */; };
+		F7E662A81DED2787002717D6 /* TagResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662A71DED2787002717D6 /* TagResultsViewController.swift */; };
+		F7E662AA1DED28E5002717D6 /* TagResultsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662A91DED28E5002717D6 /* TagResultsViewController+TableView.swift */; };
+		F7E662AC1DED2A7C002717D6 /* BookFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662AB1DED2A7C002717D6 /* BookFilterController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,6 +213,9 @@
 		F7E6629E1DED0FE0002717D6 /* UIColor+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Random.swift"; path = "Utilities/UIColor+Random.swift"; sourceTree = "<group>"; };
 		F7E662A01DED1FC5002717D6 /* TagTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagTableViewCell.swift; path = Cells/TagTableViewCell.swift; sourceTree = "<group>"; };
 		F7E662A11DED1FC5002717D6 /* TagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TagTableViewCell.xib; path = Cells/TagTableViewCell.xib; sourceTree = "<group>"; };
+		F7E662A71DED2787002717D6 /* TagResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagResultsViewController.swift; path = "View Controllers/TagResultsViewController.swift"; sourceTree = "<group>"; };
+		F7E662A91DED28E5002717D6 /* TagResultsViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TagResultsViewController+TableView.swift"; path = "View Controllers/TagResultsViewController+TableView.swift"; sourceTree = "<group>"; };
+		F7E662AB1DED2A7C002717D6 /* BookFilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookFilterController.swift; path = Controllers/BookFilterController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +285,7 @@
 				F7C8FEC71DEA846700BFEEDF /* GoogleImageSearch.swift */,
 				F7C8FECD1DEB9CA300BFEEDF /* ImageHandler.swift */,
 				F7C8FEDD1DEBEFCD00BFEEDF /* ImageColorsHandler.swift */,
+				F7E662AB1DED2A7C002717D6 /* BookFilterController.swift */,
 			);
 			name = Controllers;
 			path = "../Prolific Library";
@@ -361,6 +368,7 @@
 				F7E662921DEC4D53002717D6 /* GenericBookCoverListViewController.swift */,
 				F7E662941DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift */,
 				F7E6628B1DEC419C002717D6 /* Tags View Controller */,
+				F7E662A61DED2776002717D6 /* Tag Results View Controller */,
 				F7E662881DEC4164002717D6 /* Book List View Controller */,
 				F7E662891DEC4172002717D6 /* Add Book View Controller */,
 				F7E6628A1DEC4179002717D6 /* Book Detail View Controller */,
@@ -481,6 +489,15 @@
 				F7E6628E1DEC4A83002717D6 /* TagsViewController+CollectionView.swift */,
 			);
 			name = "Tags View Controller";
+			sourceTree = "<group>";
+		};
+		F7E662A61DED2776002717D6 /* Tag Results View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F7E662A71DED2787002717D6 /* TagResultsViewController.swift */,
+				F7E662A91DED28E5002717D6 /* TagResultsViewController+TableView.swift */,
+			);
+			name = "Tag Results View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -673,6 +690,7 @@
 			files = (
 				F7E6628F1DEC4A83002717D6 /* TagsViewController+CollectionView.swift in Sources */,
 				F7C8FED11DEBDF1600BFEEDF /* TagBubbleViewContainer.swift in Sources */,
+				F7E662AA1DED28E5002717D6 /* TagResultsViewController+TableView.swift in Sources */,
 				F7E662871DEC353A002717D6 /* BookListViewController+CollectionView.swift in Sources */,
 				F7E662951DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift in Sources */,
 				F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */,
@@ -681,6 +699,7 @@
 				F73BFBAC1DE94EBA00C0AAA5 /* BookTableViewCell.swift in Sources */,
 				F7E6628D1DEC41B0002717D6 /* TagsViewController.swift in Sources */,
 				F7E662931DEC4D53002717D6 /* GenericBookCoverListViewController.swift in Sources */,
+				F7E662A81DED2787002717D6 /* TagResultsViewController.swift in Sources */,
 				F73BFB741DE934FE00C0AAA5 /* AppDelegate.m in Sources */,
 				F73BFB711DE934FE00C0AAA5 /* main.m in Sources */,
 				F73BFBBB1DE9583A00C0AAA5 /* BookListViewController+TableView.swift in Sources */,
@@ -714,6 +733,7 @@
 				F7E6629F1DED0FE0002717D6 /* UIColor+Random.swift in Sources */,
 				F7C8FEA71DEA724A00BFEEDF /* NetworkRequestManager.swift in Sources */,
 				F7C8FEAB1DEA725300BFEEDF /* NetworkRequestManager+DELETE.swift in Sources */,
+				F7E662AC1DED2A7C002717D6 /* BookFilterController.swift in Sources */,
 				F7C8FEAA1DEA725100BFEEDF /* NetworkRequestManager+PUT.swift in Sources */,
 				F7C8FEA61DEA719600BFEEDF /* BookCellViewModel.swift in Sources */,
 				F7C8FEA51DEA710600BFEEDF /* SegueHandlerType.swift in Sources */,
