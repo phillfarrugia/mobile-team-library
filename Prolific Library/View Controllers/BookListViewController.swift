@@ -51,14 +51,10 @@ class BookListViewController: UIViewController, GenericBookCoverListViewControll
         
         configureNavigation()
         configureViewStyle(viewStyle)
-        // Server Books
-//        fetchAllBooks {
-//            books in
-//            self.viewModels = BookCellViewModel.viewModels(fromModels: books)
-//        }
-        
-        // Sample Books
-        self.viewModels = BookCellViewModel.viewModels(fromModels: sampleBooks())
+        fetchAllBooks {
+            books in
+            self.viewModels = BookCellViewModel.viewModels(fromModels: books)
+        }
     }
     
     func configureNavigation() {
