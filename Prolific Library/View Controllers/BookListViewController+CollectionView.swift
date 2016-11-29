@@ -28,33 +28,40 @@ extension BookListViewController {
             return UICollectionViewCell()
         }
         
+        // Check if Cover Image already exists, if so set cover image and return cell
         let viewModel = viewModels[indexPath.row]
-        let queryString = "\(viewModel.title) \(viewModel.authors)"
         bookCell.cellStyle = .CoverImage
+        if let coverImage = viewModel.coverImage {
+            bookCell.setCoverImage(image: coverImage)
+            return bookCell
+        }
+        
+        // Set Placeholder Cover Image
         if let placeholderImage = UIImage(named: "placeholder-cover") {
             bookCell.setCoverImage(image: placeholderImage)
         }
+        
+        // Request new Cover Image
+        let queryString = "\(viewModel.title) \(viewModel.authors)"
         ImageHandler.downloadAndCacheCoverImage(forQueryString: queryString, completion: {
             image, error in
             
-            // Get Image Colours
+            // Calculate Image Colours
             if let image = image {
                 ImageColorsHandler.colors(forImage: image, completion: {
                     primary, secondary, detail in
-                    let viewModel = viewModels[indexPath.row]
                     viewModel.primaryColor = primary
                     viewModel.secondaryColor = secondary
                     viewModel.detailColor = detail
                 })
+                
+                // Check if Cell still exists at indexPath, if no, cell has scrolled offscreen
+                viewModel.coverImage = image
+                if let cell = collectionView.cellForItem(at: indexPath) as? BookCollectionViewCell {
+                    // Set new Cover Image on cell
+                    cell.setCoverImage(image: image)
+                }
             }
-            
-            guard let cell = collectionView.cellForItem(at: indexPath) as? BookCollectionViewCell,
-                let image = image else {
-                    // Cell at IndexPath is no longer visible on screen
-                    // Request image response is cached locally by AlamofireImage
-                    return
-            }
-            cell.setCoverImage(image: image)
         })
         
         return bookCell
