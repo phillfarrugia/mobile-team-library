@@ -78,6 +78,8 @@
 		F7E662A81DED2787002717D6 /* TagResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662A71DED2787002717D6 /* TagResultsViewController.swift */; };
 		F7E662AA1DED28E5002717D6 /* TagResultsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662A91DED28E5002717D6 /* TagResultsViewController+TableView.swift */; };
 		F7E662AC1DED2A7C002717D6 /* BookFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662AB1DED2A7C002717D6 /* BookFilterController.swift */; };
+		F7E662AF1DED2F60002717D6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662AE1DED2F60002717D6 /* SettingsViewController.swift */; };
+		F7E662B11DED2FEF002717D6 /* SettingsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E662B01DED2FEF002717D6 /* SettingsViewController+TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,6 +218,8 @@
 		F7E662A71DED2787002717D6 /* TagResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagResultsViewController.swift; path = "View Controllers/TagResultsViewController.swift"; sourceTree = "<group>"; };
 		F7E662A91DED28E5002717D6 /* TagResultsViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TagResultsViewController+TableView.swift"; path = "View Controllers/TagResultsViewController+TableView.swift"; sourceTree = "<group>"; };
 		F7E662AB1DED2A7C002717D6 /* BookFilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookFilterController.swift; path = Controllers/BookFilterController.swift; sourceTree = "<group>"; };
+		F7E662AE1DED2F60002717D6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "View Controllers/SettingsViewController.swift"; sourceTree = "<group>"; };
+		F7E662B01DED2FEF002717D6 /* SettingsViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SettingsViewController+TableView.swift"; path = "View Controllers/SettingsViewController+TableView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +371,7 @@
 			children = (
 				F7E662921DEC4D53002717D6 /* GenericBookCoverListViewController.swift */,
 				F7E662941DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift */,
+				F7E662AD1DED2F4C002717D6 /* Settings View Controller */,
 				F7E6628B1DEC419C002717D6 /* Tags View Controller */,
 				F7E662A61DED2776002717D6 /* Tag Results View Controller */,
 				F7E662881DEC4164002717D6 /* Book List View Controller */,
@@ -498,6 +503,15 @@
 				F7E662A91DED28E5002717D6 /* TagResultsViewController+TableView.swift */,
 			);
 			name = "Tag Results View Controller";
+			sourceTree = "<group>";
+		};
+		F7E662AD1DED2F4C002717D6 /* Settings View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F7E662AE1DED2F60002717D6 /* SettingsViewController.swift */,
+				F7E662B01DED2FEF002717D6 /* SettingsViewController+TableView.swift */,
+			);
+			name = "Settings View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -690,7 +704,9 @@
 			files = (
 				F7E6628F1DEC4A83002717D6 /* TagsViewController+CollectionView.swift in Sources */,
 				F7C8FED11DEBDF1600BFEEDF /* TagBubbleViewContainer.swift in Sources */,
+				F7E662B11DED2FEF002717D6 /* SettingsViewController+TableView.swift in Sources */,
 				F7E662AA1DED28E5002717D6 /* TagResultsViewController+TableView.swift in Sources */,
+				F7E662AF1DED2F60002717D6 /* SettingsViewController.swift in Sources */,
 				F7E662871DEC353A002717D6 /* BookListViewController+CollectionView.swift in Sources */,
 				F7E662951DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift in Sources */,
 				F73BFBC31DE95B9F00C0AAA5 /* BookDetailViewController.m in Sources */,
