@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class TagViewModel {
+public class TagViewModel: NSObject {
     
     public let title: String
     
@@ -20,7 +20,10 @@ public class TagViewModel {
         var tagViewModels: [TagViewModel] = []
         for bookViewModel in bookViewModels {
             if let categories = bookViewModel.categories {
-                tagViewModels.append(contentsOf: categories.map { TagViewModel(title: $0) })
+                let tags = categories.map { TagViewModel(title: $0) }.filter {
+                    return !tagViewModels.contains($0)
+                }
+                tagViewModels.append(contentsOf: tags)
             }
         }
         return tagViewModels
@@ -43,6 +46,14 @@ public class TagViewModel {
                 completion(nil, error)
             }
         })
+    }
+    
+    public override func isEqual(_ object: Any?) -> Bool {
+        guard let rhs = object as? TagViewModel else {
+            return false
+        }
+        let lhs = self
+        return lhs.title == rhs.title
     }
     
 }
