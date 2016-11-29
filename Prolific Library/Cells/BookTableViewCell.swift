@@ -48,6 +48,9 @@ class BookTableViewCell: UITableViewCell, Reusable {
         if let viewModel = self.viewModel, let categories = viewModel.categories {
             tagViewContainer.layoutTagViews(forTags: categories, withColor: viewModel.detailColor)
         }
+        else {
+            tagViewContainer.removeTagViews()
+        }
     }
     
     func setCoverImage(image: UIImage) {

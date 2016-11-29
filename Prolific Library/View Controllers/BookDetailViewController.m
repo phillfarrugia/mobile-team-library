@@ -126,9 +126,8 @@
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [self deleteBookWithCompletion:^{
-            [alertController dismissViewControllerAnimated:YES completion:^{
-                [self dismissViewControllerAnimated:YES completion:nil];
-            }];
+            self.bookDeletedAction();
+            [self.navigationController popToRootViewControllerAnimated:YES];
         }];
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -172,6 +171,7 @@
 //                    NSLog(@"%@", book);
 //                }
 //            }];
+            
         }
     }];
 }

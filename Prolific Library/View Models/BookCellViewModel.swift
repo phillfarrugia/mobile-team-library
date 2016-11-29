@@ -21,14 +21,14 @@ public class BookCellViewModel: NSObject {
     }
     
     public var publisher: String? {
-        if let publisher = book.publisher {
+        if let publisher = book.publisher, publisher.characters.count > 0 {
             return "\(publisher)"
         }
         return nil
     }
     
     public var categories: [String]? {
-        if let categories = book.categories {
+        if let categories = book.categories, categories.characters.count > 0 {
             let trimmedCategories = categories.replacingOccurrences(of: ", ", with: ",").trimmingCharacters(in: .whitespaces)
             return trimmedCategories.components(separatedBy: ",")
         }

@@ -103,7 +103,8 @@ class BookListViewController: UIViewController, GenericBookCoverListViewControll
     
     internal func didPullToRefresh() {
         self.fetchAllBooks {
-            _ in
+            books in
+            self.viewModels = BookCellViewModel.viewModels(fromModels: books)
             self.endPullToRefresh()
         }
     }
@@ -136,6 +137,9 @@ class BookListViewController: UIViewController, GenericBookCoverListViewControll
             if let destinationViewController = segue.destination as? BookDetailViewController,
                 let viewModel = selectedViewModel {
                 destinationViewController.configure(for: viewModel)
+                destinationViewController.bookDeletedAction = {
+                    self.didPullToRefresh()
+                }
                 selectedViewModel = nil
             }
         }

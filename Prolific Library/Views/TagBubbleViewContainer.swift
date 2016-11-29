@@ -60,7 +60,7 @@ class TagBubbleViewContainer: UIView {
         addSubview(circularView)
     }
     
-    private func removeTagViews() {
+    public func removeTagViews() {
         for subview in subviews {
             subview.removeFromSuperview()
         }
