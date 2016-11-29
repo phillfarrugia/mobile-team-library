@@ -21,8 +21,6 @@ extension SettingsViewController {
             switch (settingsSection) {
             case .Actions:
                 return 1
-            case .Acknowledgements:
-                return 1
             }
         }
         return 0
@@ -34,8 +32,6 @@ extension SettingsViewController {
             switch (settingsSection) {
             case .Actions:
                 cell.textLabel?.text = "Delete All Books"
-            case .Acknowledgements:
-                cell.textLabel?.text = "View Acknowledgements"
             }
         }
         return cell
@@ -47,9 +43,16 @@ extension SettingsViewController {
         if let settingsSection = SettingsSections(rawValue: indexPath.section) {
             switch (settingsSection) {
             case .Actions:
-                break
-            case .Acknowledgements:
-                break
+                handleClearAllBooksDidPress {
+                    if let deleteCell = tableView.cellForRow(at: indexPath) {
+                        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+                        deleteCell.accessoryView = activityIndicator
+                        activityIndicator.startAnimating()
+                        self.clearAllBooks {
+                            deleteCell.accessoryView = nil
+                        }
+                    }
+                }
             }
         }
         tableView.deselectRow(at: indexPath, animated: true)
