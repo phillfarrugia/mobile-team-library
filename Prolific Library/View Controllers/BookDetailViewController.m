@@ -55,7 +55,7 @@
     }
     else {
         NSString *queryString = [NSString stringWithFormat:@"%@ %@", self.viewModel.title, self.viewModel.authors];
-        [ImageHandler downloadAndCacheCoverImageForQueryString:queryString completion:^(UIImage * _Nullable image, NSError * _Nullable error) {
+        [ImageHandler cachedImageOrDownloadImageForQueryString:queryString completion:^(UIImage * _Nullable image, NSError * _Nullable error) {
             if (image) {
                 self.coverImageView.image = image;
             }

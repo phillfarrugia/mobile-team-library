@@ -47,8 +47,10 @@ class TagsViewController: UIViewController, SegueHandlerType, GenericBookCoverLi
         configureViewStyle(viewStyle)
         fetchAllBooks {
             books in
-            let bookCellViewModels = BookCellViewModel.viewModels(fromModels: books)
-            self.viewModels = TagViewModel.tagViewModels(fromBookCellViewModels: bookCellViewModels)
+            self.bookViewModels = BookCellViewModel.viewModels(fromModels: books)
+            if let bookViewModels = self.bookViewModels {
+                self.viewModels = TagViewModel.tagViewModels(fromBookCellViewModels: bookViewModels)
+            }
         }
     }
     

@@ -15,60 +15,63 @@ public class ImageHandler: NSObject {
     
     private let imageDownloader = ImageDownloader(configuration: ImageDownloader.defaultURLSessionConfiguration(),
                                                   downloadPrioritization: .fifo,
-                                                  maximumActiveDownloads: 10,
+                                                  maximumActiveDownloads: 20,
                                                   imageCache: AutoPurgingImageCache())
     
     public typealias DownloadAndCacheImageRequestCompletion = (_ image: UIImage?, _ error: Error?) -> Void
     
-    public func downloadAndCacheImage(withImageURL imageURL: URL, completion: @escaping DownloadAndCacheImageRequestCompletion) {
-        if let cachedImage = cachedImage(forURLString: imageURL.absoluteString) {
-            completion(cachedImage, nil)
+    public func downloadImage(withImageURL imageURL: URL, queryString: String, completion: @escaping DownloadAndCacheImageRequestCompletion) {
+        let urlRequest = URLRequest(url: imageURL)
+        imageDownloader.download(urlRequest, completion: {
+            response in
+            switch (response.result) {
+            case .success(let image):
+                completion(image, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        })
+    }
+    
+    private func cache(image: UIImage, forQueryString queryString: String, withURL url: URL) {
+        if let imageCache = imageDownloader.imageCache {
+            imageCache.add(image, withIdentifier: queryString)
         }
         else {
-            let urlRequest = URLRequest(url: imageURL)
-            imageDownloader.download(urlRequest, completion: {
-                response in
-                switch (response.result) {
-                case .success(let image):
-                    self.cache(image: image, forURLString: imageURL.absoluteString)
-                    completion(image, nil)
-                case .failure(let error):
-                    completion(nil, error)
-                }
-            })
+            print("No cache")
         }
     }
     
-    private func cache(image: UIImage, forURLString urlString: String) {
+    public func cachedImage(forQueryString queryString: String) -> UIImage? {
         if let imageCache = imageDownloader.imageCache {
-            imageCache.add(image, withIdentifier: urlString)
-        }
-    }
-    
-    public func cachedImage(forURLString urlString: String) -> UIImage? {
-        if let imageCache = imageDownloader.imageCache {
-            return imageCache.image(withIdentifier: urlString)
+            return imageCache.image(withIdentifier: queryString)
         }
         return nil
     }
     
-    public static func downloadAndCacheCoverImage(forQueryString queryString: String, completion: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
-        GoogleImageSearch.performSearch(forQuery: queryString, completion: {
-            imageURL, error in
-            if let imageURL = imageURL {
-                ImageHandler.sharedInstance.downloadAndCacheImage(withImageURL: imageURL, completion: {
-                    image, error in
-                    guard let image = image else {
-                        completion(nil, error)
-                        return
-                    }
-                    completion(image, nil)
-                })
-            }
-            else {
-                completion(nil, error)
-            }
-        })
+    public static func cachedImageOrDownloadImage(forQueryString queryString: String, completion: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
+        if let cachedImage = ImageHandler.sharedInstance.cachedImage(forQueryString: queryString) {
+            completion(cachedImage, nil)
+        }
+        else {
+            GoogleImageSearch.performSearch(forQuery: queryString, completion: {
+                imageURL, error in
+                if let imageURL = imageURL {
+                    ImageHandler.sharedInstance.downloadImage(withImageURL: imageURL, queryString: queryString, completion: {
+                        image, error in
+                        guard let image = image else {
+                            completion(nil, error)
+                            return
+                        }
+                        ImageHandler.sharedInstance.cache(image: image, forQueryString: queryString, withURL: imageURL)
+                        completion(image, nil)
+                    })
+                }
+                else {
+                    completion(nil, error)
+                }
+            })
+        }
     }
     
 }

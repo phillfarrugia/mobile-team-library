@@ -28,39 +28,40 @@ extension TagResultsViewController {
                 return UITableViewCell()
         }
         
-        // Cover Image
+        // Check if Cover Image already exists, if so set cover image and return cell
         let viewModel = viewModels[indexPath.row]
+        if let coverImage = viewModel.coverImage {
+            bookCell.setCoverImage(image: coverImage)
+            return bookCell
+        }
+        
+        // Request new Cover Image
         let queryString = "\(viewModel.title) \(viewModel.authors)"
-        ImageHandler.downloadAndCacheCoverImage(forQueryString: queryString, completion: {
+        ImageHandler.cachedImageOrDownloadImage(forQueryString: queryString, completion: {
             image, error in
             
-            // Get Image Colours
+            // Calculate Image Colours
             if let image = image {
                 ImageColorsHandler.colors(forImage: image, completion: {
                     primary, secondary, detail in
-                    let viewModel = viewModels[indexPath.row]
                     viewModel.primaryColor = primary
                     viewModel.secondaryColor = secondary
                     viewModel.detailColor = detail
                     
-                    // Set Colours on Cell
-                    guard let cell = tableView.cellForRow(at: indexPath) as? BookTableViewCell else {
-                        // Cell at IndexPath is no longer visible on screen
-                        // Request Image response is cached locally by AlamofireImage
-                        return
+                    // Check if Cell still exists at indexPath, if no, cell has scrolled offscreen
+                    // Re-Layout Tag Views with new colours
+                    if let cell = tableView.cellForRow(at: indexPath) as? BookTableViewCell {
+                        cell.layoutTagViews()
                     }
-                    cell.layoutTagViews()
+                    
+                    // Check if Cell still exists at indexPath, if no, cell has scrolled offscreen
+                    viewModel.coverImage = image
+                    if let cell = tableView.cellForRow(at: indexPath) as? BookTableViewCell {
+                        // Set new Cover Image on cell
+                        cell.setCoverImage(image: image)
+                    }
                 })
             }
-            
-            // Set Image on Cell
-            guard let cell = tableView.cellForRow(at: indexPath) as? BookTableViewCell,
-                let image = image else {
-                    // Cell at IndexPath is no longer visible on screen
-                    // Request Image response is cached locally by AlamofireImage
-                    return
-            }
-            cell.setCoverImage(image: image)
         })
         
         return bookCell

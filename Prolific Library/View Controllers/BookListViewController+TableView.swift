@@ -37,7 +37,7 @@ extension BookListViewController {
         
         // Request new Cover Image
         let queryString = "\(viewModel.title) \(viewModel.authors)"
-        ImageHandler.downloadAndCacheCoverImage(forQueryString: queryString, completion: {
+        ImageHandler.cachedImageOrDownloadImage(forQueryString: queryString, completion: {
             image, error in
             
             // Calculate Image Colours
