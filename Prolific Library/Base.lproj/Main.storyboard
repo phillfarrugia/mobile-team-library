@@ -200,7 +200,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cover Image Unavailable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3y-TX-WZc">
-                                        <rect key="frame" x="107.5" y="82" width="159.5" height="17"/>
+                                        <rect key="frame" x="107" y="82" width="160" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -394,9 +394,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WBL-RS-fwU" customClass="NavigationController" customModule="Prolific_Library" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tags" image="tag-icon" id="2lO-PW-zPn"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o0K-72-Z5U">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="o0K-72-Z5U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
