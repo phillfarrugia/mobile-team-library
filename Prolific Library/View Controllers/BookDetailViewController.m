@@ -65,7 +65,7 @@
     }
     
     self.checkoutButton.layer.cornerRadius = self.checkoutButton.frame.size.height/2;
-    [self.tagViewContainer layoutTagViewsForTags:self.viewModel.categories withColor:self.viewModel.detailColor];
+    [self.tagViewContainer layoutTagViewsForTags:self.viewModel.categories withColor:self.viewModel.detailColor displayMultiLine:YES];
     self.bodyViewHeightConstraint.constant = self.view.bounds.size.height - self.coverImageView.bounds.size.height;
     
     [UIView animateWithDuration:0.3 animations:^{

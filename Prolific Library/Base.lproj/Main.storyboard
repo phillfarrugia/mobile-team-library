@@ -187,10 +187,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UqX-p5-5ev" customClass="TagBubbleViewContainer" customModule="Prolific_Library" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="137" width="335" height="25"/>
+                                                <rect key="frame" x="20" y="137" width="335" height="100"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="SQw-U7-LOa"/>
+                                                    <constraint firstAttribute="height" constant="100" id="SQw-U7-LOa"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Last checkout out by Phill on June 6 2016 11: 03 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddK-90-Ee9">

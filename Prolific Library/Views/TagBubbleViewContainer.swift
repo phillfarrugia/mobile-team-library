@@ -10,9 +10,12 @@ import UIKit
 
 class TagBubbleViewContainer: UIView {
 
-    func layoutTagViews(forTags tags: [String], withColor color: UIColor) {
+    func layoutTagViews(forTags tags: [String], withColor color: UIColor, displayMultiLine: Bool = false) {
         var xOrigins: CGFloat = bounds.origin.x
+        var yOrigins: CGFloat = bounds.origin.y
         let kHoriontalMargin: CGFloat = 8.0
+        let kVerticalMargin: CGFloat = 8.0
+        
         removeTagViews()
         
         for tag in tags {
@@ -21,11 +24,8 @@ class TagBubbleViewContainer: UIView {
             label.text = tag
             label.sizeToFit()
             
-            let circularView = UIView()
-            circularView.frame = CGRect(x: xOrigins, y: bounds.origin.y, width: label.frame.width + 20, height: label.frame.height + 8)
-            circularView.backgroundColor = color
-            circularView.layer.cornerRadius = circularView.frame.height/2
-            circularView.addSubview(label)
+            let circularViewWidth = label.frame.width + 20
+            let circularViewHeight = label.frame.height + 8
             
             var labelFrame = label.frame
             label.textColor = .white
@@ -33,11 +33,31 @@ class TagBubbleViewContainer: UIView {
             label.frame = labelFrame
             
             // Only adds tag if it fits within the remaining space of container width
-            if (xOrigins + (circularView.frame.size.width + kHoriontalMargin) < bounds.size.width) {
-                addSubview(circularView)
-                xOrigins += (circularView.frame.size.width + kHoriontalMargin)
+            if (xOrigins + circularViewWidth + kHoriontalMargin < bounds.size.width) {
+                let circularViewFrame = CGRect(x: xOrigins, y: yOrigins, width: circularViewWidth, height: circularViewHeight)
+                addCircularView(withFrame: circularViewFrame, color: color, label: label)
+                xOrigins += (circularViewWidth + kHoriontalMargin)
+            }
+            else {
+                if (displayMultiLine) {
+                    xOrigins = bounds.origin.x
+                    yOrigins += circularViewHeight + kVerticalMargin
+                    let circularViewFrame = CGRect(x: xOrigins, y: yOrigins, width: circularViewWidth, height: circularViewHeight)
+                    addCircularView(withFrame: circularViewFrame, color: color, label: label)
+                    xOrigins += (circularViewWidth + kHoriontalMargin)
+                }
             }
         }
+    }
+    
+    private func addCircularView(withFrame frame: CGRect, color: UIColor, label: UILabel) {
+        let circularView = UIView()
+        let circularViewFrame = frame
+        circularView.frame = circularViewFrame
+        circularView.backgroundColor = color
+        circularView.layer.cornerRadius = circularView.frame.height/2
+        circularView.addSubview(label)
+        addSubview(circularView)
     }
     
     private func removeTagViews() {

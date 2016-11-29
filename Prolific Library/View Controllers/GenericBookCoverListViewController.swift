@@ -67,7 +67,7 @@ extension GenericBookCoverListViewController where Self: UIViewController, Self:
     }
     
     func sampleBooks() -> [Book] {
-        let bookOne = Book(title: "Mastering iOS Frameworks", author: "Kyle Richter", publisher: "Random House Publishing", categories: "ios development,programming, dev")
+        let bookOne = Book(title: "Mastering iOS Frameworks", author: "Kyle Richter", publisher: "Random House Publishing", categories: "ios development,programming, dev, mac, phill, farrugia, prolific interactive")
         let bookTwo = Book(title: "iOS Programming: The Big Nerd Ranch Guide", author: "Aaron Hilegass", publisher: nil, categories: "ios, programming, nerds")
         let bookThree = Book(title: "iOS App Development For Dummies", author: "Jesse Feiler",publisher: nil, categories: "app development,for dummies")
         let bookFour = Book(title: "The iPhone Developer's CookBook", author: "Erica Sadun", publisher: nil, categories: "iphone, developer, cookbook")
