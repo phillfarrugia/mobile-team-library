@@ -16,8 +16,10 @@
 @property (strong, nonatomic) IBOutlet UITextField *publisherTextField;
 @property (strong, nonatomic) IBOutlet UITextField *categoriesTextField;
 
-@property (nonatomic) BOOL isEditingBookMode;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *scrollViewBottomVerticalConstraint;
 
+@property (nonatomic) BOOL isEditingBookMode;
 @property (nonatomic) Book *existingBookModel;
 
 @end

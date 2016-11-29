@@ -375,7 +375,7 @@
 		F73BFBA81DE94E2300C0AAA5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F77F22211DED5222008146CF /* Alert View Controller */,
+				F77F22211DED5222008146CF /* Modal Alert View Controller */,
 				F7E662921DEC4D53002717D6 /* GenericBookCoverListViewController.swift */,
 				F7E662941DEC509A002717D6 /* GenericBookCoverListViewController+Errors.swift */,
 				F7E662AD1DED2F4C002717D6 /* Settings View Controller */,
@@ -433,14 +433,14 @@
 			path = "../Prolific Library";
 			sourceTree = "<group>";
 		};
-		F77F22211DED5222008146CF /* Alert View Controller */ = {
+		F77F22211DED5222008146CF /* Modal Alert View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				F77F22221DED523D008146CF /* ModalAlertViewController.swift */,
 				F77F22261DED58FA008146CF /* UIViewController+ModalAlertView.swift */,
 				F77F22231DED523D008146CF /* ModalAlertViewController.xib */,
 			);
-			name = "Alert View Controller";
+			name = "Modal Alert View Controller";
 			sourceTree = "<group>";
 		};
 		F7C8FE801DEA6EF800BFEEDF /* ProlificLibraryCore */ = {
