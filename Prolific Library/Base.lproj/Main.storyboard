@@ -74,9 +74,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kuF-Io-dgv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kuF-Io-dgv">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9As-FV-7OZ">
@@ -93,9 +92,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kuF-Io-dgv" secondAttribute="trailing" id="ONR-N4-mDl"/>
                             <constraint firstItem="dQr-Vo-HhH" firstAttribute="top" secondItem="9As-FV-7OZ" secondAttribute="bottom" id="Qgf-Nx-M0Q"/>
+                            <constraint firstItem="kuF-Io-dgv" firstAttribute="leading" secondItem="vvx-GT-NSk" secondAttribute="leading" id="RTr-Kv-Wtl"/>
                             <constraint firstItem="9As-FV-7OZ" firstAttribute="leading" secondItem="vvx-GT-NSk" secondAttribute="leading" id="cvB-dh-y5E"/>
+                            <constraint firstItem="dQr-Vo-HhH" firstAttribute="top" secondItem="kuF-Io-dgv" secondAttribute="bottom" id="fXQ-TB-2W5"/>
                             <constraint firstAttribute="trailing" secondItem="9As-FV-7OZ" secondAttribute="trailing" id="od7-0A-2Fz"/>
+                            <constraint firstItem="kuF-Io-dgv" firstAttribute="top" secondItem="hMB-Ry-vbZ" secondAttribute="bottom" id="pXM-Et-g58"/>
                             <constraint firstItem="9As-FV-7OZ" firstAttribute="top" secondItem="hMB-Ry-vbZ" secondAttribute="bottom" id="uCU-Fz-ZyS"/>
                         </constraints>
                     </view>
@@ -537,9 +540,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="AGj-nE-1u9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="AGj-nE-1u9">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlainTableViewCell" textLabel="mcg-lr-azS" style="IBUITableViewCellStyleDefault" id="kGC-4z-LEf">
@@ -563,6 +565,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AGj-nE-1u9" firstAttribute="top" secondItem="t4d-8k-wwP" secondAttribute="bottom" id="7Ni-xf-8f6"/>
+                            <constraint firstItem="AGj-nE-1u9" firstAttribute="leading" secondItem="1ZS-TC-Lgv" secondAttribute="leading" id="Q5o-T1-yQ0"/>
+                            <constraint firstItem="4ov-Os-Qzx" firstAttribute="top" secondItem="AGj-nE-1u9" secondAttribute="bottom" id="pyi-ZL-x0p"/>
+                            <constraint firstAttribute="trailing" secondItem="AGj-nE-1u9" secondAttribute="trailing" id="sIA-qg-2Qb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r59-ai-aKy"/>
                     <connections>
