@@ -42,10 +42,29 @@
     
     self.title = @"Detail";
     [self configureNavigation];
+    [self configureCoverImage];
 }
 
 - (void)configureNavigation {
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"more-dots-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(moreBarButtonItemDidPress)];
+}
+
+- (void)configureCoverImage {
+    if (self.viewModel.coverImage) {
+        self.coverImageView.image = self.viewModel.coverImage;
+    }
+    else {
+        NSString *queryString = [NSString stringWithFormat:@"%@ %@", self.viewModel.title, self.viewModel.authors];
+        [ImageHandler downloadAndCacheCoverImageForQueryString:queryString completion:^(UIImage * _Nullable image, NSError * _Nullable error) {
+            if (image) {
+                self.coverImageView.image = image;
+            }
+            else {
+                self.coverImageView.hidden = true;
+                self.coverImageUnavailableLabel.hidden = false;
+            }
+        }];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -136,17 +155,6 @@
 
 - (void)configureForViewModel:(BookCellViewModel *)viewModel {
     self.viewModel = viewModel;
-    
-    NSString *queryString = [NSString stringWithFormat:@"%@ %@", viewModel.title, viewModel.authors];
-    [ImageHandler downloadAndCacheCoverImageForQueryString:queryString completion:^(UIImage * _Nullable image, NSError * _Nullable error) {
-        if (image) {
-            self.coverImageView.image = image;
-        }
-        else {
-            self.coverImageView.hidden = true;
-            self.coverImageUnavailableLabel.hidden = false;
-        }
-    }];
 }
 
 - (IBAction)checkoutButtonDidPress:(id)sender {

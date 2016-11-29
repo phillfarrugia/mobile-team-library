@@ -57,6 +57,8 @@ public class BookCellViewModel: NSObject {
     
     public var detailColor: UIColor = .lightGray
     
+    public var coverImage: UIImage?
+    
     // MARK: Static Functions
     
     public static func viewModels(fromModels models: [Book]) -> [BookCellViewModel] {
