@@ -40,19 +40,19 @@ Unit tests have not currently been provided for these files.
 
 ## Third Party Dependencies
 
-## Alamofire
+### Alamofire
 
 https://github.com/Alamofire/Alamofire
 
 Network Requests made throughout this app rely on the use of the Alamofire framework. Alamofire provides a lot of out-of-the box functionality including Caching, Result Validation, Authentication and Parameter Encoding that are useful for this project.
 
-## AlamofireImage
+### AlamofireImage
 
 https://github.com/Alamofire/AlamofireImage
 
 This application heavily relies on performing asynchronous network-based requests for images. AlamofireImage couples very well with the use of Alamofire to provide powerful and convenient caching of Images that heavily improve the performance of loading UICollectionViewCells and UITableViewCells with asynchronous images.
 
-## Gloss
+### Gloss
 
 https://github.com/hkellaway/Gloss
 
@@ -62,17 +62,59 @@ Why not decode JSON without Gloss in Swift?
 
 It's definitely possible to decode JSON in Swift without a third party tool, although Gloss is an existing, well-tested and capable tool that allows the developer to be more productive in building this application in a short amount of time.
 
-## UIImageColors
+### UIImageColors
 
 https://github.com/jathu/UIImageColors
 
 Calculates the primary, secondary and detail colours from a UIImage asynchronously. Performing this calculating asynchronously is a difficult task and this tool is a well-tested solution that enables me to be more productive in building this application in a short amount of time.
 
-## Quick and Nimble
+### Quick and Nimble
 
 https://github.com/Quick/Quick
 <br>https://github.com/Quick/Nimble
 
 Quick and Nimble are the cornerstone tools for implementing Behavioural Driven Development (BDD) unit tests in Swift.
+
+## Unit Tests
+
+Unit tests have not been fully implemented for the project due to the time constraints of this project. Given more time tests would need to be implemented for the NetworkManager (a stubbing or mocking solution for network requests would need to be determined).
+
+Tests currently exist for:
+
+AddBookValidatorSpec
+DateFormatter+BookSpec
+
+## Collection View and Table View
+
+In order to showcase my abilities with using both UICollectionView and UITableView I've implemented both throughout this application. 
+
+### Asynchronous Images
+
+These implementations rely heavily on loading images asyncronoushly from the network.
+
+My solution to this problem is as follows:
+
+1. View Controller dequeues a reusable Cell
+2. View Controller checks if cell's viewModel has an image already
+3. If image exists, image is set on the cell by the View Controller and cell is returned
+4. If no image, View Controller makes an asynchronous request using the ImageHandler
+5. Asynchronous request callsback to the View Controller
+6. ImageHandler caches the image in memory using AlamofireImage
+7. View Controller saves the image in the cell's viewModel
+6. View Controller checks if cell still exists at the same indexPath
+7. If cell doesn't exist, View Controller returns, because cell is off screen
+8. If cell does exist, View Controller sets image on cell and cell is returned
+
+Potential issues:
+
+#### Cell is offscreen
+
+If a cell scrolls offscreen before an asynchronous image request callsback, the image is cached in memory and saved to the viewModel for use when a cell is dequeued again for the same indexPath. In this case, no new network request is needed.
+
+#### Cell is reused for another indexPath
+
+If a cell is reused for a different indexPath, the image is coupled with the viewModel instead of the cell. Therefore no mismatching issues can occur.
+
+
 
 
