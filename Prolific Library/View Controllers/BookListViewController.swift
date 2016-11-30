@@ -94,11 +94,15 @@ class BookListViewController: UIViewController, GenericBookCoverListViewControll
     private func configureRefreshControl() {
         let tableViewRefreshControl = UIRefreshControl()
         tableViewRefreshControl.addTarget(self, action: #selector(BookListViewController.didPullToRefresh), for: .valueChanged)
-        tableView.refreshControl = tableViewRefreshControl
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = tableViewRefreshControl
+        }
         
         let collectionViewRefreshControl = UIRefreshControl()
         collectionViewRefreshControl.addTarget(self, action: #selector(BookListViewController.didPullToRefresh), for: .valueChanged)
-        collectionView.refreshControl = collectionViewRefreshControl
+        if #available(iOS 10.0, *) {
+            collectionView.refreshControl = collectionViewRefreshControl
+        }
     }
     
     internal func didPullToRefresh() {
@@ -112,9 +116,13 @@ class BookListViewController: UIViewController, GenericBookCoverListViewControll
     internal func endPullToRefresh() {
         switch (self.viewStyle) {
         case .List:
-            self.tableView.refreshControl?.endRefreshing()
+            if #available(iOS 10.0, *) {
+                self.tableView.refreshControl?.endRefreshing()
+            }
         case .Cover:
-            self.collectionView.refreshControl?.endRefreshing()
+            if #available(iOS 10.0, *) {
+                self.collectionView.refreshControl?.endRefreshing()
+            }
         }
     }
     
