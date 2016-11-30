@@ -105,6 +105,11 @@ My solution to this problem is as follows:
 7. If cell doesn't exist, View Controller returns, because cell is off screen
 8. If cell does exist, View Controller sets image on cell and cell is returned
 
+See the following for actual implementation:
+
+BookListViewController+TableView.swift (tableView:cellForRowAtIndexPath:)
+BookListViewController+CollectionView.swift (collectionView:cellForItemAtIndexPath:)
+
 Potential issues:
 
 #### Cell is offscreen
@@ -116,5 +121,43 @@ If a cell scrolls offscreen before an asynchronous image request callsback, the 
 If a cell is reused for a different indexPath, the image is coupled with the viewModel instead of the cell. Therefore no mismatching issues can occur.
 
 
+## Problems I Encountered
 
+### Book Details - Share, Edit, Delete
 
+#### Problem
+
+During development of the `BookDetailViewController` I was faced with the task of implementing buttons to 'Share', 'Edit' and 'Delete' a specific book. Along with the `UINavigationBar` and the `UITabBar`, I found it difficult to determine the most User Friendly way to present these options to the user.
+
+Initially I implemented the following solution, which placed the native iOS Share button in the Navigation Bar, but this left me no room to place an Edit or Delete button.
+
+#### Screenshot
+<a href="http://i.imgur.com/8iQaQ94.png"><img src="http://i.imgur.com/8iQaQ94.png" width="400" /></a>
+
+#### Solution
+
+In order to find a solution I researched into the existing Navigation patterns for popular iOS apps on the App Store, such as Facebook, Instagram, Snapchat, Twitter among others. Eventually I settled on an approach that I've used in previous projects I've worked on of displaying several actions in an animated custom Alert View modal overlay. 
+
+I don't feel as comfortable as I would like with hiding these 3 actions behinds a 'more' button (three dots), like a hamburger-menu style button. But due to the time constraints of the building this project, I had to settle on something clean and this was the best solution I settled on.
+
+#### Screenshot
+
+<a href="http://i.imgur.com/WEpoMyz.png"><img src="http://i.imgur.com/WEpoMyz.png" width="400" /></a>
+
+### Heroku Server Downtime
+
+#### Problem
+
+While developing this project, I was provided with a Heroku API for fetching, adding, removing, updating and deleting books from the network. I had no control over this server, as is a usual occurance on many software projects. Halfway through my development the API experienced issues and went down. With no control over the server, I was faced with building my app without the server.
+
+#### Solution
+
+I've experienced this exact scenario many times on software projects, so although this was an issue it did not take my by surprise. In order to workaround the server issues, I was able to use tools such as Charles Proxy (https://www.charlesproxy.com/), and ServeUp (http://www.blackdogfoundry.com/blog/introducing-serveup/) to implement a mock local Web Server that returned pre-defined JSON responses for specific network requests. This enabled me to mock the server independently of my application code, and ensure that everything would be working given a working Heroku API again.
+
+Before completing this project, I was able to request a fix on the server in order to run final integration tests to ensure no issues, and to fix any minor bugs before finalising.
+
+## Feedback
+
+This project was a great approach to showcasing my pragmatic iOS development knowledge and experience. The instructions left enough room for interpretation to craft a unique mobile app with the data provided.
+
+Despite the Book data provided being simple and brief, I found it enabled me to open up to new ways of presenting that data to the user. One such example was the Book categories. Instead of taking the comma seperating string of categories from the server and simply presenting them as a boring UILabel to the user, I enjoyed crafting TagViews that placed the tags in colourful rounded bubbles, that flowed onto multilines. I even found a way to add features to the app that let the user search and catalogue through books using these tags more powerfully.
