@@ -1,9 +1,13 @@
+<a href="http://i.imgur.com/dNIROyC.png"><img src="http://i.imgur.com/dNIROyC.png" width="180"/></a>
+
 # prolific-library
 A simple iOS app to track who has which book from the prolific library.
 
 ## Architecture
 
 This application has been seperated out into two key Application Targets - Prolific Library Core (Core Framework) and Prolific Library (iOS Target). This allows for a clear seperation of concerns between core business-related logic and target or platform specific logic.
+
+![](http://i.imgur.com/h7Bzwbe.png)
 
 ### Core Framework
 
