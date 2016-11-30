@@ -30,6 +30,8 @@ class ModalAlertMessage: NSObject {
     
     var showTextField: Bool = false
     
+    var textFieldText: String?
+    
     init(title: String?, body: String?, topButtonTitle: String?, middleButtonTitle: String?, bottomButtonTitle: String?, primaryColor: UIColor, secondaryColor: UIColor, detailColor: UIColor, showTextField: Bool) {
         self.title = title
         self.body = body
@@ -57,29 +59,31 @@ class ModalAlertViewController: UIViewController {
     
     @IBOutlet internal var backgroundOverlayView: UIView!
     @IBOutlet internal var messageModalView: UIView!
+    @IBOutlet var messageModalTopConstraint: NSLayoutConstraint!
+    @IBOutlet var messageModalVerticalCenterConstraint: NSLayoutConstraint!
     
-    @IBOutlet var titleLabelHeightConstraint: NSLayoutConstraint!
-    @IBOutlet var bodyLabelHeightConstraint: NSLayoutConstraint!
-    @IBOutlet var bodyLabelTopVerticalConstraint: NSLayoutConstraint!
+    @IBOutlet internal var titleLabelHeightConstraint: NSLayoutConstraint!
+    @IBOutlet internal var bodyLabelHeightConstraint: NSLayoutConstraint!
+    @IBOutlet internal var bodyLabelTopVerticalConstraint: NSLayoutConstraint!
     
     @IBOutlet internal var titleLabel: UILabel!
-    @IBOutlet var bodyLabel: UILabel!
+    @IBOutlet internal var bodyLabel: UILabel!
     
-    @IBOutlet var textField: UITextField!
-    @IBOutlet var textFieldHeightConstraint: NSLayoutConstraint!
-    @IBOutlet var textFieldTopConstraint: NSLayoutConstraint!
-    @IBOutlet var textFieldBottomConstraint: NSLayoutConstraint!
+    @IBOutlet internal var textField: UITextField!
+    @IBOutlet internal var textFieldHeightConstraint: NSLayoutConstraint!
+    @IBOutlet internal var textFieldTopConstraint: NSLayoutConstraint!
+    @IBOutlet internal var textFieldBottomConstraint: NSLayoutConstraint!
 
     @IBOutlet internal var topButton: UIButton!
-    @IBOutlet var topButtonHeightConstraint: NSLayoutConstraint!
+    @IBOutlet internal var topButtonHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet internal var middleButton: UIButton!
-    @IBOutlet var middleVerticalConstraint: NSLayoutConstraint!
-    @IBOutlet var middleButtonHeightConstraint: NSLayoutConstraint!
+    @IBOutlet internal var middleVerticalConstraint: NSLayoutConstraint!
+    @IBOutlet internal var middleButtonHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet internal var bottomButton: UIButton!
-    @IBOutlet var bottomVerticalConstraint: NSLayoutConstraint!
-    @IBOutlet var bottomButtonHeightConstraint: NSLayoutConstraint!
+    @IBOutlet internal var bottomVerticalConstraint: NSLayoutConstraint!
+    @IBOutlet internal var bottomButtonHeightConstraint: NSLayoutConstraint!
     
     internal var alertMessage: ModalAlertMessage
     internal var completion: ModalAlertViewCompletion
@@ -136,10 +140,14 @@ class ModalAlertViewController: UIViewController {
         }
         
         if (!alertMessage.showTextField) {
+            messageModalVerticalCenterConstraint.isActive = true
+            messageModalTopConstraint.isActive = false
             textFieldHeightConstraint.constant = 0
             textFieldBottomConstraint.constant = 0
         }
         else {
+            messageModalVerticalCenterConstraint.isActive = false
+            messageModalTopConstraint.isActive = true
             textField.becomeFirstResponder()
         }
         
@@ -238,6 +246,7 @@ class ModalAlertViewController: UIViewController {
             self.backgroundOverlayView.alpha = ModalAlertViewController.kBackgroundAlphaInitial
         }, completion: {
             _ in
+            self.alertMessage.textFieldText = self.textField.text
             self.dismiss(animated: true, completion: completion)
         })
     }

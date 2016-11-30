@@ -13,8 +13,6 @@
 
 @interface BookDetailViewController ()
 
-@property (nonatomic, weak) BookCellViewModel *viewModel;
-
 @property (strong, nonatomic) IBOutlet UIView *coverImageHeaderView;
 @property (strong, nonatomic) IBOutlet UIImageView *coverImageView;
 @property (strong, nonatomic) IBOutlet UILabel *coverImageUnavailableLabel;
@@ -70,14 +68,18 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self.titleLabel setText:self.viewModel.title];
-    [self.authorLabel setText:self.viewModel.authors];
-    [self.lastCheckedOutLabel setText:self.viewModel.lastCheckedOut];
+    [self configureForViewModel:self.viewModel];
+}
+
+- (void)configureForViewModel:(BookCellViewModel *)viewModel {
+    [self.titleLabel setText:viewModel.title];
+    [self.authorLabel setText:viewModel.authors];
+    [self.lastCheckedOutLabel setText:viewModel.lastCheckedOut];
     
     self.coverImageUnavailableLabel.hidden = true;
     
-    if (self.viewModel.publisher) {
-        [self.publisherLabel setText:self.viewModel.publisher];
+    if (viewModel.publisher) {
+        [self.publisherLabel setText:viewModel.publisher];
     }
     else {
         self.publisherLabelTopConstraint.constant = 0;
@@ -85,13 +87,13 @@
     }
     
     self.checkoutButton.layer.cornerRadius = self.checkoutButton.frame.size.height/2;
-    [self.tagViewContainer layoutTagViewsForTags:self.viewModel.categories withColor:self.viewModel.detailColor displayMultiLine:YES];
+    [self.tagViewContainer layoutTagViewsForTags:viewModel.categories withColor:viewModel.detailColor displayMultiLine:YES];
     self.bodyViewHeightConstraint.constant = self.view.bounds.size.height - self.coverImageView.bounds.size.height;
     
     [UIView animateWithDuration:0.3 animations:^{
-        [self.navigationController.navigationBar setBarTintColor:self.viewModel.primaryColor];
-        self.coverImageHeaderView.backgroundColor = self.viewModel.secondaryColor;
-        self.checkoutButton.backgroundColor = self.viewModel.primaryColor;
+        [self.navigationController.navigationBar setBarTintColor:viewModel.primaryColor];
+        self.coverImageHeaderView.backgroundColor = viewModel.secondaryColor;
+        self.checkoutButton.backgroundColor = viewModel.primaryColor;
     }];
 }
 
@@ -126,7 +128,7 @@
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [self deleteBookWithCompletion:^{
-            self.bookDeletedAction();
+            self.bookUpdateDeleteAction();
             [self.navigationController popToRootViewControllerAnimated:YES];
         }];
     }];
@@ -149,11 +151,15 @@
         UINavigationController *destinationViewController = [segue destinationViewController];
         AddBookViewController *addBookViewController = destinationViewController.viewControllers.firstObject;
         [addBookViewController configureForEditingExistingBook:self.viewModel.book];
+        [addBookViewController setBookAddedUpdatedAction:^(Book *updatedBook) {
+            BookCellViewModel *updatedViewModel = [[BookCellViewModel alloc] initWithBook:updatedBook];
+            updatedViewModel.primaryColor = self.viewModel.primaryColor;
+            updatedViewModel.secondaryColor = self.viewModel.secondaryColor;
+            updatedViewModel.detailColor = self.viewModel.detailColor;
+            self.viewModel = updatedViewModel;
+            [self configureForViewModel:updatedViewModel];
+        }];
     }
-}
-
-- (void)configureForViewModel:(BookCellViewModel *)viewModel {
-    self.viewModel = viewModel;
 }
 
 - (IBAction)checkoutButtonDidPress:(id)sender {
@@ -162,16 +168,25 @@
 
 - (void)presentCheckoutAlert {
     ModalAlertMessage *alertMessage = [[ModalAlertMessage alloc] initWithTitle:@"Checkout Book" body:@"Enter your name in order to checkout this book" topButtonTitle:@"Cancel" middleButtonTitle:nil bottomButtonTitle:@"Confirm" primaryColor:self.viewModel.secondaryColor secondaryColor:self.viewModel.secondaryColor detailColor:self.viewModel.primaryColor showTextField:YES];
-    [self presentModalAlertViewWithMessage:alertMessage completion:^(enum ModalAlertResult result) {
+    [self presentModalTextInputAlertViewWithMessage:alertMessage completion:^(enum ModalAlertResult result, NSString * _Nullable textFieldText) {
         if (result == ModalAlertResultBottom) {
-            // TODO: Send Network Request to Checkout Book
-//            [NetworkRequestManager checkoutBookRequestWithBook:self.viewModel.book checkedOutBy:@"Phill Farrugia" completion:^(Book * _Nullable book, NSError * _Nullable error) {
-//                NSLog(@"%@", book.lastCheckedOutBy);
-//                if (error) {
-//                    NSLog(@"%@", book);
-//                }
-//            }];
-            
+            [self checkoutBookWithName:textFieldText completion:nil];
+        }
+    }];
+}
+
+- (void)checkoutBookWithName:(NSString *)name completion:(void (^)())completion {
+    [NetworkRequestManager checkoutBookRequestWithBook:self.viewModel.book checkedOutBy:name completion:^(Book * _Nullable book, NSError * _Nullable error) {
+        if (error) {
+            [self handleCheckoutBookError];
+        }
+        self.viewModel = [[BookCellViewModel alloc] initWithBook:book];
+        [UIView animateWithDuration:0.3 animations:^{
+            self.lastCheckedOutLabel.text = self.viewModel.lastCheckedOut;
+        }];
+        self.bookUpdateDeleteAction();
+        if (completion) {
+            completion();
         }
     }];
 }
@@ -181,10 +196,25 @@
         if (error) {
             [self handleDeleteBookError];
         }
-        else {
+        else if (completion) {
             completion();
         }
     }];
+}
+
+- (void)handleCheckoutBookError {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Uh oh!"
+                                                                             message:@"We were unable to checkout this book. Would you like to try again?"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertController addAction:confirmAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)handleDeleteBookError {

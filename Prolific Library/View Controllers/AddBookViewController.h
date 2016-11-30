@@ -11,7 +11,7 @@
 @class Book;
 @interface AddBookViewController : UIViewController
 
-@property (nonatomic) void (^bookAddedAction)(void);
+@property (nonatomic) void (^bookAddedUpdatedAction)(Book *updatedBook);
 
 - (void)configureForEditingExistingBook:(Book *)existingBook;
 

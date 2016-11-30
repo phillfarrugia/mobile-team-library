@@ -17,4 +17,10 @@ extension DateFormatter {
         return dateFormatter.string(from: date)
     }
     
+    public static var jsonDateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return formatter
+    }
+    
 }

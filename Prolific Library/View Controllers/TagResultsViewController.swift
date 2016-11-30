@@ -52,7 +52,7 @@ class TagResultsViewController: UIViewController, SegueHandlerType, UITableViewD
         case .BookDetail:
             if let destinationViewController = segue.destination as? BookDetailViewController,
                 let viewModel = selectedViewModel {
-                destinationViewController.configure(for: viewModel)
+                destinationViewController.viewModel = viewModel
                 selectedViewModel = nil
             }
         }

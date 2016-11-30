@@ -129,15 +129,16 @@ class BookListViewController: UIViewController, GenericBookCoverListViewControll
         case .AddBook:
             if let navigationController = segue.destination as? UINavigationController,
                 let destinationViewController = navigationController.viewControllers.first as? AddBookViewController {
-                destinationViewController.bookAddedAction = {
+                destinationViewController.bookAddedUpdatedAction = {
+                    _ in
                     self.didPullToRefresh()
                 }
             }
         case .BookDetail:
             if let destinationViewController = segue.destination as? BookDetailViewController,
                 let viewModel = selectedViewModel {
-                destinationViewController.configure(for: viewModel)
-                destinationViewController.bookDeletedAction = {
+                destinationViewController.viewModel = viewModel
+                destinationViewController.bookUpdateDeleteAction = {
                     self.didPullToRefresh()
                 }
                 selectedViewModel = nil

@@ -19,4 +19,16 @@ extension UIViewController {
         })
     }
     
+    internal func presentModalTextInputAlertView(withMessage message: ModalAlertMessage, completion: @escaping (_ result: ModalAlertResult, _ textFieldText: String?) -> Void) {
+        let modalAlertViewController = ModalAlertViewController(message: message, completion: {
+            completionResult in
+            completion(completionResult, message.textFieldText)
+        })
+        modalAlertViewController.modalPresentationStyle = .overFullScreen
+        modalAlertViewController.modalTransitionStyle = .crossDissolve
+        present(modalAlertViewController, animated: false, completion: {
+            modalAlertViewController.animateModalView()
+        })
+    }
+    
 }

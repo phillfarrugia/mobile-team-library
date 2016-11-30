@@ -165,15 +165,16 @@
 }
 
 - (void)updateExistingBook:(Book *)existingBook {
-    [NetworkRequestManager updateBookRequestWithBook:existingBook completion:^(Book * _Nullable book, NSError * _Nullable error) {
+    [NetworkRequestManager updateBookRequestWithBook:existingBook bookURL:self.existingBookModel.url completion:^(Book * _Nullable book, NSError * _Nullable error) {
         if (book == nil) {
             [self handleAddBookRequestError];
         }
         else {
-            if (self.bookAddedAction) {
-                self.bookAddedAction();
-            }
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self dismissViewControllerAnimated:YES completion:^{
+                if (self.bookAddedUpdatedAction) {
+                    self.bookAddedUpdatedAction(book);
+                }
+            }];
         }
     }];
 }
@@ -184,8 +185,8 @@
             [self handleAddBookRequestError];
         }
         else {
-            if (self.bookAddedAction) {
-                self.bookAddedAction();
+            if (self.bookAddedUpdatedAction) {
+                self.bookAddedUpdatedAction(book);
             }
             [self dismissViewControllerAnimated:YES completion:nil];
         }

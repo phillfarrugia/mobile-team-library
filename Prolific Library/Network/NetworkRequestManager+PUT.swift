@@ -16,9 +16,8 @@ public extension NetworkRequestManager {
     
     public typealias UpdateBookRequestCompletion = (_ book: Book?, _ error: Error?) -> Void
     
-    public static func updateBookRequest(book: Book, completion: @escaping UpdateBookRequestCompletion) {
+    public static func updateBookRequest(book: Book, bookURL: String, completion: @escaping UpdateBookRequestCompletion) {
         let params = book.toDict()
-        guard let bookURL = book.url else { return }
         Alamofire.request("\(NetworkRequestManager.baseURL)\(bookURL)", method: .put, parameters: params, encoding: URLEncoding(destination: .httpBody)).responseJSON {
             response in
             switch response.result {

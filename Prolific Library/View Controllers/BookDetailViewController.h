@@ -11,8 +11,8 @@
 @class BookCellViewModel;
 @interface BookDetailViewController : UIViewController
 
-@property (nonatomic) void (^bookDeletedAction)(void);
+@property (nonatomic) void (^bookUpdateDeleteAction)(void);
 
-- (void)configureForViewModel:(BookCellViewModel *)viewModel;
+@property (nonatomic) BookCellViewModel *viewModel;
 
 @end

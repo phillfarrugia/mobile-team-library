@@ -67,8 +67,8 @@ public class Book: NSObject, Decodable {
         self.author = author
         self.publisher = "publisher" <~~ json
         self.categories = "categories" <~~ json
-        self.lastCheckedOut = "lastCheckedOut" <~~ json
         self.lastCheckedOutBy = "lastCheckedOutBy" <~~ json
+        self.lastCheckedOut = Decoder.decode(dateForKey: "lastCheckedOut", dateFormatter: DateFormatter.jsonDateFormatter)(json)
     }
     
 }
