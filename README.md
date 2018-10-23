@@ -1,17 +1,17 @@
 <a href="http://i.imgur.com/dNIROyC.png"><img src="http://i.imgur.com/dNIROyC.png" width="180"/></a>
 
-# prolific-library
-A simple iOS app to track who has which book from the prolific library.
+# mobile-team-library
+A simple iOS app to track who has which book from a mobile team's library.
 
 ## Architecture
 
-This application has been seperated out into two key Application Targets - Prolific Library Core (Core Framework) and Prolific Library (iOS Target). This allows for a clear seperation of concerns between core business-related logic and target or platform specific logic.
+This application has been seperated out into two key Application Targets - Mobile Team Library Core (Core Framework) and Mobile Team Library (iOS Target). This allows for a clear seperation of concerns between core business-related logic and target or platform specific logic.
 
-![](http://i.imgur.com/h7Bzwbe.png)
+![](https://i.imgur.com/0DzBQEL.png)
 
 ### Core Framework
 
-ProlificLibraryCore consists of the following types of classes:
+MobileTeamLibraryCore consists of the following types of classes:
 
 - Models
 - View Models
